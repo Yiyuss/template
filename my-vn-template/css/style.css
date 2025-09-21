@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../assets/fonts/GenSenRounded-H.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'GenSenRounded', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease;
+}
+
+#video-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#character-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+}
+
+.character {
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#dialogue-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    z-index: 30;
+    text-align: center;
+}
+
+#character-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+#dialogue-text {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#choice-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 40;
+}
+
+.choice-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'GenSenRounded', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choice-button:hover {
+    background-color: #555;
+}
+
+#save-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 50;
+    font-size: 18px;
+}
+
+#save-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    z-index: 60;
+    color: white;
+}
+
+.save-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #333;
+}
+
+#close-save-panel {
+    cursor: pointer;
+}
+
+.save-slots {
+    padding: 15px;
+}
+
+.save-slot {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-slot:hover {
+    background-color: #555;
+}
+
+/* 轉場效果 */
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 1s ease;
+}
+
+.fade-overlay.active {
+    opacity: 1;
+}
+
+.white-fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 1s ease;
+}
+
+.white-fade-overlay.active {
+    opacity: 1;
+}
+
+
+/* 遊戲啟動界面 */
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.start-content {
+    text-align: center;
+    color: white;
+}
+
+.start-content h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffcc00;
+}
+
+#start-game-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'GenSenRounded', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#start-game-button:hover {
+    background-color: #ffdd55;
+}
