@@ -88,6 +88,11 @@ loadScene: function(sceneName) {
         if (dialogue.character && dialogue.character !== '') {
             this.showCharacter(dialogue.character);
         }
+
+        // 播放配音 (新增)
+        if (dialogue.voice) {
+            AudioManager.playVoice(dialogue.voice);
+        }
         
         // 處理選擇項
         if (dialogue.choices) {
@@ -186,6 +191,9 @@ playVideo: function(videoSrc, nextScene) {
         if (currentDialogue.choices || currentDialogue.video) {
             return;
         }
+
+        // 停止當前配音 (新增)
+        AudioManager.stopVoice();
         
         // 移動到下一個對話
         this.currentDialogue++;
@@ -219,3 +227,4 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
