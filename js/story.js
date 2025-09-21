@@ -7,7 +7,7 @@ const Story = {
     scenes: {
         // 開始場景
         start: {
-            background: 'https://raw.githubusercontent.com/Yiyuss/template/refs/heads/main/assets/images/backgrounds/bg1.gif',
+            background: 'assets/images/backgrounds/bg1.gif',
             bgm: 'assets/audio/start_bgm.mp3', // 可選，場景特定的BGM
             dialogues: [
                 {
@@ -205,5 +205,6 @@ const Story = {
     }
 
 };
+
 
 
