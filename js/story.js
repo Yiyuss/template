@@ -32,14 +32,14 @@ const Story = {
                 },
                 {
                     character: '伊鬱',
-                    text: '請選擇你想去的地方：',
+                    text: '請選擇妳想成為的角色：',
                     choices: [
                         {
-                            text: '去城市',
+                            text: '瑪格麗特·諾爾絲',
                             nextScene: 'city'
                         },
                         {
-                            text: '去森林',
+                            text: '森森鈴蘭',
                             nextScene: 'forest'
                         }
                     ]
@@ -168,7 +168,7 @@ const Story = {
     
     // 角色定義
     characters: {
-        '主角': {
+        '艾希雅': {
             image: 'assets/images/characters/char1.png',
             position: '30%'
         },
@@ -217,6 +217,7 @@ const Story = {
     }
 
 };
+
 
 
 
