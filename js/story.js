@@ -39,7 +39,7 @@ const Story = {
                             nextScene: 'city'
                         },
                         {
-                            text: '森森鈴蘭',
+                            text: '森森鈴蘭(未解鎖)',
                             nextScene: 'forest'
                         }
                     ]
@@ -217,6 +217,7 @@ const Story = {
     }
 
 };
+
 
 
 
