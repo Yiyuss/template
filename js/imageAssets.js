@@ -4,7 +4,7 @@ const ImageAssets = {
     backgrounds: [
         {
             id: 'bg1',
-            path: 'assets/images/backgrounds/bg1.jpg',
+            path: 'assets/images/backgrounds/bg1.gif',
             description: '開始場景背景'
         },
         {
@@ -71,4 +71,5 @@ const ImageAssets = {
             img.src = char.path;
         });
     }
+
 };
