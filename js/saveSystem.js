@@ -45,7 +45,16 @@ const SaveSystem = {
             },
             timestamp: new Date().toLocaleString()
         };
-        
+
+        // 保存配音狀態 (新增)
+            voice: {
+                src: AudioManager.currentVoice,
+                isPlaying: AudioManager.isVoicePlaying,
+                volume: AudioManager.voiceGain.gain.value
+            },
+            timestamp: new Date().toLocaleString()
+        };
+
         // 獲取角色狀態
         const characters = document.querySelectorAll('.character');
         characters.forEach(char => {
@@ -106,6 +115,14 @@ const SaveSystem = {
                     AudioManager.isBgmPlaying = false;
                 }
             }
+
+             // 恢復配音狀態 (新增)
+            if (gameState.voice && gameState.voice.src) {
+                if (gameState.voice.isPlaying) {
+                    AudioManager.playVoice(gameState.voice.src);
+                    AudioManager.setVoiceVolume(gameState.voice.volume);
+                }
+            }
             
             // 繼續遊戲
             Game.displayCurrentDialogue();
@@ -136,4 +153,5 @@ const SaveSystem = {
             }
         }
     }
+
 };
