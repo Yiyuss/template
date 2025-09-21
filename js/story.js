@@ -13,22 +13,27 @@ const Story = {
                 {
                     character: '伊鬱',
                     text: '初次讀取請耐心等候圖片生成，請點擊對話框繼續。'
+                    
                 },
                 {
                     character: '伊鬱',
                     text: '歡迎來到花語·無聲！'
+                    voice: 'assets/voice/start_1.mp3' // 新增配音文件路徑
                 },
                 {
                     character: '伊鬱',
                     text: '一個叫做 埃露芙塔（Eluftha） 的世界，一切情感皆可產生魔力，稱為「情咒」。'
+                    voice: 'assets/voice/start_1.mp3' // 新增配音文件路徑
                 },
                 {
                     character: '伊鬱',
                     text: '情咒不需要吟唱，情感到達某種閾值時，自然會轉化為「輕魔法」——能微調物理現實（例如改變花的顏色、讓空氣中出現聲音幻象、投影記憶等），但無法直接用於戰鬥。'
+                    voice: 'assets/voice/start_1.mp3' // 新增配音文件路徑
                 },
                 {
                     character: '伊鬱',
                     text: '政府將情咒分級管理，過度的情感會被視為「危咒」。於是，越是壓抑感情的人，越容易擁有強大的情咒潛力。'
+                    voice: 'assets/voice/start_1.mp3' // 新增配音文件路徑
                 },
                 {
                     character: '伊鬱',
@@ -217,6 +222,7 @@ const Story = {
     }
 
 };
+
 
 
 
