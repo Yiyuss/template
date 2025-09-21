@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GenSenRounded';
-    src: url('../assets/fonts/GenSenRounded-H.ttf') format('truetype');
+    src: url('../assets/fonts/GenSenRounded-H.woff2') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -253,4 +253,5 @@ body {
 
 #start-game-button:hover {
     background-color: #ffdd55;
+
 }
