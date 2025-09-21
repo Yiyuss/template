@@ -11,15 +11,15 @@ const Story = {
             bgm: 'assets/audio/start_bgm.mp3', // 可選，場景特定的BGM
             dialogues: [
                 {
-                    character: '旁白',
-                    text: '歡迎來到視覺系小說遊戲！'
+                    character: '伊鬱',
+                    text: '歡迎來到無聲之書！初次讀取請耐心等候圖片生成'
                 },
                 {
-                    character: '旁白',
+                    character: '伊鬱',
                     text: '這是一個簡單的示例，展示了如何創建視覺系小說遊戲。'
                 },
                 {
-                    character: '旁白',
+                    character: '伊鬱',
                     text: '請選擇你想去的地方：',
                     choices: [
                         {
@@ -205,3 +205,4 @@ const Story = {
     }
 
 };
+
