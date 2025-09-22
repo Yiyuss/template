@@ -175,11 +175,9 @@ const AudioManager = {
         if (this.bgmGain) {
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
-    }
-
-};
-
- // 新增播放配音功能
+    },
+        
+// 新增播放配音功能
     playVoice: function(voiceSrc) {
         if (!this.audioContext || !voiceSrc) return;
         
@@ -248,6 +246,10 @@ const AudioManager = {
             this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     }
+};
+
+ 
+
 
 
 
