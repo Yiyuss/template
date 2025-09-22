@@ -7,6 +7,12 @@ const AudioManager = {
     currentBgm: '',
     isBgmPlaying: false,
     audioBuffers: {}, // 用於存儲預加載的音頻
+
+    // 新增配音相關變數
+    voiceSource: null,
+    currentVoice: '',
+    isVoicePlaying: false,
+    voiceGain: null,
     
     // 初始化音頻管理器
     init: function() {
@@ -172,3 +178,76 @@ const AudioManager = {
     }
 
 };
+
+// 新增播放配音功能
+    playVoice: function(voiceSrc) {
+        if (!this.audioContext || !voiceSrc) return;
+        
+        // 如果音頻上下文被暫停，嘗試恢復
+        if (this.audioContext.state === 'suspended') {
+            this.resumeAudioContext();
+            return;
+        }
+        
+        // 停止當前播放的配音
+        this.stopVoice();
+        
+        // 設置新的配音
+        this.currentVoice = voiceSrc;
+        
+        // 檢查是否已預加載
+        if (this.audioBuffers[voiceSrc]) {
+            this.playVoiceBuffer(this.audioBuffers[voiceSrc]);
+        } else {
+            // 如果未預加載，則加載並播放
+            fetch(voiceSrc)
+                .then(response => response.arrayBuffer())
+                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+                .then(audioBuffer => {
+                    this.audioBuffers[voiceSrc] = audioBuffer;
+                    this.playVoiceBuffer(audioBuffer);
+                })
+                .catch(error => console.error('配音播放失敗:', error));
+        }
+    },
+    
+    // 播放配音緩存
+    playVoiceBuffer: function(audioBuffer) {
+        if (!this.audioContext) return;
+        
+        // 創建音頻源
+        this.voiceSource = this.audioContext.createBufferSource();
+        this.voiceSource.buffer = audioBuffer;
+        this.voiceSource.loop = false; // 配音不循環
+        
+        // 連接並播放
+        this.voiceSource.connect(this.voiceGain);
+        this.voiceSource.start(0);
+        this.isVoicePlaying = true;
+        
+        // 設置結束事件
+        this.voiceSource.onended = () => {
+            this.isVoicePlaying = false;
+            this.voiceSource = null;
+        };
+    },
+    
+    // 停止配音
+    stopVoice: function() {
+        if (this.voiceSource) {
+            try {
+                this.voiceSource.stop();
+            } catch (e) {
+                // 忽略已停止的音頻源錯誤
+            }
+            this.voiceSource = null;
+            this.isVoicePlaying = false;
+        }
+    },
+    
+    // 設置配音音量
+    setVoiceVolume: function(volume) {
+        if (this.voiceGain) {
+            this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
+        }
+    }
