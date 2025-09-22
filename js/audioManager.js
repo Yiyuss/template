@@ -174,3 +174,24 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         }
     }
 };    // 修改：刪除原本的 export { AudioManager }; 語句
+
+   // 新增播放語音功能
+    playVoice: function(voiceSrc, volume = 1.0) {
+        if (!this.audioContext) return;
+        
+        fetch(voiceSrc)
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                const voiceSource = this.audioContext.createBufferSource();
+                const voiceGain = this.audioContext.createGain();
+                
+                voiceSource.buffer = audioBuffer;
+                voiceGain.gain.value = volume;
+                
+                voiceSource.connect(voiceGain);
+                voiceGain.connect(this.audioContext.destination);
+                voiceSource.start(0);
+            })
+            .catch(error => console.error('語音播放失敗:', error));
+    },
