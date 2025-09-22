@@ -212,3 +212,4 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             this.voiceGain = null;
         }
     },
+};
