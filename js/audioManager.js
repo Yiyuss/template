@@ -167,15 +167,14 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         }
     },
     
-    // 設置音量
+     // 設置音量
     setVolume: function(volume) {
         if (this.bgmGain) {
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
-    }
-};    // 修改：刪除原本的 export { AudioManager }; 語句
-
-   // 新增播放語音功能
+    },
+    
+    // 新增播放語音功能（移到這裡）
     playVoice: function(voiceSrc, volume = 1.0) {
         if (!this.audioContext) return;
         
@@ -194,4 +193,5 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
                 voiceSource.start(0);
             })
             .catch(error => console.error('語音播放失敗:', error));
-    },
+    }
+};
