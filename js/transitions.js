@@ -1,5 +1,5 @@
 // 轉場效果管理
-const Transitions = {
+export const Transitions = {    // 修改：添加 export 關鍵字
     // 初始化轉場效果
     init: function() {
         // 創建黑色淡化覆蓋層
