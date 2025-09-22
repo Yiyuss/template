@@ -1,8 +1,7 @@
-// 音頻管理器
-const AudioManager = {
+// audioManager.js
+export const AudioManager = {
     audioContext: null,
     bgmSource: null,
-    bgmBuffer: null,
     bgmGain: null,
     currentBgm: '',
     isBgmPlaying: false,
@@ -186,7 +185,7 @@ const AudioManager = {
         this.voiceSource.buffer = audioBuffer;
         this.voiceSource.loop = false;
 
-        // 加這段確保 voiceGain 有值，避免 connect 錯誤
+        // 確保 voiceGain 存在
         if (!this.voiceGain) {
             this.voiceGain = this.audioContext.createGain();
             this.voiceGain.connect(this.audioContext.destination);
