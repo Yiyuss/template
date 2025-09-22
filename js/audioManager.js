@@ -1,5 +1,5 @@
 // 音頻管理器
-const AudioManager = {
+export const AudioManager = {    // 修改：添加 export 關鍵字
     audioContext: null,
     bgmSource: null,
     bgmBuffer: null,
@@ -170,4 +170,4 @@ const AudioManager = {
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     }
-};
+};    // 修改：刪除原本的 export { AudioManager }; 語句
