@@ -331,6 +331,132 @@ const Story = {
                 }
             ]
         }
+        ,
+        
+        // 第三章：情咒的迴響
+        c3_echo: {
+            background: 'assets/images/backgrounds/bg2.jpg',
+            bgm: 'assets/audio/city_bgm.mp3',
+            dialogues: [
+                { character: '旁白', text: '【場景：清晨·宿舍】陽光越過窗棂，薄霧未散。鳥鳴在陌生的學院裡格外清晰。' },
+                { character: '旁白', text: '瑪格麗特坐起，凝視同寢的森森鈴蘭。她睡得安穩，眉間卻帶著若隱若現的緊繃。' },
+                { character: '旁白', text: '她拉近日記本，細細寫下心底最輕的憂慮。' },
+                { character: '瑪格麗特（心聲）', text: '我不懂她。她笑得這麼輕快，為什麼我卻覺得，她在笑容之下，藏著比我更沉重的東西？' },
+                { character: '旁白', text: '她停筆，合上本子，像是怕打擾沉睡的同伴。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：學院餐廳】早餐時間喧鬧，刀叉與陶瓷相碰的聲音此起彼伏。' },
+                { character: '森森鈴蘭', text: '這裡！' },
+                { character: '旁白', text: '她遞來一杯熱騰騰的花草茶——玫瑰果茶，帶著安定心情的回甘。' },
+                { character: '鈴蘭', text: '妳昨天是不是又看書看到很晚？' },
+                { character: '瑪格麗特（支吾）', text: '……嗯，有一點。' },
+                { character: '鈴蘭（故意眯眼）', text: '妳小心點喔，圖書館的老書不全是能隨便碰的。有些東西，會咬人。' },
+                { character: '旁白', text: '瑪格麗特心中一震，卻把到嘴邊的話吞了回去。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：課堂·情咒基礎】老師的聲音低沉而緩慢：情咒不是力量，而是映照。' },
+                { character: '老師', text: '真正的危險，不是咒本身，而是人心。' },
+                { character: '旁白', text: '瑪格麗特專注地聽著，幾乎每一個字都重重敲擊心底。鈴蘭則顯得心神不寧。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：操場·放學後】眾人練習，光與霧交錯。' },
+                { character: '旁白', text: '瑪格麗特的指尖只閃過微弱光點，隨即熄滅。' },
+                { character: '森森鈴蘭（笑）', text: '別急。情咒不是用「想」出來的，它只是……妳心底的回聲。' },
+                { character: '旁白', text: '她的眼神帶著鼓勵，卻掩不住一縷陰影。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：夜晚·宿舍屋頂】星空與月光覆頂。' },
+                { character: '瑪格麗特（心聲）', text: '我開始明白，情咒是心的映照。可是——如果心底藏著不該有的東西，會不會連花朵也因此扭曲？' },
+                { character: '旁白', text: '夜語花的光在她指尖浮現，比以往更清晰。遠處的鈴蘭，眼神裡閃過一絲痛苦。' },
+                { character: '旁白', text: '【第三章·完】', choices: [ { text: '前往第四章', nextScene: 'c4_trial' } ] }
+            ]
+        },
+        
+        // 第四章：共鳴咒試煉
+        c4_trial: {
+            background: 'assets/images/backgrounds/bg2.jpg',
+            bgm: 'assets/audio/city_bgm.mp3',
+            dialogues: [
+                { character: '旁白', text: '【場景：清晨·學院廣場】石磚在露水中發光。鐘樓長鳴，空氣裡迴盪著壓抑。' },
+                { character: '旁白', text: '每個人手裡都有封印的試煉名單。瑪格麗特看見自己的名字，也看見了——森森鈴蘭。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：課堂·試煉前說明】' },
+                { character: '老師', text: '共鳴咒試煉，不是戰鬥，而是揭示。它讓你們面對最深的心念。試煉不會說謊。' },
+                { character: '旁白', text: '壓抑蔓延。瑪格麗特沉默，心跳漸快；鈴蘭的視線停在她身上，卻又裝作若無其事。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：傍晚·學院花園】夕陽將花園渲染成橘紅。' },
+                { character: '旁白', text: '鈴蘭把白色百合放在她手心：聽說百合能驅散惡夢。明天，妳會需要它。' },
+                { character: '瑪格麗特', text: '……妳不害怕嗎？' },
+                { character: '森森鈴蘭', text: '害怕啊。不過，與其害怕試煉，不如害怕自己連正視都不敢。' },
+                { character: '旁白', text: '她緊握百合，卻無言。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：夜晚·宿舍屋頂】二人無言並肩，遠望星空。' },
+                { character: '旁白', text: '她聽見自己的心跳，強烈到像要震碎胸腔。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：試煉之日·大禮堂】高聳圓頂、冷冽石牆，符文環繞。' },
+                { character: '旁白', text: '當她的名字被唸出，她幾乎站不穩。她觸碰水晶，黑暗如潮——' },
+                { character: '旁白', text: '【內心世界】散落的信紙鋪滿地面，皆是從未寄出的字句。' },
+                { character: '旁白', text: '鈴蘭拾起那些信紙，默讀。她想阻止，卻無法靠近。' },
+                { character: '旁白', text: '【試煉水晶外】眾人只見她淚流滿面。鈴蘭伸手，竟闖入了她的心境。' },
+                { character: '旁白', text: '【內心世界·交會】信紙如雪飛舞，終化作夜語花。' },
+                { character: '森森鈴蘭', text: '妳知道嗎……我一直都聽得見。' },
+                { character: '旁白', text: '【第四章·完】', choices: [ { text: '前往第五章', nextScene: 'c5_finale' } ] }
+            ]
+        },
+        
+        // 第五章：無聲之花（含雙結局）
+        c5_finale: {
+            background: 'assets/images/backgrounds/bg3.jpg',
+            bgm: 'assets/audio/forest_bgm.mp3',
+            dialogues: [
+                { character: '旁白', text: '【場景：黎明·學院邊界】濃霧覆蓋森林，符文在空氣中微光閃爍。' },
+                { character: '旁白', text: '幾名學生趁守衛換班悄然逃離。瑪格麗特與鈴蘭並肩而行，誰也沒有先開口。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：森林小徑】露水自枝葉滴落。鈴蘭背影挺直，步伐堅定而孤絕。' },
+                { character: '瑪格麗特', text: '……妳真的不後悔嗎？' },
+                { character: '旁白', text: '她望向霧中的村落燈火：' },
+                { character: '森森鈴蘭', text: '後悔什麼？我們都只是想活下去。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：夜晚·廢棄教堂】彩窗殘缺，灰塵覆椅。' },
+                { character: '瑪格麗特', text: '如果他們找到我們怎麼辦？' },
+                { character: '旁白', text: '她在講壇前指尖劃過破損木雕，像在告別。' },
+                { character: '森森鈴蘭', text: '其實，我已經決定好了。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：分岔口·雨夜】暴雨傾盆，林道泥濘。' },
+                { character: '森森鈴蘭', text: '妳走吧，往北，還有能容身的地方。' },
+                { character: '瑪格麗特', text: '不……我們不是說好要一起——' },
+                { character: '森森鈴蘭', text: '我不能跟妳一起走。他們給了我選擇——只要我留下，成為研究樣本，就能保妳自由。' },
+                { character: '旁白', text: '她衝上前握住她的手，卻終被一步步推向北方道路。' },
+                { character: '森森鈴蘭', text: '妳要活下去。替我記住——我存在過。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：雨中分離】背影消失在雨幕。夜語花在掌心綻放，光芒如最後的回應。' },
+                { character: '旁白', text: '——' },
+                { character: '旁白', text: '【場景：數年後·無聲之園】一片新生的花園收容無法壓抑情咒的孩子們。' },
+                { character: '旁白', text: '瑪格麗特身姿挺直，溫柔地教導新來的孩子與情感共處。' },
+                { character: '旁白', text: '某日，一封無署名信送來——字跡熟悉。' },
+                { character: '信件', text: '我曾在妳的夜語裡，看見整個世界。謝謝妳，讓我明白什麼是「愛」。' },
+                { character: '旁白', text: '她屏住呼吸，指尖顫抖。' },
+                { character: '旁白', text: '—— 請選擇結局 ——' },
+                { character: '旁白', text: '選擇後會播放片段並返回開始。' },
+                { character: '旁白', text: '結局選擇：', choices: [ { text: 'A 結局：尋找', nextScene: 'c5_endA' }, { text: 'B 結局：傳遞', nextScene: 'c5_endB' } ] }
+            ]
+        },
+        
+        // 結局A：尋找
+        c5_endA: {
+            background: 'assets/images/backgrounds/bg5.jpg',
+            bgm: 'assets/audio/forest_bgm.mp3',
+            dialogues: [
+                { character: '旁白', text: '她合上信，抬頭望向群山：如果妳還在……我一定會找到妳。' },
+                { character: '旁白', text: '她踏上旅途。', video: 'assets/videos/video1.mp4', nextScene: 'start' }
+            ]
+        },
+        
+        // 結局B：傳遞
+        c5_endB: {
+            background: 'assets/images/backgrounds/bg4.jpg',
+            bgm: 'assets/audio/start_bgm.mp3',
+            dialogues: [
+                { character: '旁白', text: '她將信折好，放入夜語花的花心：就讓孩子們，替我把情感傳遞下去吧。' },
+                { character: '旁白', text: '風起，花瓣飛舞。', video: 'assets/videos/video2.mp4', nextScene: 'start' }
+            ]
+        }
     },
     
     // 角色定義
@@ -373,23 +499,23 @@ const Story = {
         },
         '森森鈴蘭': {
             image: 'assets/images/characters/visitor.png',
-            position: '70%'
+            position: '60%'
         },
         '森森鈴蘭（笑）': {
             image: 'assets/images/characters/visitor.png',
-            position: '70%'
+            position: '60%'
         },
         '森森鈴蘭（微笑）': {
             image: 'assets/images/characters/visitor.png',
-            position: '70%'
+            position: '60%'
         },
         '森森鈴蘭（轉過頭）': {
             image: 'assets/images/characters/visitor.png',
-            position: '70%'
+            position: '60%'
         },
         '森森鈴蘭（心聲）': {
             image: 'assets/images/characters/visitor.png',
-            position: '70%'
+            position: '60%'
         },
         '教師甲（低聲）': {
             image: 'assets/images/characters/librarian.png',
