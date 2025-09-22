@@ -4,13 +4,14 @@ const AudioManager = {
     bgmSource: null,
     bgmBuffer: null,
     bgmGain: null,
-    voiceGain: null,
     currentBgm: '',
-    currentVoice: '',
     isBgmPlaying: false,
-    isVoicePlaying: false,
     audioBuffers: {},
+
     voiceSource: null,
+    currentVoice: '',
+    isVoicePlaying: false,
+    voiceGain: null,
 
     // 初始化
     init: function () {
@@ -18,29 +19,25 @@ const AudioManager = {
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
             this.audioContext = new AudioContext();
 
-            // BGM 音量控制
+            // BGM 音量
             this.bgmGain = this.audioContext.createGain();
             this.bgmGain.connect(this.audioContext.destination);
             this.bgmGain.gain.value = 0.5;
 
-            // ✅ 配音音量控制
+            // Voice 音量
             this.voiceGain = this.audioContext.createGain();
             this.voiceGain.connect(this.audioContext.destination);
             this.voiceGain.gain.value = 1.0;
 
-            // 預加載
             this.preloadAudio();
 
-            // 解鎖播放
             document.addEventListener('click', this.resumeAudioContext.bind(this), { once: true });
             document.addEventListener('keydown', this.resumeAudioContext.bind(this), { once: true });
-
         } catch (e) {
             console.error('Web Audio API 不支持:', e);
         }
     },
 
-    // 恢復音頻上下文
     resumeAudioContext: function () {
         if (this.audioContext && this.audioContext.state === 'suspended') {
             this.audioContext.resume().then(() => {
@@ -52,7 +49,6 @@ const AudioManager = {
         }
     },
 
-    // 預加載音頻
     preloadAudio: function () {
         if (!this.audioContext) return;
 
@@ -67,21 +63,19 @@ const AudioManager = {
         }
     },
 
-    // 加載音頻
     loadAudio: function (url) {
         if (!this.audioContext || this.audioBuffers[url]) return;
 
         fetch(url)
-            .then(res => res.arrayBuffer())
-            .then(buf => this.audioContext.decodeAudioData(buf))
-            .then(decoded => {
-                this.audioBuffers[url] = decoded;
-                console.log(`音頻已加載: ${url}`);
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                this.audioBuffers[url] = audioBuffer;
+                console.log(`音頻 ${url} 已加載`);
             })
-            .catch(err => console.error(`音頻加載失敗 ${url}:`, err));
+            .catch(error => console.error(`加載音頻 ${url} 失敗:`, error));
     },
 
-    // 播放 BGM
     playBgm: function (audioSrc, volume = 0.5) {
         if (!this.audioContext) return;
 
@@ -90,7 +84,9 @@ const AudioManager = {
             return;
         }
 
-        if (this.currentBgm === audioSrc && this.isBgmPlaying) return;
+        if (this.currentBgm === audioSrc && this.isBgmPlaying) {
+            return;
+        }
 
         this.stopBgm();
         this.currentBgm = audioSrc;
@@ -100,13 +96,13 @@ const AudioManager = {
         } else {
             this.loadAudio(audioSrc);
             fetch(audioSrc)
-                .then(res => res.arrayBuffer())
-                .then(buf => this.audioContext.decodeAudioData(buf))
-                .then(decoded => {
-                    this.audioBuffers[audioSrc] = decoded;
-                    this.playBufferedAudio(decoded, volume);
+                .then(response => response.arrayBuffer())
+                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+                .then(audioBuffer => {
+                    this.audioBuffers[audioSrc] = audioBuffer;
+                    this.playBufferedAudio(audioBuffer, volume);
                 })
-                .catch(err => console.error('BGM播放失敗:', err));
+                .catch(error => console.error('BGM播放失敗:', error));
         }
     },
 
@@ -118,6 +114,7 @@ const AudioManager = {
         this.bgmSource.loop = true;
 
         this.bgmGain.gain.value = volume;
+
         this.bgmSource.connect(this.bgmGain);
         this.bgmSource.start(0);
         this.isBgmPlaying = true;
@@ -127,16 +124,6 @@ const AudioManager = {
                 this.playBufferedAudio(audioBuffer, volume);
             }
         };
-    },
-
-    stopBgm: function () {
-        if (this.bgmSource) {
-            try {
-                this.bgmSource.stop();
-            } catch (e) {}
-            this.bgmSource = null;
-            this.isBgmPlaying = false;
-        }
     },
 
     pauseBgm: function () {
@@ -152,13 +139,22 @@ const AudioManager = {
         }
     },
 
+    stopBgm: function () {
+        if (this.bgmSource) {
+            try {
+                this.bgmSource.stop();
+            } catch (e) {}
+            this.bgmSource = null;
+            this.isBgmPlaying = false;
+        }
+    },
+
     setVolume: function (volume) {
         if (this.bgmGain) {
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     },
 
-    // ✅ 播放配音
     playVoice: function (voiceSrc) {
         if (!this.audioContext || !voiceSrc) return;
 
@@ -173,13 +169,13 @@ const AudioManager = {
             this.playVoiceBuffer(this.audioBuffers[voiceSrc]);
         } else {
             fetch(voiceSrc)
-                .then(res => res.arrayBuffer())
-                .then(buf => this.audioContext.decodeAudioData(buf))
-                .then(decoded => {
-                    this.audioBuffers[voiceSrc] = decoded;
-                    this.playVoiceBuffer(decoded);
+                .then(response => response.arrayBuffer())
+                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+                .then(audioBuffer => {
+                    this.audioBuffers[voiceSrc] = audioBuffer;
+                    this.playVoiceBuffer(audioBuffer);
                 })
-                .catch(err => console.error('配音播放失敗:', err));
+                .catch(error => console.error('配音播放失敗:', error));
         }
     },
 
@@ -189,6 +185,13 @@ const AudioManager = {
         this.voiceSource = this.audioContext.createBufferSource();
         this.voiceSource.buffer = audioBuffer;
         this.voiceSource.loop = false;
+
+        // 加這段確保 voiceGain 有值，避免 connect 錯誤
+        if (!this.voiceGain) {
+            this.voiceGain = this.audioContext.createGain();
+            this.voiceGain.connect(this.audioContext.destination);
+            this.voiceGain.gain.value = 1.0;
+        }
 
         this.voiceSource.connect(this.voiceGain);
         this.voiceSource.start(0);
