@@ -1,7 +1,8 @@
 // main.js
+import { Story } from './story.js';
 import { AudioManager } from './audioManager.js';
 import { Transitions } from './transitions.js';
-import { Story } from './story.js';
+
 
 // DOM 載入完成後執行
 window.addEventListener('DOMContentLoaded', () => {
