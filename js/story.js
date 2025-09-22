@@ -311,6 +311,7 @@ const Story = {
                     character: '旁白',
                     text: '【第二章·完】',
                     choices: [
+                        { text: '前往第三章', nextScene: 'c3_echo' },
                         { text: '返回開始', nextScene: 'start' },
                         { text: '重看第二章結尾片段', nextScene: 'c2_outro' }
                     ]
@@ -499,23 +500,23 @@ const Story = {
         },
         '森森鈴蘭': {
             image: 'assets/images/characters/visitor.png',
-            position: '60%'
+            position: '50%'
         },
         '森森鈴蘭（笑）': {
             image: 'assets/images/characters/visitor.png',
-            position: '60%'
+            position: '50%'
         },
         '森森鈴蘭（微笑）': {
             image: 'assets/images/characters/visitor.png',
-            position: '60%'
+            position: '50%'
         },
         '森森鈴蘭（轉過頭）': {
             image: 'assets/images/characters/visitor.png',
-            position: '60%'
+            position: '50%'
         },
         '森森鈴蘭（心聲）': {
             image: 'assets/images/characters/visitor.png',
-            position: '60%'
+            position: '50%'
         },
         '教師甲（低聲）': {
             image: 'assets/images/characters/librarian.png',
