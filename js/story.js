@@ -128,8 +128,37 @@ const Story = {
             { id: 'city_bgm', path: 'assets/audio/city_bgm.mp3', description: '城市場景背景音樂' },
             { id: 'forest_bgm', path: 'assets/audio/forest_bgm.mp3', description: '森林場景背景音樂' }
         ]
+    },
+
+    // ========= 新增功能 =========
+    start() {
+        console.log("故事開始！");
+        this.loadScene("start");
+    },
+
+    loadScene(sceneName) {
+        const scene = this.scenes[sceneName];
+        if (!scene) {
+            console.error(`找不到場景: ${sceneName}`);
+            return;
+        }
+
+        // 播放 BGM
+        if (scene.bgm) {
+            import("./audioManager.js").then(({ AudioManager }) => {
+                AudioManager.playBgm(scene.bgm);
+            });
+        }
+
+        // 顯示背景
+        const bgLayer = document.getElementById("background-layer");
+        if (bgLayer) {
+            bgLayer.style.backgroundImage = `url(${scene.background})`;
+        }
+
+        // TODO: 後續逐行顯示 dialogues
+        console.log("載入場景:", sceneName, scene);
     }
 };
 
-// 匯出模組
 export { Story };
