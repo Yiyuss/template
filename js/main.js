@@ -1,16 +1,25 @@
-// main.js
+// 引入模組
 import { AudioManager } from './audioManager.js';
+import { Transitions } from './transitions.js';
+import { Story } from './story.js';
 
-// 初始化遊戲
+// DOM 載入完成後執行
 window.addEventListener('DOMContentLoaded', () => {
     // 初始化音效系統
     AudioManager.init();
 
-    // 如果有設定預設 BGM，就開場播放
-    if (typeof Story !== "undefined" && Story.defaultBgm) {
+    // 如果故事設定有預設 BGM，自動播放
+    if (Story.defaultBgm) {
         AudioManager.playBgm(Story.defaultBgm);
     }
 
-    // 這裡放你的其他遊戲初始化程式
-    console.log("遊戲初始化完成");
+    // 綁定開始按鈕
+    const startButton = document.getElementById('start-game-button');
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+            // 這裡之後可以加入故事啟動邏輯
+        });
+    }
 });
