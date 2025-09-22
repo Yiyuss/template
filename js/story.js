@@ -64,7 +64,7 @@ const Story = {
         
         // 第一章：花園日常 — 起點（沿用 city 這個 key）
         city: {
-            background: 'assets/images/backgrounds/bg2.jpg',
+            background: 'assets/images/backgrounds/campus.jpg',
             bgm: 'assets/audio/city_bgm.mp3',
             dialogues: [
                 {
@@ -170,7 +170,7 @@ const Story = {
                 {
                     character: '旁白',
                     text: '【場景：古老溫室】微塵浮動，枯枝沉睡。當她們心念相連時，微光自花蕊漫出——',
-                    video: 'assets/videos/video1.mp4',
+                    video: 'assets/videos/transition_greenhouse.mp4',
                     nextScene: 'c2_library_night'
                 }
             ]
@@ -178,7 +178,7 @@ const Story = {
         
         // 第二章：禁忌花名冊 — 圖書館·深夜（未解鎖分支 forest -> 鎖定提示）
         forest: {
-            background: 'assets/images/backgrounds/bg3.jpg',
+            background: 'assets/images/backgrounds/forest.jpg',
             bgm: 'assets/audio/forest_bgm.mp3',
             dialogues: [
                 {
@@ -204,7 +204,7 @@ const Story = {
         
         // 第二章：圖書館·深夜
         c2_library_night: {
-            background: 'assets/images/backgrounds/bg1.jpg',
+            background: 'assets/images/backgrounds/library_night.jpg',
             bgm: 'assets/audio/start_bgm.mp3',
             dialogues: [
                 {
@@ -321,13 +321,13 @@ const Story = {
         
         // 第二章結尾過場影片（可選）
         c2_outro: {
-            background: 'assets/images/backgrounds/bg1.jpg',
+            background: 'assets/images/backgrounds/library_night.jpg',
             bgm: 'assets/audio/start_bgm.mp3',
             dialogues: [
                 {
                     character: '旁白',
                     text: '夜色如潮，花影浮動。',
-                    video: 'assets/videos/video2.mp4',
+                    video: 'assets/videos/transition_ch2_outro.mp4',
                     nextScene: 'start'
                 }
             ]
@@ -336,7 +336,7 @@ const Story = {
         
         // 第三章：情咒的迴響
         c3_echo: {
-            background: 'assets/images/backgrounds/bg2.jpg',
+            background: 'assets/images/backgrounds/dorm_morning.jpg',
             bgm: 'assets/audio/city_bgm.mp3',
             dialogues: [
                 { character: '旁白', text: '【場景：清晨·宿舍】陽光越過窗棂，薄霧未散。鳥鳴在陌生的學院裡格外清晰。' },
@@ -371,7 +371,7 @@ const Story = {
         
         // 第四章：共鳴咒試煉
         c4_trial: {
-            background: 'assets/images/backgrounds/bg2.jpg',
+            background: 'assets/images/backgrounds/plaza.jpg',
             bgm: 'assets/audio/city_bgm.mp3',
             dialogues: [
                 { character: '旁白', text: '【場景：清晨·學院廣場】石磚在露水中發光。鐘樓長鳴，空氣裡迴盪著壓抑。' },
@@ -403,7 +403,7 @@ const Story = {
         
         // 第五章：無聲之花（含雙結局）
         c5_finale: {
-            background: 'assets/images/backgrounds/bg3.jpg',
+            background: 'assets/images/backgrounds/forest_path.jpg',
             bgm: 'assets/audio/forest_bgm.mp3',
             dialogues: [
                 { character: '旁白', text: '【場景：黎明·學院邊界】濃霧覆蓋森林，符文在空氣中微光閃爍。' },
@@ -441,21 +441,21 @@ const Story = {
         
         // 結局A：尋找
         c5_endA: {
-            background: 'assets/images/backgrounds/bg5.jpg',
+            background: 'assets/images/backgrounds/mountains.jpg',
             bgm: 'assets/audio/forest_bgm.mp3',
             dialogues: [
                 { character: '旁白', text: '她合上信，抬頭望向群山：如果妳還在……我一定會找到妳。' },
-                { character: '旁白', text: '她踏上旅途。', video: 'assets/videos/video1.mp4', nextScene: 'start' }
+                { character: '旁白', text: '她踏上旅途。', video: 'assets/videos/ending_A.mp4', nextScene: 'start' }
             ]
         },
         
         // 結局B：傳遞
         c5_endB: {
-            background: 'assets/images/backgrounds/bg4.jpg',
+            background: 'assets/images/backgrounds/garden.jpg',
             bgm: 'assets/audio/start_bgm.mp3',
             dialogues: [
                 { character: '旁白', text: '她將信折好，放入夜語花的花心：就讓孩子們，替我把情感傳遞下去吧。' },
-                { character: '旁白', text: '風起，花瓣飛舞。', video: 'assets/videos/video2.mp4', nextScene: 'start' }
+                { character: '旁白', text: '風起，花瓣飛舞。', video: 'assets/videos/ending_B.mp4', nextScene: 'start' }
             ]
         }
     },
