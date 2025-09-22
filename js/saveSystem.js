@@ -44,7 +44,7 @@ const SaveSystem = {
                 volume: AudioManager.bgmPlayer.volume
             },
             timestamp: new Date().toLocaleString()
-        };
+        },
 
         // 保存配音狀態 (新增)
             voice: {
@@ -155,3 +155,4 @@ const SaveSystem = {
     }
 
 };
+
