@@ -1,196 +1,132 @@
-// audioManager.js
 export const AudioManager = {
-    audioContext: null,
-    bgmSource: null,
-    bgmGain: null,
-    currentBgm: '',
-    isBgmPlaying: false,
-    audioBuffers: {},
+    context: null,       // Web Audio 上下文
+    bgmSource: null,     // BGM AudioBufferSourceNode
+    bgmGain: null,       // BGM 音量控制
+    currentBgm: '',      // 當前 BGM 路徑
+    isBgmPlaying: false, // BGM 播放狀態
+    audioBuffers: {},    // 緩存音訊
 
-    voiceSource: null,
-    currentVoice: '',
+    voiceSource: null,   // 配音 AudioBufferSourceNode
+    voiceGain: null,     // 配音音量
     isVoicePlaying: false,
-    voiceGain: null,
 
-    // 初始化
-    init: function () {
+    // 初始化，接收 audioMap
+    init(audioMap) {
         try {
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
-            this.audioContext = new AudioContext();
+            this.context = new AudioContext();
 
             // BGM 音量
-            this.bgmGain = this.audioContext.createGain();
-            this.bgmGain.connect(this.audioContext.destination);
+            this.bgmGain = this.context.createGain();
             this.bgmGain.gain.value = 0.5;
+            this.bgmGain.connect(this.context.destination);
 
             // Voice 音量
-            this.voiceGain = this.audioContext.createGain();
-            this.voiceGain.connect(this.audioContext.destination);
+            this.voiceGain = this.context.createGain();
             this.voiceGain.gain.value = 1.0;
+            this.voiceGain.connect(this.context.destination);
 
-            this.preloadAudio();
+            // 預載 audioMap 的音訊
+            if (audioMap) {
+                for (let i = 0; i < audioMap.bgm.length; i++) {
+                    this.loadAudio(audioMap.bgm[i].path);
+                }
+            }
 
-            document.addEventListener('click', this.resumeAudioContext.bind(this), { once: true });
-            document.addEventListener('keydown', this.resumeAudioContext.bind(this), { once: true });
         } catch (e) {
             console.error('Web Audio API 不支持:', e);
         }
     },
 
-    resumeAudioContext: function () {
-        if (this.audioContext && this.audioContext.state === 'suspended') {
-            this.audioContext.resume().then(() => {
-                console.log('音頻上下文已恢復');
-                if (Story.defaultBgm && !this.isBgmPlaying) {
-                    this.playBgm(Story.defaultBgm);
-                }
-            });
-        }
-    },
-
-    preloadAudio: function () {
-        if (!this.audioContext) return;
-
-        if (Story.audio && Story.audio.bgm) {
-            Story.audio.bgm.forEach(bgm => {
-                this.loadAudio(bgm.path);
-            });
-        }
-
-        if (Story.defaultBgm) {
-            this.loadAudio(Story.defaultBgm);
-        }
-    },
-
-    loadAudio: function (url) {
-        if (!this.audioContext || this.audioBuffers[url]) return;
+    // 載入音訊
+    loadAudio(url) {
+        if (!this.context || this.audioBuffers[url]) return;
 
         fetch(url)
             .then(response => response.arrayBuffer())
-            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(arrayBuffer => this.context.decodeAudioData(arrayBuffer))
             .then(audioBuffer => {
                 this.audioBuffers[url] = audioBuffer;
                 console.log(`音頻 ${url} 已加載`);
             })
-            .catch(error => console.error(`加載音頻 ${url} 失敗:`, error));
+            .catch(err => console.error(`加載音頻 ${url} 失敗:`, err));
     },
 
-    playBgm: function (audioSrc, volume = 0.5) {
-        if (!this.audioContext) return;
-
-        if (this.audioContext.state === 'suspended') {
-            this.resumeAudioContext();
+    // 播放 BGM
+    playBgm(url, volume = 0.5) {
+        if (!this.context) return;
+        if (this.context.state === 'suspended') {
+            this.context.resume();
             return;
         }
 
-        if (this.currentBgm === audioSrc && this.isBgmPlaying) {
-            return;
-        }
+        if (this.currentBgm === url && this.isBgmPlaying) return;
 
         this.stopBgm();
-        this.currentBgm = audioSrc;
+        this.currentBgm = url;
 
-        if (this.audioBuffers[audioSrc]) {
-            this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
+        if (this.audioBuffers[url]) {
+            this._playBufferedAudio(this.audioBuffers[url], volume);
         } else {
-            this.loadAudio(audioSrc);
-            fetch(audioSrc)
-                .then(response => response.arrayBuffer())
-                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            this.loadAudio(url);
+            fetch(url)
+                .then(r => r.arrayBuffer())
+                .then(buf => this.context.decodeAudioData(buf))
                 .then(audioBuffer => {
-                    this.audioBuffers[audioSrc] = audioBuffer;
-                    this.playBufferedAudio(audioBuffer, volume);
+                    this.audioBuffers[url] = audioBuffer;
+                    this._playBufferedAudio(audioBuffer, volume);
                 })
-                .catch(error => console.error('BGM播放失敗:', error));
+                .catch(err => console.error('BGM播放失敗:', err));
         }
     },
 
-    playBufferedAudio: function (audioBuffer, volume = 0.5) {
-        if (!this.audioContext) return;
-
-        this.bgmSource = this.audioContext.createBufferSource();
+    _playBufferedAudio(audioBuffer, volume = 0.5) {
+        this.bgmSource = this.context.createBufferSource();
         this.bgmSource.buffer = audioBuffer;
         this.bgmSource.loop = true;
-
         this.bgmGain.gain.value = volume;
-
         this.bgmSource.connect(this.bgmGain);
         this.bgmSource.start(0);
         this.isBgmPlaying = true;
 
         this.bgmSource.onended = () => {
             if (this.isBgmPlaying) {
-                this.playBufferedAudio(audioBuffer, volume);
+                this._playBufferedAudio(audioBuffer, volume);
             }
         };
     },
 
-    pauseBgm: function () {
-        if (this.isBgmPlaying && this.bgmSource) {
-            this.bgmSource.stop();
-            this.isBgmPlaying = false;
-        }
-    },
-
-    resumeBgm: function () {
-        if (!this.isBgmPlaying && this.currentBgm) {
-            this.playBgm(this.currentBgm, this.bgmGain.gain.value);
-        }
-    },
-
-    stopBgm: function () {
+    stopBgm() {
         if (this.bgmSource) {
-            try {
-                this.bgmSource.stop();
-            } catch (e) {}
+            try { this.bgmSource.stop(); } catch (e) {}
             this.bgmSource = null;
             this.isBgmPlaying = false;
         }
     },
 
-    setVolume: function (volume) {
-        if (this.bgmGain) {
-            this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
-        }
-    },
-
-    playVoice: function (voiceSrc) {
-        if (!this.audioContext || !voiceSrc) return;
-
-        if (this.audioContext.state === 'suspended') {
-            this.resumeAudioContext();
-            return;
-        }
-
+    // 播放配音
+    playVoice(url) {
+        if (!this.context || !url) return;
         this.stopVoice();
 
-        if (this.audioBuffers[voiceSrc]) {
-            this.playVoiceBuffer(this.audioBuffers[voiceSrc]);
+        if (this.audioBuffers[url]) {
+            this._playVoiceBuffer(this.audioBuffers[url]);
         } else {
-            fetch(voiceSrc)
-                .then(response => response.arrayBuffer())
-                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            fetch(url)
+                .then(r => r.arrayBuffer())
+                .then(buf => this.context.decodeAudioData(buf))
                 .then(audioBuffer => {
-                    this.audioBuffers[voiceSrc] = audioBuffer;
-                    this.playVoiceBuffer(audioBuffer);
+                    this.audioBuffers[url] = audioBuffer;
+                    this._playVoiceBuffer(audioBuffer);
                 })
-                .catch(error => console.error('配音播放失敗:', error));
+                .catch(err => console.error('配音播放失敗:', err));
         }
     },
 
-    playVoiceBuffer: function (audioBuffer) {
-        if (!this.audioContext) return;
-
-        this.voiceSource = this.audioContext.createBufferSource();
+    _playVoiceBuffer(audioBuffer) {
+        this.voiceSource = this.context.createBufferSource();
         this.voiceSource.buffer = audioBuffer;
         this.voiceSource.loop = false;
-
-        // 確保 voiceGain 存在
-        if (!this.voiceGain) {
-            this.voiceGain = this.audioContext.createGain();
-            this.voiceGain.connect(this.audioContext.destination);
-            this.voiceGain.gain.value = 1.0;
-        }
 
         this.voiceSource.connect(this.voiceGain);
         this.voiceSource.start(0);
@@ -202,19 +138,19 @@ export const AudioManager = {
         };
     },
 
-    stopVoice: function () {
+    stopVoice() {
         if (this.voiceSource) {
-            try {
-                this.voiceSource.stop();
-            } catch (e) {}
+            try { this.voiceSource.stop(); } catch (e) {}
             this.voiceSource = null;
             this.isVoicePlaying = false;
         }
     },
 
-    setVoiceVolume: function (volume) {
-        if (this.voiceGain) {
-            this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
-        }
+    setBgmVolume(volume) {
+        if (this.bgmGain) this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
+    },
+
+    setVoiceVolume(volume) {
+        if (this.voiceGain) this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
     }
 };
