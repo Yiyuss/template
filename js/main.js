@@ -1,5 +1,5 @@
 // main.js
-import { Story } from './story.js';
+import { Story } from './story.js';           // 必須放在最前面
 import { AudioManager } from './audioManager.js';
 import { Transitions } from './transitions.js';
 
