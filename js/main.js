@@ -6,7 +6,18 @@ import { Story } from './story.js';
 // DOM 載入完成後執行
 window.addEventListener('DOMContentLoaded', () => {
     // 初始化音效系統
-    AudioManager.init();
+    AudioManager.init(Story.audio);
+
+    document.addEventListener("click", () => {
+        if (AudioManager.context && AudioManager.context.state === "suspended") {
+            AudioManager.context.resume();
+            console.log("AudioContext 已解鎖 ✅");
+        }
+    }, { once: true });
+
+    Transitions.init();
+    Story.start();
+});
 
     // 如果故事設定有預設 BGM，自動播放
     if (Story.defaultBgm) {
@@ -23,3 +34,4 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
