@@ -23,6 +23,11 @@ const AudioManager = {
             this.bgmGain = this.audioContext.createGain();
             this.bgmGain.connect(this.audioContext.destination);
             this.bgmGain.gain.value = 0.5; // 默認音量
+
+              // ✅ 加入 Voice 音量控制（這是關鍵）
+        this.voiceGain = this.audioContext.createGain();
+        this.voiceGain.connect(this.audioContext.destination);
+        this.voiceGain.gain.value = 1.0;
             
             // 預加載所有音頻
             this.preloadAudio();
@@ -249,6 +254,7 @@ const AudioManager = {
 };
 
  
+
 
 
 
