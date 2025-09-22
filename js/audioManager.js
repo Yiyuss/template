@@ -1,6 +1,6 @@
-// 音頻管理器
+// audioManager.js
 export const AudioManager = {
-    context: null,
+    audioContext: null,
     bgmSource: null,
     bgmGain: null,
     currentBgm: '',
@@ -8,133 +8,191 @@ export const AudioManager = {
     audioBuffers: {},
 
     voiceSource: null,
-    voiceGain: null,
     isVoicePlaying: false,
+    voiceGain: null,
 
-    init: function() {
+    // 初始化
+    init: function () {
         try {
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
-            this.context = new AudioContext();
+            this.audioContext = new AudioContext();
 
             // BGM 音量
-            this.bgmGain = this.context.createGain();
+            this.bgmGain = this.audioContext.createGain();
+            this.bgmGain.connect(this.audioContext.destination);
             this.bgmGain.gain.value = 0.5;
-            this.bgmGain.connect(this.context.destination);
 
             // Voice 音量
-            this.voiceGain = this.context.createGain();
+            this.voiceGain = this.audioContext.createGain();
+            this.voiceGain.connect(this.audioContext.destination);
             this.voiceGain.gain.value = 1.0;
-            this.voiceGain.connect(this.context.destination);
+
+            // 預載 BGM
+            this.preloadAudio();
+
+            // 延遲解鎖 AudioContext
+            const unlockAudio = () => {
+                if (this.audioContext.state === 'suspended') {
+                    this.audioContext.resume().then(() => {
+                        console.log('AudioContext 已解鎖 ✅');
+                    });
+                }
+            };
+            document.addEventListener('click', unlockAudio, { once: true });
+            document.addEventListener('keydown', unlockAudio, { once: true });
+
         } catch (e) {
             console.error('Web Audio API 不支持:', e);
         }
     },
 
-    resumeContext: function() {
-        if (this.context && this.context.state === 'suspended') {
-            this.context.resume().then(() => {
-                console.log('AudioContext 已解鎖 ✅');
+    preloadAudio: function () {
+        if (!this.audioContext) return;
+
+        if (Story.audio && Story.audio.bgm) {
+            Story.audio.bgm.forEach(bgm => {
+                this.loadAudio(bgm.path);
             });
+        }
+
+        if (Story.defaultBgm) {
+            this.loadAudio(Story.defaultBgm);
         }
     },
 
-    loadAudio: function(url) {
-        if (!this.context || this.audioBuffers[url]) return;
+    loadAudio: function (url) {
+        if (!this.audioContext || this.audioBuffers[url]) return;
 
         fetch(url)
-            .then(r => r.arrayBuffer())
-            .then(buf => this.context.decodeAudioData(buf))
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
             .then(audioBuffer => {
                 this.audioBuffers[url] = audioBuffer;
                 console.log(`音頻 ${url} 已加載`);
             })
-            .catch(err => console.error(`加載音頻 ${url} 失敗:`, err));
+            .catch(error => console.error(`加載音頻 ${url} 失敗:`, error));
     },
 
-    playBgm: function(url, volume = 0.5) {
-        if (!this.context) return;
+    playBgm: function (audioSrc, volume = 0.5) {
+        if (!this.audioContext) return;
+        if (this.audioContext.state === 'suspended') return;
+
+        if (this.currentBgm === audioSrc && this.isBgmPlaying) return;
 
         this.stopBgm();
-        this.currentBgm = url;
+        this.currentBgm = audioSrc;
 
-        if (this.audioBuffers[url]) {
-            this._playBuffer(this.audioBuffers[url], volume, 'bgm');
+        if (this.audioBuffers[audioSrc]) {
+            this._playBufferedAudio(this.audioBuffers[audioSrc], volume);
         } else {
-            this.loadAudio(url);
-            // 延遲播放直到加載完成
-            const checkBuffer = setInterval(() => {
-                if (this.audioBuffers[url]) {
-                    clearInterval(checkBuffer);
-                    this._playBuffer(this.audioBuffers[url], volume, 'bgm');
-                }
-            }, 100);
+            this.loadAudio(audioSrc);
+            fetch(audioSrc)
+                .then(res => res.arrayBuffer())
+                .then(buf => this.audioContext.decodeAudioData(buf))
+                .then(audioBuffer => {
+                    this.audioBuffers[audioSrc] = audioBuffer;
+                    this._playBufferedAudio(audioBuffer, volume);
+                })
+                .catch(err => console.error('BGM播放失敗:', err));
         }
     },
 
-    _playBuffer: function(buffer, volume, type) {
-        const source = this.context.createBufferSource();
-        source.buffer = buffer;
-        if (type === 'bgm') source.loop = true;
+    _playBufferedAudio: function (audioBuffer, volume = 0.5) {
+        if (!this.audioContext) return;
 
-        const gainNode = type === 'bgm' ? this.bgmGain : this.voiceGain;
-        gainNode.gain.value = volume;
+        this.bgmSource = this.audioContext.createBufferSource();
+        this.bgmSource.buffer = audioBuffer;
+        this.bgmSource.loop = true;
 
-        source.connect(gainNode);
-        source.start(0);
+        this.bgmGain.gain.value = volume;
+        this.bgmSource.connect(this.bgmGain);
+        this.bgmSource.start(0);
+        this.isBgmPlaying = true;
 
-        if (type === 'bgm') {
-            this.bgmSource = source;
-            this.isBgmPlaying = true;
-        } else {
-            this.voiceSource = source;
-            this.isVoicePlaying = true;
-        }
-
-        source.onended = () => {
-            if (type === 'bgm') this.isBgmPlaying = false;
-            else this.isVoicePlaying = false;
+        this.bgmSource.onended = () => {
+            if (this.isBgmPlaying) {
+                this._playBufferedAudio(audioBuffer, volume);
+            }
         };
     },
 
-    stopBgm: function() {
+    pauseBgm: function () {
+        if (this.isBgmPlaying && this.bgmSource) {
+            this.bgmSource.stop();
+            this.isBgmPlaying = false;
+        }
+    },
+
+    resumeBgm: function () {
+        if (!this.isBgmPlaying && this.currentBgm) {
+            this.playBgm(this.currentBgm, this.bgmGain.gain.value);
+        }
+    },
+
+    stopBgm: function () {
         if (this.bgmSource) {
-            try { this.bgmSource.stop(); } catch (e) {}
+            try { this.bgmSource.stop(); } catch(e){}
             this.bgmSource = null;
             this.isBgmPlaying = false;
         }
     },
 
-    playVoice: function(url) {
-        if (!this.context) return;
+    setVolume: function (volume) {
+        if (this.bgmGain) this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
+    },
+
+    playVoice: function (voiceSrc) {
+        if (!this.audioContext || !voiceSrc) return;
+        if (this.audioContext.state === 'suspended') return;
 
         this.stopVoice();
 
-        if (this.audioBuffers[url]) {
-            this._playBuffer(this.audioBuffers[url], 1.0, 'voice');
+        if (this.audioBuffers[voiceSrc]) {
+            this._playVoiceBuffer(this.audioBuffers[voiceSrc]);
         } else {
-            this.loadAudio(url);
-            const checkBuffer = setInterval(() => {
-                if (this.audioBuffers[url]) {
-                    clearInterval(checkBuffer);
-                    this._playBuffer(this.audioBuffers[url], 1.0, 'voice');
-                }
-            }, 100);
+            fetch(voiceSrc)
+                .then(res => res.arrayBuffer())
+                .then(buf => this.audioContext.decodeAudioData(buf))
+                .then(audioBuffer => {
+                    this.audioBuffers[voiceSrc] = audioBuffer;
+                    this._playVoiceBuffer(audioBuffer);
+                })
+                .catch(err => console.error('配音播放失敗:', err));
         }
     },
 
-    stopVoice: function() {
+    _playVoiceBuffer: function (audioBuffer) {
+        if (!this.audioContext) return;
+
+        this.voiceSource = this.audioContext.createBufferSource();
+        this.voiceSource.buffer = audioBuffer;
+        this.voiceSource.loop = false;
+
+        if (!this.voiceGain) {
+            this.voiceGain = this.audioContext.createGain();
+            this.voiceGain.connect(this.audioContext.destination);
+            this.voiceGain.gain.value = 1.0;
+        }
+
+        this.voiceSource.connect(this.voiceGain);
+        this.voiceSource.start(0);
+        this.isVoicePlaying = true;
+
+        this.voiceSource.onended = () => {
+            this.isVoicePlaying = false;
+            this.voiceSource = null;
+        };
+    },
+
+    stopVoice: function () {
         if (this.voiceSource) {
-            try { this.voiceSource.stop(); } catch (e) {}
+            try { this.voiceSource.stop(); } catch(e){}
             this.voiceSource = null;
             this.isVoicePlaying = false;
         }
     },
 
-    setBgmVolume: function(volume) {
-        if (this.bgmGain) this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
-    },
-
-    setVoiceVolume: function(volume) {
+    setVoiceVolume: function (volume) {
         if (this.voiceGain) this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
     }
 };
