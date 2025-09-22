@@ -1,3 +1,6 @@
+// 引入音樂管理
+import { AudioManager } from './audioManager.js';
+
 // 轉場效果管理
 const Transitions = {
     // 初始化轉場效果
@@ -13,41 +16,41 @@ const Transitions = {
         document.getElementById('game-container').appendChild(whiteFadeOverlay);
     },
     
-// 黑色淡入淡出
-fadeToBlack: function(callback, duration = 1000) {
-    const overlay = document.querySelector('.fade-overlay');
-    overlay.classList.add('active');
-    
-    // 轉場開始時暫停音樂
-    AudioManager.pauseBgm();
-    
-    setTimeout(() => {
-        if (callback) callback();
+    // 黑色淡入淡出
+    fadeToBlack: function(callback, duration = 1000) {
+        const overlay = document.querySelector('.fade-overlay');
+        overlay.classList.add('active');
+        
+        // 轉場開始時暫停音樂
+        AudioManager.pauseBgm();
         
         setTimeout(() => {
-            overlay.classList.remove('active');
-            // 轉場結束後，音樂會在 loadScene 中處理
+            if (callback) callback();
+            
+            setTimeout(() => {
+                overlay.classList.remove('active');
+                // 轉場結束後，音樂會在 loadScene 中處理
+            }, duration);
         }, duration);
-    }, duration);
-},
+    },
 
-// 白色淡入淡出
-fadeToWhite: function(callback, duration = 1000) {
-    const overlay = document.querySelector('.white-fade-overlay');
-    overlay.classList.add('active');
-    
-    // 轉場開始時暫停音樂
-    AudioManager.pauseBgm();
-    
-    setTimeout(() => {
-        if (callback) callback();
+    // 白色淡入淡出
+    fadeToWhite: function(callback, duration = 1000) {
+        const overlay = document.querySelector('.white-fade-overlay');
+        overlay.classList.add('active');
+        
+        // 轉場開始時暫停音樂
+        AudioManager.pauseBgm();
         
         setTimeout(() => {
-            overlay.classList.remove('active');
-            // 轉場結束後，音樂會在 loadScene 中處理
+            if (callback) callback();
+            
+            setTimeout(() => {
+                overlay.classList.remove('active');
+                // 轉場結束後，音樂會在 loadScene 中處理
+            }, duration);
         }, duration);
-    }, duration);
-},
+    },
     
     // 簡單淡入淡出
     simpleFade: function(element, fadeIn, duration = 500) {
@@ -67,3 +70,6 @@ fadeToWhite: function(callback, duration = 1000) {
         }
     }
 };
+
+// 匯出模組
+export { Transitions };
