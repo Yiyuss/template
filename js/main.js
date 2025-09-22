@@ -206,23 +206,20 @@ playVideo: function(videoSrc, nextScene) {
     }
 };
 
-// 當頁面載入完成後初始化遊戲
+// 當頁面加載完成後初始化遊戲
 window.addEventListener('DOMContentLoaded', () => {
-    // 初始化音頻管理器和轉場效果
+    // 初始化音頻管理器
     AudioManager.init();
+    
+    // 初始化轉場效果
     Transitions.init();
     
     // 綁定開始遊戲按鈕
-    document.getElementById('start-game-button').addEventListener('click', () => {
-        // 隱藏啟動界面
+    document.getElementById('start-game-button').addEventListener('click', function() {
         document.getElementById('start-screen').style.display = 'none';
-        // 顯示遊戲容器
-        document.getElementById('game-container').style.display = 'block';
-        
-        // 初始化並開始遊戲
         Game.init();
     });
-
 });
+
 
 
