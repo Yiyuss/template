@@ -5,25 +5,8 @@ import { Story } from './story.js';
 
 // DOM 載入完成後執行
 window.addEventListener('DOMContentLoaded', () => {
-
-    // 初始化音效系統，傳入 Story.audio
-    AudioManager.init(Story.audio);
-
-    // 點擊解鎖 AudioContext（Chrome 自動播放限制）
-    document.addEventListener("click", () => {
-        if (AudioManager.context && AudioManager.context.state === "suspended") {
-            AudioManager.context.resume();
-            console.log("AudioContext 已解鎖 ✅");
-        }
-    }, { once: true });
-
     // 初始化轉場效果
     Transitions.init();
-
-    // 如果故事設定有預設 BGM，自動播放
-    if (Story.defaultBgm) {
-        AudioManager.playBgm(Story.defaultBgm);
-    }
 
     // 綁定開始按鈕
     const startButton = document.getElementById('start-game-button');
@@ -31,9 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         startButton.addEventListener('click', () => {
             document.getElementById('start-screen').style.display = 'none';
             document.getElementById('game-container').style.display = 'block';
-            // 這裡可以加入 Story.start() 或故事啟動邏輯
+
+            // 點擊時解鎖 AudioContext + 初始化
+            if (!AudioManager.context) {
+                AudioManager.init(Story.audio);
+                console.log("AudioContext 已解鎖 ✅");
+            }
+
+            // 呼叫故事開始
             Story.start();
         });
     }
-
 });
