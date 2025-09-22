@@ -82,11 +82,9 @@ const Game = {
             
             // 顯示當前對話
             this.displayCurrentDialogue();
-            
-            // 完成轉場
-            Transitions.fadeFromBlack();
         });
     },
+
     
     // 顯示當前對話
     displayCurrentDialogue: function() {
