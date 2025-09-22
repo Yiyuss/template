@@ -7,6 +7,8 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     bgmSource: null,
     bgmBuffer: null,
     bgmGain: null,
+    voiceSource: null,
+    voiceGain: null,
     currentBgm: '',
     isBgmPlaying: false,
     audioBuffers: {}, // 用於存儲預加載的音頻
@@ -173,25 +175,40 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     },
-    
-    // 新增播放語音功能（移到這裡）
+
+    // 修改 playVoice 函數
     playVoice: function(voiceSrc, volume = 1.0) {
         if (!this.audioContext) return;
+        
+        // 先停止之前的語音
+        this.stopVoice();
         
         fetch(voiceSrc)
             .then(response => response.arrayBuffer())
             .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
             .then(audioBuffer => {
-                const voiceSource = this.audioContext.createBufferSource();
-                const voiceGain = this.audioContext.createGain();
+                this.voiceSource = this.audioContext.createBufferSource();
+                this.voiceGain = this.audioContext.createGain();
                 
-                voiceSource.buffer = audioBuffer;
-                voiceGain.gain.value = volume;
+                this.voiceSource.buffer = audioBuffer;
+                this.voiceGain.gain.value = volume;
                 
-                voiceSource.connect(voiceGain);
-                voiceGain.connect(this.audioContext.destination);
-                voiceSource.start(0);
+                this.voiceSource.connect(this.voiceGain);
+                this.voiceGain.connect(this.audioContext.destination);
+                this.voiceSource.start(0);
             })
             .catch(error => console.error('語音播放失敗:', error));
-    }
-};
+    },
+    
+    // 新增停止語音功能
+    stopVoice: function() {
+        if (this.voiceSource) {
+            try {
+                this.voiceSource.stop();
+            } catch (e) {
+                // 忽略已停止的音頻源錯誤
+            }
+            this.voiceSource = null;
+            this.voiceGain = null;
+        }
+    },
