@@ -1,3 +1,6 @@
+import { Story } from './story.js';
+
+
 // 音頻管理器
 export const AudioManager = {    // 修改：添加 export 關鍵字
     audioContext: null,
