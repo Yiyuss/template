@@ -4,258 +4,215 @@ const AudioManager = {
     bgmSource: null,
     bgmBuffer: null,
     bgmGain: null,
-    currentBgm: '',
-    isBgmPlaying: false,
-    audioBuffers: {}, // 用於存儲預加載的音頻
-
-    // 新增配音相關變數
-    voiceSource: null,
-    currentVoice: '',
-    isVoicePlaying: false,
     voiceGain: null,
-    
-    // 初始化音頻管理器
-    init: function() {
-        // 創建音頻上下文
+    currentBgm: '',
+    currentVoice: '',
+    isBgmPlaying: false,
+    isVoicePlaying: false,
+    audioBuffers: {},
+    voiceSource: null,
+
+    // 初始化
+    init: function () {
         try {
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
             this.audioContext = new AudioContext();
+
+            // BGM 音量控制
             this.bgmGain = this.audioContext.createGain();
             this.bgmGain.connect(this.audioContext.destination);
-            this.bgmGain.gain.value = 0.5; // 默認音量
+            this.bgmGain.gain.value = 0.5;
 
-              // ✅ 加入 Voice 音量控制（這是關鍵）
-        this.voiceGain = this.audioContext.createGain();
-        this.voiceGain.connect(this.audioContext.destination);
-        this.voiceGain.gain.value = 1.0;
-            
-            // 預加載所有音頻
+            // ✅ 配音音量控制
+            this.voiceGain = this.audioContext.createGain();
+            this.voiceGain.connect(this.audioContext.destination);
+            this.voiceGain.gain.value = 1.0;
+
+            // 預加載
             this.preloadAudio();
-            
-            // 添加用戶交互事件監聽器，解決自動播放問題
+
+            // 解鎖播放
             document.addEventListener('click', this.resumeAudioContext.bind(this), { once: true });
             document.addEventListener('keydown', this.resumeAudioContext.bind(this), { once: true });
+
         } catch (e) {
             console.error('Web Audio API 不支持:', e);
         }
     },
-    
-    // 恢復音頻上下文（解決自動播放問題）
-    resumeAudioContext: function() {
+
+    // 恢復音頻上下文
+    resumeAudioContext: function () {
         if (this.audioContext && this.audioContext.state === 'suspended') {
             this.audioContext.resume().then(() => {
                 console.log('音頻上下文已恢復');
-                // 如果有默認BGM，嘗試播放
                 if (Story.defaultBgm && !this.isBgmPlaying) {
                     this.playBgm(Story.defaultBgm);
                 }
             });
         }
     },
-    
+
     // 預加載音頻
-    preloadAudio: function() {
+    preloadAudio: function () {
         if (!this.audioContext) return;
-        
-        // 預加載所有BGM
+
         if (Story.audio && Story.audio.bgm) {
             Story.audio.bgm.forEach(bgm => {
                 this.loadAudio(bgm.path);
             });
         }
-        
-        // 預加載默認BGM
+
         if (Story.defaultBgm) {
             this.loadAudio(Story.defaultBgm);
         }
     },
-    
-    // 加載音頻文件
-    loadAudio: function(url) {
+
+    // 加載音頻
+    loadAudio: function (url) {
         if (!this.audioContext || this.audioBuffers[url]) return;
-        
+
         fetch(url)
-            .then(response => response.arrayBuffer())
-            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
-            .then(audioBuffer => {
-                this.audioBuffers[url] = audioBuffer;
-                console.log(`音頻 ${url} 已加載`);
+            .then(res => res.arrayBuffer())
+            .then(buf => this.audioContext.decodeAudioData(buf))
+            .then(decoded => {
+                this.audioBuffers[url] = decoded;
+                console.log(`音頻已加載: ${url}`);
             })
-            .catch(error => console.error(`加載音頻 ${url} 失敗:`, error));
+            .catch(err => console.error(`音頻加載失敗 ${url}:`, err));
     },
-    
-    // 播放背景音樂
-    playBgm: function(audioSrc, volume = 0.5) {
+
+    // 播放 BGM
+    playBgm: function (audioSrc, volume = 0.5) {
         if (!this.audioContext) return;
-        
-        // 如果音頻上下文被暫停，嘗試恢復
+
         if (this.audioContext.state === 'suspended') {
             this.resumeAudioContext();
             return;
         }
-        
-        // 如果是同一首BGM且正在播放，則不做任何操作
-        if (this.currentBgm === audioSrc && this.isBgmPlaying) {
-            return;
-        }
-        
-        // 停止當前播放的BGM
+
+        if (this.currentBgm === audioSrc && this.isBgmPlaying) return;
+
         this.stopBgm();
-        
-        // 設置新的BGM
         this.currentBgm = audioSrc;
-        
-        // 檢查是否已預加載
+
         if (this.audioBuffers[audioSrc]) {
             this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
         } else {
-            // 如果未預加載，則加載並播放
             this.loadAudio(audioSrc);
             fetch(audioSrc)
-                .then(response => response.arrayBuffer())
-                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
-                .then(audioBuffer => {
-                    this.audioBuffers[audioSrc] = audioBuffer;
-                    this.playBufferedAudio(audioBuffer, volume);
+                .then(res => res.arrayBuffer())
+                .then(buf => this.audioContext.decodeAudioData(buf))
+                .then(decoded => {
+                    this.audioBuffers[audioSrc] = decoded;
+                    this.playBufferedAudio(decoded, volume);
                 })
-                .catch(error => console.error('BGM播放失敗:', error));
+                .catch(err => console.error('BGM播放失敗:', err));
         }
     },
-    
-    // 播放已緩存的音頻
-    playBufferedAudio: function(audioBuffer, volume = 0.5) {
+
+    playBufferedAudio: function (audioBuffer, volume = 0.5) {
         if (!this.audioContext) return;
-        
-        // 創建音頻源
+
         this.bgmSource = this.audioContext.createBufferSource();
         this.bgmSource.buffer = audioBuffer;
         this.bgmSource.loop = true;
-        
-        // 設置音量
+
         this.bgmGain.gain.value = volume;
-        
-        // 連接並播放
         this.bgmSource.connect(this.bgmGain);
         this.bgmSource.start(0);
         this.isBgmPlaying = true;
-        
-        // 設置結束事件（雖然設置了循環，但以防萬一）
+
         this.bgmSource.onended = () => {
             if (this.isBgmPlaying) {
                 this.playBufferedAudio(audioBuffer, volume);
             }
         };
     },
-    
-    // 暫停背景音樂
-    pauseBgm: function() {
+
+    stopBgm: function () {
+        if (this.bgmSource) {
+            try {
+                this.bgmSource.stop();
+            } catch (e) {}
+            this.bgmSource = null;
+            this.isBgmPlaying = false;
+        }
+    },
+
+    pauseBgm: function () {
         if (this.isBgmPlaying && this.bgmSource) {
             this.bgmSource.stop();
             this.isBgmPlaying = false;
         }
     },
-    
-    // 恢復背景音樂
-    resumeBgm: function() {
+
+    resumeBgm: function () {
         if (!this.isBgmPlaying && this.currentBgm) {
             this.playBgm(this.currentBgm, this.bgmGain.gain.value);
         }
     },
-    
-    // 停止背景音樂
-    stopBgm: function() {
-        if (this.bgmSource) {
-            try {
-                this.bgmSource.stop();
-            } catch (e) {
-                // 忽略已停止的音頻源錯誤
-            }
-            this.bgmSource = null;
-            this.isBgmPlaying = false;
-        }
-    },
-    
-    // 設置音量
-    setVolume: function(volume) {
+
+    setVolume: function (volume) {
         if (this.bgmGain) {
             this.bgmGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     },
-        
-// 新增播放配音功能
-    playVoice: function(voiceSrc) {
+
+    // ✅ 播放配音
+    playVoice: function (voiceSrc) {
         if (!this.audioContext || !voiceSrc) return;
-        
-        // 如果音頻上下文被暫停，嘗試恢復
+
         if (this.audioContext.state === 'suspended') {
             this.resumeAudioContext();
             return;
         }
-        
-        // 停止當前播放的配音
+
         this.stopVoice();
-        
-        // 檢查是否已預加載
+
         if (this.audioBuffers[voiceSrc]) {
             this.playVoiceBuffer(this.audioBuffers[voiceSrc]);
         } else {
-            // 如果未預加載，則加載並播放
             fetch(voiceSrc)
-                .then(response => response.arrayBuffer())
-                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
-                .then(audioBuffer => {
-                    this.audioBuffers[voiceSrc] = audioBuffer;
-                    this.playVoiceBuffer(audioBuffer);
+                .then(res => res.arrayBuffer())
+                .then(buf => this.audioContext.decodeAudioData(buf))
+                .then(decoded => {
+                    this.audioBuffers[voiceSrc] = decoded;
+                    this.playVoiceBuffer(decoded);
                 })
-                .catch(error => console.error('配音播放失敗:', error));
+                .catch(err => console.error('配音播放失敗:', err));
         }
     },
-    
-    // 播放配音緩存
-    playVoiceBuffer: function(audioBuffer) {
+
+    playVoiceBuffer: function (audioBuffer) {
         if (!this.audioContext) return;
-        
-        // 創建音頻源
+
         this.voiceSource = this.audioContext.createBufferSource();
         this.voiceSource.buffer = audioBuffer;
-        this.voiceSource.loop = false; // 配音不循環
-        
-        // 連接並播放
+        this.voiceSource.loop = false;
+
         this.voiceSource.connect(this.voiceGain);
         this.voiceSource.start(0);
         this.isVoicePlaying = true;
-        
-        // 設置結束事件
+
         this.voiceSource.onended = () => {
             this.isVoicePlaying = false;
             this.voiceSource = null;
         };
     },
-    
-    // 停止配音
-    stopVoice: function() {
+
+    stopVoice: function () {
         if (this.voiceSource) {
             try {
                 this.voiceSource.stop();
-            } catch (e) {
-                // 忽略已停止的音頻源錯誤
-            }
+            } catch (e) {}
             this.voiceSource = null;
             this.isVoicePlaying = false;
         }
     },
-    
-    // 設置配音音量
-    setVoiceVolume: function(volume) {
+
+    setVoiceVolume: function (volume) {
         if (this.voiceGain) {
             this.voiceGain.gain.value = Math.max(0, Math.min(1, volume));
         }
     }
 };
-
- 
-
-
-
-
-
