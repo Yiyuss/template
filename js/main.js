@@ -1,40 +1,48 @@
+// main.js
 import { AudioManager } from './audioManager.js';
 import { Transitions } from './transitions.js';
 import { Story } from './story.js';
 
+// DOM 載入完成後執行
 window.addEventListener('DOMContentLoaded', () => {
-
     // 初始化音效系統
     AudioManager.init();
 
+    // 使用者手勢解鎖 AudioContext
+    const unlockAudio = () => {
+        if (AudioManager.audioContext && AudioManager.audioContext.state === "suspended") {
+            AudioManager.audioContext.resume().then(() => {
+                console.log("AudioContext 已解鎖 ✅");
+            });
+        }
+    };
+    document.addEventListener("click", unlockAudio, { once: true });
+    document.addEventListener("keydown", unlockAudio, { once: true });
+
     // 初始化轉場
     Transitions.init();
+
+    // 隱藏遊戲容器，顯示開始畫面
+    document.getElementById('game-container').style.display = 'none';
 
     // 綁定開始按鈕
     const startButton = document.getElementById('start-game-button');
     if (startButton) {
         startButton.addEventListener('click', () => {
-
-            // 隱藏開始畫面，顯示遊戲畫面
             document.getElementById('start-screen').style.display = 'none';
             document.getElementById('game-container').style.display = 'block';
 
-            // 解鎖 AudioContext
-            AudioManager.resumeContext();
-
-            // 播放預設 BGM
-            if (Story.defaultBgm) {
-                AudioManager.playBgm(Story.defaultBgm);
-            }
-
             // 啟動故事
-            if (typeof Story.start === 'function') {
-                Story.start();
-            }
+            Story.start();
         });
     }
 
-    // 第一次點擊任意位置也可解鎖 AudioContext（安全措施）
-    document.addEventListener('click', () => AudioManager.resumeContext(), { once: true });
-
+    // 如果有默認 BGM，延遲到手勢解鎖後播放
+    if (Story.defaultBgm) {
+        const playDefaultBgm = () => {
+            AudioManager.playBgm(Story.defaultBgm);
+        };
+        document.addEventListener("click", playDefaultBgm, { once: true });
+        document.addEventListener("keydown", playDefaultBgm, { once: true });
+    }
 });
