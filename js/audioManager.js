@@ -179,7 +179,7 @@ const AudioManager = {
 
 };
 
-// 新增播放配音功能
+ // 新增播放配音功能
     playVoice: function(voiceSrc) {
         if (!this.audioContext || !voiceSrc) return;
         
@@ -190,27 +190,7 @@ const AudioManager = {
         }
         
         // 停止當前播放的配音
-        if (this.voiceSource) {
-            try {
-                this.voiceSource.stop();
-            } catch (e) {
-                // 忽略已停止的音頻源錯誤
-            }
-            this.voiceSource = null;
-        }
-        
-        // 播放新的配音
-        fetch(voiceSrc)
-            .then(response => response.arrayBuffer())
-            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
-            .then(audioBuffer => {
-                this.voiceSource = this.audioContext.createBufferSource();
-                this.voiceSource.buffer = audioBuffer;
-                this.voiceSource.connect(this.audioContext.destination);
-                this.voiceSource.start(0);
-            })
-            .catch(error => console.error('配音播放失敗:', error));
-    }
+        this.stopVoice();
         
         // 檢查是否已預加載
         if (this.audioBuffers[voiceSrc]) {
