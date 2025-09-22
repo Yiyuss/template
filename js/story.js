@@ -224,16 +224,16 @@ const Story = {
 
 },
     
-    // 獲取角色圖片路徑
+     // 獲取角色圖片路徑
     getCharacterImage: function(characterName) {
-        const dialogue = this.scenes[this.currentScene].dialogues[this.currentDialogue];
-        return dialogue.characterImage || '';
+        const character = this.characters[characterName];
+        return character ? character.image : '';
     },
     
     // 獲取角色位置
     getCharacterPosition: function(characterName) {
-        const dialogue = this.scenes[this.currentScene].dialogues[this.currentDialogue];
-        return dialogue.position || '50%';
+        const character = this.characters[characterName];
+        return character ? character.position : '50%';
     }
 };
 
