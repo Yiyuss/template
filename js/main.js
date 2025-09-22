@@ -8,9 +8,6 @@ const Game = {
         // 初始化轉場效果
         Transitions.init();
         
-        // 初始化存檔系統
-        SaveSystem.init();
-        
         // 初始化音頻管理器
         AudioManager.init();
         
@@ -227,4 +224,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
