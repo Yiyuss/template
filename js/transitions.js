@@ -1,3 +1,5 @@
+import { AudioManager } from './audioManager.js';
+
 // 轉場效果管理
 export const Transitions = {    // 修改：添加 export 關鍵字
     // 初始化轉場效果
