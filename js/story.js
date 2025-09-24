@@ -152,7 +152,7 @@ c1_dorm_room: {
         { character: '旁白', text: '鈴蘭注意到她表情的變化。' }, 
         { character: '瑪格麗特', text: '沒、沒事。' },
         { character: '旁白', text: '瑪麗慌忙垂下眼簾，將日記本收進抽屜裡，像是怕被發現什麼。' },
-        { character: '森森鈴蘭', text: '哈哈，妳很緊張啊。 },
+        { character: '森森鈴蘭', text: '哈哈，妳很緊張啊。' },
         { character: '旁白', text: '鈴蘭笑出聲，卻沒有追問，只是自然地拉開窗簾，讓更多陽光灑入房間。' },
         { character: '旁白', text: '她轉身時，那抹笑容乾淨得彷彿能驅散一切陰影。' },
         { character: '旁白', text: '瑪麗胸口一熱，不知該說什麼，只能安靜地看著對方。' },
@@ -772,6 +772,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
