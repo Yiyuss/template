@@ -215,7 +215,7 @@ c1_dorm_room_night: {
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
         { character: '旁白', text: '——第一章完。', choices: [ { text: '前往第二章', nextScene: 'c2_start' } ] }
     ]
-}
+},
         
         // 森森鈴蘭視角路線（獨立劇情線，劇本待完成）
         forest: {
@@ -742,6 +742,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
