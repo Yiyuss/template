@@ -80,7 +80,7 @@ c1_gate: {
         { character: '瑪格麗特', text: '……呼。' },
         { character: '旁白', text: '她深吸一口氣，才邁步踏入。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【校園小徑】。', choices: [ { text: '繼續', nextScene: 'c1_path' } ] }
+        { character: '旁白', text: '即將前往【校園小徑】。', choices: [ { text: '出發', nextScene: 'c1_path' } ] }
     ]
 },
 
@@ -107,7 +107,7 @@ c1_path: {
 c1_dorm_hall: {
     background: 'assets/images/backgrounds/dorm_morning.jpg',
     dialogues: [
-        { character: '【宿舍走廊】', text: '在學姐的帶領下，她抵達了分配好的宿舍棟。' },
+        { character: '【宿舍走廊】', text: '在學姐的帶領下，瑪格麗特抵達了分配好的宿舍棟。' },
         { character: '旁白', text: '走廊裡鋪著淺色木地板，窗戶敞開，陽光灑落，空氣中帶著淡淡的木香。' },
         { character: '旁白', text: '腳步聲在寂靜的走廊迴盪，每一步都提醒她：從今天起，她將在這裡度過無數的晨昏。' },
         { character: '瑪格麗特', text: '這裡……好像比我想像中更寬敞。' },
@@ -116,7 +116,7 @@ c1_dorm_hall: {
         { character: '學姐', text: '你的房間在這裡。' },
         { character: '瑪格麗特', text: '謝、謝謝。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【宿舍房間】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_room' } ] }
+        { character: '旁白', text: '即將前往【宿舍房間】。', choices: [ { text: '進入房間', nextScene: 'c1_dorm_room' } ] }
     ]
 },
 
@@ -129,21 +129,34 @@ c1_dorm_room: {
         { character: '旁白', text: '瑪格麗特走近，伸手撫過木質桌面的紋理，指尖觸到一絲溫潤的質感。' },
         { character: '旁白', text: '——她還沒來得及仔細觀察，門卻在此刻被推開了。' },
         { character: '森森鈴蘭', text: '啊，妳已經到了？' },
-        { character: '旁白', text: '瑪格麗特抬頭，與一雙明亮的眼睛對上。' },
+        { character: '旁白', text: '瑪麗抬頭，與一雙明亮的眼睛對上。' },
         { character: '旁白', text: '那是個與她年紀相仿的少女，帶著自然的笑容，髮梢在陽光下閃爍。' },
         { character: '旁白', text: '她的出現，就像在安靜的房間裡點亮了一盞燈。' },
         { character: '森森鈴蘭', text: '……我叫森森鈴蘭。' },
+        { character: '旁白', text: '少女笑著自我介紹，將行李輕放到另一張床上。' },
         { character: '森森鈴蘭', text: '看來以後我們要一起住了呢。' },
-        { character: '瑪格麗特', text: '我……我叫瑪格麗特·諾爾絲。請、請多多指教。' },
+        { character: '旁白', text: '瑪麗愣了愣，才急忙低聲回應。' },
+        { character: '瑪格麗特', text: '我……我叫瑪格麗特·諾爾絲，請、請多多指教。' },
+        { character: '旁白', text: '她的聲音有些顫抖，但鈴蘭只是笑得更溫柔。' },
         { character: '森森鈴蘭', text: '嗯，請多多關照呀。' },
+        { character: '旁白', text: '瑪麗雖然緊張，但還是努力讓自己微笑，小心翼翼地問。' },
         { character: '瑪格麗特', text: '妳是……轉學生嗎？' },
-        { character: '森森鈴蘭', text: '嗯，算是吧。我以前是在北方的分校念書，因為一些原因才轉來這裡。聽說這裡的花園很有名呢，所以有點期待。' },
+        { character: '森森鈴蘭', text: '嗯，算是吧。' },
+        { character: '旁白', text: '鈴蘭把外套脫下來，掛在牆邊的掛鉤上，動作乾脆俐落。' },
+        { character: '森森鈴蘭', text: '我以前是在北方的分校念書，因為一些原因才轉來這裡。聽說這裡的花園很有名呢，所以有點期待。' },
         { character: '瑪格麗特', text: '花園……' },
-        { character: '旁白', text: '瑪格麗特心中微微一顫。對她來說，「花園」並不是單純的觀光景點，而是某種心底的秘密寄託。她一直壓抑的情感，總會在夜晚化作「夜語花」悄然綻放。' },
+        { character: '旁白', text: '瑪格麗特心中微微一顫。' },
+        { character: '旁白', text: '對她來說，「花園」並不是單純的觀光景點，而是某種心底的秘密寄託。' },
+        { character: '旁白', text: '她一直壓抑的情感，總會在夜晚化作「夜語花」悄然綻放。' },
+        { character: '森森鈴蘭', text: '怎麼了？' },
+        { character: '旁白', text: '鈴蘭注意到她表情的變化。' }, 
         { character: '瑪格麗特', text: '沒、沒事。' },
-        { character: '旁白', text: '瑪格麗特慌忙垂下眼簾，將日記本收進抽屜裡，像是怕被發現什麼。' },
-        { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '繼續', nextScene: 'c1_classroom' } ] }
+        { character: '旁白', text: '瑪麗慌忙垂下眼簾，將日記本收進抽屜裡，像是怕被發現什麼。' },
+        { character: '森森鈴蘭', text: '哈哈，妳很緊張啊。 },
+        { character: '旁白', text: '鈴蘭笑出聲，卻沒有追問，只是自然地拉開窗簾，讓更多陽光灑入房間。' },
+        { character: '旁白', text: '她轉身時，那抹笑容乾淨得彷彿能驅散一切陰影。' },
+        { character: '旁白', text: '瑪麗胸口一熱，不知該說什麼，只能安靜地看著對方。' },
+        { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '第二日', nextScene: 'c1_classroom' } ] }
     ]
 },
 
@@ -743,6 +756,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
