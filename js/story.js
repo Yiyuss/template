@@ -213,7 +213,8 @@ c1_dorm_room_night: {
         { character: '旁白', text: '——我想，或許在這裡……我能找到不一樣的自己。' },
         { character: '瑪格麗特', text: '……我希望這次，不要再錯過了。' },
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
-        { character: '旁白', text: '——第一章完。', choices: [ { text: '前往第二章', nextScene: 'c2_start' } ] }
+        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/transition_ch1_to_ch2.mp4', nextScene: 'c2_library_night' }
+        
     ]
 },
         
@@ -742,6 +743,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
