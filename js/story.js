@@ -156,6 +156,7 @@ c1_dorm_room: {
         { character: '旁白', text: '鈴蘭笑出聲，卻沒有追問，只是自然地拉開窗簾，讓更多陽光灑入房間。' },
         { character: '旁白', text: '她轉身時，那抹笑容乾淨得彷彿能驅散一切陰影。' },
         { character: '旁白', text: '瑪麗胸口一熱，不知該說什麼，只能安靜地看著對方。' },
+        { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '第二日', nextScene: 'c1_classroom' } ] }
     ]
 },
@@ -165,19 +166,30 @@ c1_classroom: {
     dialogues: [
         { character: '【教室】', text: '翌日清晨，學院的鐘聲悠然響起。' },
         { character: '旁白', text: '瑪格麗特和鈴蘭一同走進教室，裡頭的氣氛比她想像的更熱鬧。' },
-        { character: '旁白', text: '木質課桌整齊排列，牆上掛著地圖與魔力規範表。學生們三三兩兩圍在一起，有的在討論課程，有的則分享家鄉的趣事。' },
+        { character: '旁白', text: '木質課桌整齊排列，牆上掛著地圖與魔力規範表。' },
+        { character: '旁白', text: '學生們三三兩兩圍在一起，有的在討論課程，有的則分享家鄉的趣事。' },
         { character: '短髮少女', text: '早啊！' },
+        { character: '旁白', text: '一位短髮的少女熱情地跟鈴蘭打招呼，目光落在她身旁的瑪格麗特時，語氣帶了幾分好奇' },
         { character: '短髮少女', text: '這位是？' },
         { character: '森森鈴蘭', text: '她是我的室友，瑪格麗特。' },
+        { character: '旁白', text: '鈴蘭自然地介紹。' },
+        { character: '旁白', text: '瑪麗心頭一顫，卻努力擠出一個笑容，微微鞠躬。' },
         { character: '瑪格麗特', text: '……初次見面，請多多指教。' },
         { character: '短髮少女', text: '哦～' },
-        { character: '老師', text: '靜語花園學院，是情咒研究的核心場所。你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
+        { character: '旁白', text: '短髮少女眼神閃了閃，像是看透了她的羞怯，但沒有多說，只是回以一笑。' },
+        { character: '旁白', text: '課程開始後，老師是一位身穿黑袍的中年男子，聲音低沉卻不失威嚴。' },
+        { character: '老師', text: '靜語花園學院，是情咒研究的核心場所。' },
+        { character: '老師', text: '你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
         { character: '旁白', text: '瑪格麗特低下頭，用筆記下老師的話。' },
         { character: '瑪格麗特', text: '與自己相處……' },
-        { character: '森森鈴蘭', text: '瑪格麗特，我們去圖書館看看吧？聽說裡面藏了很多關於情咒的記錄。' },
-        { character: '瑪格麗特', text: '……嗯。' },
+        { character: '旁白', text: '這幾個字在她腦中迴盪，卻又像一道無形的牆，讓她感到窒息。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【圖書館】。', choices: [ { text: '繼續', nextScene: 'c1_library' } ] }
+        { character: '旁白', text: '下課時，鈴蘭拉著她的袖子。' },
+        { character: '森森鈴蘭', text: '瑪麗，我們去圖書館看看吧？聽說裡面藏了很多關於情咒的記錄。' },
+        { character: '瑪格麗特', text: '……嗯。' },
+        { character: '旁白', text: '她遲疑片刻，還是答應了。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【圖書館】。', choices: [ { text: '離開教室', nextScene: 'c1_library' } ] }
     ]
 },
 
@@ -756,6 +768,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
