@@ -121,7 +121,7 @@ c1_dorm_hall: {
 },
 
 c1_dorm_room: {
-    background: 'assets/images/backgrounds/dorm_morning2.jpg',
+    background: 'assets/images/backgrounds/school4.jpg',
     dialogues: [
         { character: '【宿舍房間】', text: '推開門時，一股淡淡的清新氣息迎面而來。' },
         { character: '旁白', text: '房間不大，卻佈置得井然有序：靠窗的位置擺著兩張床，中間隔著小桌，桌上放著新發的日程冊和一盞油燈。' },
@@ -204,7 +204,7 @@ c1_garden: {
 },
 
 c1_dorm_room_night: {
-    background: 'assets/images/backgrounds/dorm_night.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【宿舍房間・夜】', text: '夜幕降臨，月光從窗外照進來，灑落在床邊。' },
         { character: '旁白', text: '瑪格麗特坐在書桌前，攤開日記本。筆尖在紙上顫抖，卻仍堅持落下字句。' },
@@ -743,6 +743,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
