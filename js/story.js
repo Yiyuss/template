@@ -517,39 +517,39 @@ const Story = {
     characters: {
         '瑪格麗特': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（心聲）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（有些慌亂）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（點頭）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（低聲）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（驚訝）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（試探）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（遲疑）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '瑪格麗特（震驚·低聲）': {
             image: 'assets/images/characters/margaret.png',
-            position: '30%'
+            position: '15%'
         },
         '森森鈴蘭': {
             image: 'assets/images/characters/visitor.png',
