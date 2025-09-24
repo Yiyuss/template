@@ -67,7 +67,7 @@ const Story = {
             background: 'assets/images/backgrounds/campus.jpg',
             bgm: 'assets/audio/bgm_ch1.mp3',
             dialogues: [
-                { character: '旁白', text: '【場景：靜語花園學院大門】黃昏的陽光斜斜灑落，校園被花草香氣包圍。風鈴聲隨微風響起，帶來不真實的安寧。' },
+                { character: '【場景：靜語花園學院大門】', text: '黃昏的陽光斜斜灑落，校園被花草香氣包圍。風鈴聲隨微風響起，帶來不真實的安寧。' },
                 { character: '瑪格麗特（心聲）', text: '……終於到了。靜語花園學院。' },
                 { character: '旁白', text: '她抱著一本厚厚的日記本，指尖微微顫抖。' },
                 { character: '瑪格麗特（心聲）', text: '這裡，據說聚集了全大陸最敏感的情咒者……我真的能融入這裡嗎？' },
@@ -78,9 +78,9 @@ const Story = {
         },
         
         c1_path: {
-            background: 'assets/images/backgrounds/campus.jpg',
+            background: 'assets/images/backgrounds/school.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：校園小徑】樹影斑駁，花香更濃。' },
+                { character: '【場景：校園小徑】', text: '樹影斑駁，花香更濃。' },
                 { character: '森森鈴蘭', text: '嘿！妳是新生吧？' },
                 { character: '旁白', text: '瑪格麗特嚇得停下腳步，轉頭，看見一個帶著笑意的女孩正揮手。陽光落在她的髮絲上，耀眼得像光本身。' },
                 { character: '瑪格麗特', text: '啊……是的。我、我是……瑪格麗特·諾爾絲。' },
@@ -90,14 +90,14 @@ const Story = {
                 { character: '旁白', text: '她邁開腳步，走得很自然，像是習慣帶領別人。瑪格麗特猶豫了一下，還是跟了上去。' },
                 { character: '瑪格麗特（心聲）', text: '她好像……和其他人不一樣。不會用那種打量的眼神看我……' },
                 { character: '旁白', text: '——', },
-                { character: '旁白', text: '即將前往【宿舍走廊】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_hall' } ] }
+                { character: '旁白', text: '即將前往【校園宿舍】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_hall' } ] }
             ]
         },
         
         c1_dorm_hall: {
             background: 'assets/images/backgrounds/dorm_morning.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：宿舍走廊】' },
+                { character: '【場景：校園宿舍】', text: '——' },
                 { character: '森森鈴蘭', text: '所以，妳是轉學生嗎？' },
                 { character: '瑪格麗特（點頭）', text: '嗯，之前一直在小鎮的普通學堂……因為情咒敏感度的檢測結果，被推薦來這裡。' },
                 { character: '森森鈴蘭（挑眉）', text: '喔～原來妳也是「高敏感組」啊，難怪老師們會注意到妳。' },
@@ -106,7 +106,7 @@ const Story = {
                 { character: '瑪格麗特（驚訝）', text: '……感覺？' },
                 { character: '森森鈴蘭（轉過頭）', text: '嗯，情咒不是用來炫耀的東西。妳會發現，它更多時候……只是心在說話的方式。' },
                 { character: '旁白', text: '二人被臨時分配去清理古老溫室……夜語花的奇蹟即將發生。' },
-                { character: '旁白', text: '【場景：古老溫室】微塵浮動，枯枝沉睡。當她們心念相連時，微光自花蕊漫出——', video: 'assets/videos/transition_greenhouse.mp4', nextScene: 'c2_library_night' }
+                { character: '【場景：古老溫室】', text: '微塵浮動，枯枝沉睡。當她們心念相連時，微光自花蕊漫出——', video: 'assets/videos/transition_greenhouse.mp4', nextScene: 'c2_library_night' }
             ]
         },
         
@@ -146,8 +146,8 @@ const Story = {
             bgm: 'assets/audio/bgm_ch2.mp3',
             dialogues: [
                 {
-                    character: '旁白',
-                    text: '【場景：學院圖書館·深夜】微弱的燈光，紙張與墨水的味道瀰漫。瑪格麗特偷偷留到很晚，翻閱古老筆記。'
+                    character: '【場景：學院圖書館·深夜】',
+                    text: '微弱的燈光，紙張與墨水的味道瀰漫。瑪格麗特偷偷留到很晚，翻閱古老筆記。'
                 },
                 {
                     character: '瑪格麗特（心聲）',
@@ -163,9 +163,9 @@ const Story = {
         },
 
         c2_cellar: {
-            background: 'assets/images/backgrounds/library_night.jpg',
+            background: 'assets/images/backgrounds/school2.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：圖書館地窖入口】忽然，她在半掩的門後聽見談話聲。' },
+                { character: '【場景：圖書館地窖入口】', text: '忽然，她在半掩的門後聽見談話聲。' },
                 {
                     character: '教師甲（低聲）',
                     text: '這份名冊，必須嚴格保管。任何人不能接觸。'
@@ -176,7 +176,7 @@ const Story = {
                 },
                 {
                     character: '旁白',
-                    text: '教師們離開後，瑪格麗特忍不住上前，發現桌上一本厚重黑皮冊子——《花名冊》。'
+                    text: '教師們離開後，瑪格麗特忍不住上前，發現了一本厚重黑皮冊子——《花名冊》。'
                 },
                 {
                     character: '瑪格麗特（心聲）',
@@ -198,7 +198,7 @@ const Story = {
         c2_bench: {
             background: 'assets/images/backgrounds/garden.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：第二天·花園長椅】陽光燦爛，學生喧鬧。瑪格麗特卻渾身僵硬。' },
+                { character: '【場景：第二天·花園長椅】', text: '陽光燦爛，學生喧鬧。瑪格麗特卻渾身僵硬。' },
                 {
                     character: '森森鈴蘭（笑）',
                     text: '瑪格麗特！早啊。妳昨天好像很晚才回宿舍？'
@@ -229,9 +229,9 @@ const Story = {
         },
 
         c2_dorm_night: {
-            background: 'assets/images/backgrounds/dorm_morning.jpg',
+            background: 'assets/images/backgrounds/school3.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：宿舍夜晚】瑪格麗特輾轉反側，最終忍不住起身。夜空安靜無聲。' },
+                { character: '【場景：宿舍夜晚】', text: '瑪格麗特輾轉反側，最終忍不住起身。夜空安靜無聲。' },
                 {
                     character: '瑪格麗特（低語）',
                     text: '鈴蘭……妳到底經歷過什麼？'
@@ -251,10 +251,10 @@ const Story = {
         
         // 第三章：情咒的迴響 — 分場景
         c3_dorm_morning: {
-            background: 'assets/images/backgrounds/dorm_morning.jpg',
+            background: 'assets/images/backgrounds/school4.jpg',
             bgm: 'assets/audio/bgm_ch3.mp3',
             dialogues: [
-                { character: '旁白', text: '【場景：清晨·宿舍】陽光才剛越過窗棂，薄霧還未散去。瑪格麗特醒來時，聽見窗外鳥鳴。' },
+                { character: '【場景：清晨·宿舍】', text: '陽光才剛越過窗棂，薄霧還未散去。瑪格麗特醒來時，聽見窗外鳥鳴。' },
                 { character: '旁白', text: '那聲音不算響亮，卻在這片陌生的學院裡，顯得格外清晰。' },
                 { character: '旁白', text: '她坐起身，抱著膝，靜靜凝視同寢的森森鈴蘭。' },
                 { character: '旁白', text: '鈴蘭睡得安穩，呼吸輕柔，眉間卻若隱若現帶著一絲緊繃，好似夢裡也藏著不願告訴別人的心事。' },
@@ -269,7 +269,7 @@ const Story = {
         c3_cafeteria: {
             background: 'assets/images/backgrounds/cafeteria.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：學院餐廳】早餐時間的餐廳熱鬧非凡，學生們交談、笑鬧，刀叉與陶瓷相碰的聲音此起彼伏。' },
+                { character: '【場景：學院餐廳】', text: '早餐時間的餐廳熱鬧非凡，學生們交談、笑鬧，刀叉與陶瓷相碰的聲音此起彼伏。' },
                 { character: '旁白', text: '瑪格麗特端著餐盤找座位，卻因人群而手忙腳亂。' },
                 { character: '森森鈴蘭', text: '這裡！' },
                 { character: '旁白', text: '熟悉的聲音傳來，鈴蘭朝她揮手。她走過去，坐下。' },
@@ -288,7 +288,7 @@ const Story = {
         c3_classroom: {
             background: 'assets/images/backgrounds/classroom.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：課堂·情咒基礎】老師是一位聲音低沉的中年女性，語調緩慢，像是在講述古老的吟誦。' },
+                { character: '【場景：課堂·情咒基礎】', text: '老師是一位聲音低沉的中年女性，語調緩慢，像是在講述古老的吟誦。' },
                 { character: '老師', text: '情咒不是力量，而是映照。它把心之所想化為現象。真正的危險，不是咒本身，而是人心。' },
                 { character: '旁白', text: '學生們有人低頭記筆記，有人心不在焉。瑪格麗特卻專注地聽著，幾乎每一個字都重重敲擊心底。' },
                 { character: '旁白', text: '她忍不住看了眼身旁的鈴蘭。鈴蘭似乎在發呆，手指漫不經心地敲著桌面，眼神飄忽不定。' },
@@ -298,9 +298,9 @@ const Story = {
         },
 
         c3_field: {
-            background: 'assets/images/backgrounds/plaza.jpg',
+            background: 'assets/images/backgrounds/school5.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：操場·放學後】陽光逐漸斜下，學生們在操場上進行咒力練習。' },
+                { character: '【場景：操場·放學後】', text: '陽光逐漸斜下，學生們在操場上進行咒力練習。' },
                 { character: '旁白', text: '有人手中凝聚花瓣般的光，有人呼喚出水霧，有人只是徒勞地揮手。' },
                 { character: '旁白', text: '瑪格麗特在角落，努力想讓咒語浮現。可她的指尖只閃過微弱的光點，隨即消散。' },
                 { character: '旁白', text: '她感到挫敗，低下頭。就在這時，鈴蘭從背後輕輕拍了拍她的肩。' },
@@ -314,7 +314,7 @@ const Story = {
         c3_rooftop: {
             background: 'assets/images/backgrounds/dorm_morning.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：夜晚·宿舍屋頂】那晚，瑪格麗特一個人坐在屋頂，頭頂是繁星與月光。' },
+                { character: '【場景：夜晚·宿舍屋頂】', text: '那晚，瑪格麗特一個人坐在屋頂，頭頂是繁星與月光。' },
                 { character: '旁白', text: '夜風輕拂，遠處的花園散發著淡淡光暈。' },
                 { character: '旁白', text: '她再度打開日記本，慢慢寫下：' },
                 { character: '瑪格麗特（心聲）', text: '我開始明白，情咒是心的映照。可是——如果心底藏著不該有的東西，會不會連花朵也因此扭曲？' },
@@ -331,7 +331,7 @@ const Story = {
             background: 'assets/images/backgrounds/plaza.jpg',
             bgm: 'assets/audio/bgm_ch4.mp3',
             dialogues: [
-                { character: '旁白', text: '【場景：清晨·學院廣場】廣場的石磚在露水的浸潤下泛著光。鐘樓響起長鳴，聲音迴盪在空曠的空氣裡。' },
+                { character: '【場景：清晨·學院廣場】', text: '廣場的石磚在露水的浸潤下泛著光。鐘樓響起長鳴，聲音迴盪在空曠的空氣裡。' },
                 { character: '旁白', text: '學生們聚集於廣場中央，氣氛異樣壓抑。每個人手裡都拿著一張被封印的「試煉名單」，上面寫著即將參與「情感共鳴測試」的學生名。' },
                 { character: '旁白', text: '瑪格麗特的手心微微冒汗。她盯著名單，看見自己的名字赫然列在其上。' },
                 { character: '旁白', text: '再往下，她看見「森森鈴蘭」。指尖瞬間僵硬。她明白，無論如何，她與鈴蘭都無法迴避這場試煉。' },
@@ -343,7 +343,7 @@ const Story = {
         c4_classroom_brief: {
             background: 'assets/images/backgrounds/classroom.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：課堂·試煉前的說明】大講堂內，老師的聲音低沉。牆上懸掛的古老掛毯描繪著無數被情咒吞噬的影子。' },
+                { character: '【場景：課堂·試煉前的說明】', text: '大講堂內，老師的聲音低沉。牆上懸掛的古老掛毯描繪著無數被情咒吞噬的影子。' },
                 { character: '老師', text: '共鳴咒試煉，不是戰鬥，而是揭示。它將讓你們面對最深的心念。你們可以選擇隱藏，但試煉不會說謊。' },
                 { character: '旁白', text: '學生們議論紛紛，壓抑的氣氛逐漸蔓延。有人呼吸急促，有人低聲禱告。' },
                 { character: '旁白', text: '瑪格麗特只是沉默，心跳卻逐漸加快。她感覺得到，鈴蘭的視線停留在自己身上。' },
@@ -356,7 +356,7 @@ const Story = {
         c4_garden: {
             background: 'assets/images/backgrounds/garden.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：傍晚·學院花園】試煉前夕。夕陽把整個花園渲染成橘紅色，長椅上落滿了斑駁的光影。' },
+                { character: '【場景：傍晚·學院花園】', text: '試煉前夕。夕陽把整個花園渲染成橘紅色，長椅上落滿了斑駁的光影。' },
                 { character: '旁白', text: '瑪格麗特坐在石椅上，手裡攥著那本日記，心情紊亂。' },
                 { character: '旁白', text: '鈴蘭慢慢走來，手中拿著一支白色的百合。' },
                 { character: '森森鈴蘭', text: '聽說百合能驅散惡夢。明天，妳應該會需要它。' },
@@ -372,7 +372,7 @@ const Story = {
         c4_rooftop: {
             background: 'assets/images/backgrounds/dorm_morning.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：夜晚·宿舍屋頂】深夜的宿舍裡一片寂靜，只有月光從窗縫照進來。' },
+                { character: '【場景：夜晚·宿舍屋頂】', text: '深夜的宿舍裡一片寂靜，只有月光從窗縫照進來。' },
                 { character: '旁白', text: '瑪格麗特翻來覆去，無法入睡。她終於下床，抱著日記走到屋頂。' },
                 { character: '旁白', text: '風很冷，星光卻很亮。她緩緩寫下心中的不安。' },
                 { character: '瑪格麗特（心聲）', text: '我不想讓她看見我的心。可是，我又無法忍受，她若因此與我保持距離。' },
@@ -389,17 +389,17 @@ const Story = {
         c4_hall: {
             background: 'assets/images/backgrounds/hall_exterior.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：試煉之日·大禮堂】高聳的圓頂、冷冽的石牆，四周環繞著古老符文，空氣中瀰漫著壓迫感。' },
+                { character: '【場景：試煉之日·大禮堂】', text: '高聳的圓頂、冷冽的石牆，四周環繞著古老符文，空氣中瀰漫著壓迫感。' },
                 { character: '旁白', text: '學生們被一一喚名，走向中央的試煉水晶。當瑪格麗特的名字被念出，她幾乎站不穩。' },
                 { character: '旁白', text: '她走到水晶前，閉上眼。瞬間，黑暗如潮水般湧來——' },
-                { character: '旁白', text: '【內心世界】她看見無數散落的信紙，鋪滿腳下的地面。' },
+                { character: '【內心世界】', text: '她看見無數散落的信紙，鋪滿腳下的地面。' },
                 { character: '旁白', text: '每一封，都是她從未寄出的日記與信件，字裡行間全是關於鈴蘭的片段。' },
                 { character: '旁白', text: '腳步聲響起。她回頭，看見鈴蘭站在遠方，拾起那些信紙，逐字逐句地閱讀。' },
                 { character: '旁白', text: '瑪格麗特慌亂地想要阻止，卻無法靠近。她的聲音在這個心境裡失效，只能眼睜睜看著鈴蘭一封接一封地讀下去。' },
-                { character: '旁白', text: '【試煉水晶外】圍觀的學生看不見心境裡的景象，只見瑪格麗特淚流滿面，渾身顫抖。' },
+                { character: '【試煉水晶外】', text: '圍觀的學生看不見心境裡的景象，只見瑪格麗特淚流滿面，渾身顫抖。' },
                 { character: '旁白', text: '而站在另一側的鈴蘭，眼神卻愈發深沉，唇角失去了笑意。' },
                 { character: '旁白', text: '她伸出手，輕輕碰上水晶。下一瞬間，她竟「闖入」了瑪格麗特的心境。' },
-                { character: '旁白', text: '【內心世界·交會】信紙如雪片般飛舞。鈴蘭站在瑪格麗特面前，手中仍捏著那最後一封信。' },
+                { character: '【內心世界·交會】', text: '信紙如雪片般飛舞。鈴蘭站在瑪格麗特面前，手中仍捏著那最後一封信。' },
                 { character: '旁白', text: '她沒有說話。只是一步一步走近，然後——牽起瑪格麗特的手。' },
                 { character: '旁白', text: '那一刻，所有信紙同時化作夜語花，漫天盛放。瑪格麗特呆呆望著，淚水止不住。' },
                 { character: '森森鈴蘭', text: '妳知道嗎……我一直都聽得見。' },
@@ -409,10 +409,10 @@ const Story = {
         
         // 第五章：無聲之花 — 分場景（含雙結局）
         c5_gate: {
-            background: 'assets/images/backgrounds/hall_exterior.jpg',
+            background: 'assets/images/backgrounds/academy_gate_dawn.jpg',
             bgm: 'assets/audio/bgm_ch5.mp3',
             dialogues: [
-                { character: '旁白', text: '【場景：黎明·學院邊界】濃霧覆蓋著森林，鐵門緊閉，符文在空氣中微微閃爍。' },
+                { character: '【場景：黎明·學院邊界】', text: '濃霧覆蓋著森林，鐵門緊閉，符文在空氣中微微閃爍。' },
                 { character: '旁白', text: '幾名學生趁著守衛換班，悄然逃離。腳步聲急促，心跳混雜在夜鳥的鳴叫裡。' },
                 { character: '旁白', text: '瑪格麗特與鈴蘭並肩而行，氣息凌亂，卻沒有誰先開口。' },
                 { character: '旁白', text: '背後的學院鐘聲緩慢響起，像是最後的告別。瑪格麗特心中顫抖，她明白，若真的走出這道門，就再也回不去那段日常。' },
@@ -424,7 +424,7 @@ const Story = {
         c5_forest_path: {
             background: 'assets/images/backgrounds/forest_path.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：逃亡的旅途·森林小徑】林間濕潤，空氣裡帶著松針與泥土的氣味。露水從枝葉滴落，砸在他們的肩頭。' },
+                { character: '【場景：逃亡的旅途·森林小徑】', text: '林間濕潤，空氣裡帶著松針與泥土的氣味。露水從枝葉滴落，砸在他們的肩頭。' },
                 { character: '旁白', text: '瑪格麗特抱緊書冊與日記，緊跟在鈴蘭身後。她看見鈴蘭的背影挺直，步伐堅定，卻隱隱透著一種孤絕。' },
                 { character: '瑪格麗特', text: '……妳真的不後悔嗎？' },
                 { character: '旁白', text: '瑪格麗特終於問出口，聲音微顫。鈴蘭沒有立刻回答。她只是停下腳步，望向遠處霧氣中若隱若現的村落燈火。' },
@@ -439,7 +439,7 @@ const Story = {
         c5_church: {
             background: 'assets/images/backgrounds/church_ruins.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：夜晚·廢棄教堂】殘破的彩色玻璃灑下斑駁光影，木椅上覆滿灰塵。' },
+                { character: '【場景：夜晚·廢棄教堂】', text: '殘破的彩色玻璃灑下斑駁光影，木椅上覆滿灰塵。' },
                 { character: '旁白', text: '瑪格麗特捧著百合花，低聲說：' },
                 { character: '瑪格麗特', text: '鈴蘭……如果他們找到我們怎麼辦？' },
                 { character: '旁白', text: '鈴蘭笑了笑，卻沒有回答。她只是走到講壇前，指尖在破碎的木雕上輕輕劃過，仿佛在告別什麼。' },
@@ -454,21 +454,21 @@ const Story = {
         c5_crossroad: {
             background: 'assets/images/backgrounds/rainy_crossroad.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：分岔口·雨夜】暴雨傾盆，林道泥濘。兩人站在岔路口，雨水打濕了頭髮與衣襟。' },
+                { character: '【場景：分岔口·雨夜】', text: '暴雨傾盆，林道泥濘。兩人站在岔路口，雨水打濕了頭髮與衣襟。' },
                 { character: '旁白', text: '鈴蘭轉身，眼神前所未有的堅定。' },
                 { character: '森森鈴蘭', text: '妳走吧，瑪格麗特。往北，還有能容身的地方。' },
                 { character: '瑪格麗特', text: '不……我們不是說好要一起——' },
                 { character: '旁白', text: '瑪格麗特愣住，雨水模糊了視線。鈴蘭用力打斷：' },
                 { character: '森森鈴蘭', text: '我不能跟妳一起走。他們給了我選擇。只要我留下，成為研究樣本，就能保妳自由。' },
                 { character: '旁白', text: '——' },
-                { character: '旁白', text: '即將前往【拉扯】。', choices: [ { text: '繼續', nextScene: 'c5_separation' } ] }
+                { character: '旁白', text: '瑪格麗特整個人都僵住，喉嚨發不出聲。', choices: [ { text: '一起走！', nextScene: 'c5_separation' } ] }
             ]
         },
 
         c5_separation: {
             background: 'assets/images/backgrounds/rainy_crossroad.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：拉扯】瑪格麗特整個人都僵住，喉嚨發不出聲。她衝上前，抓住鈴蘭的手，指尖顫抖到幾乎要斷裂。' },
+                { character: '旁白', text: '她衝上前，抓住鈴蘭的手，指尖顫抖到幾乎要斷裂。' },
                 { character: '瑪格麗特', text: '不要……不要這樣……' },
                 { character: '旁白', text: '聲音破碎，幾乎被雨聲掩蓋。鈴蘭用力回握，卻一步步將她推向北方的道路。' },
                 { character: '森森鈴蘭', text: '妳要活下去。妳要替我記住，我存在過。' },
@@ -481,7 +481,7 @@ const Story = {
         c5_silent_garden: {
             background: 'assets/images/backgrounds/silent_garden.jpg',
             dialogues: [
-                { character: '旁白', text: '【場景：數年後·無聲之園】歲月流轉。遠方的山谷裡，一片新生的花園悄然綻放。' },
+                { character: '【場景：數年後·無聲之園】', text: '歲月流轉。遠方的山谷裡，一片新生的花園悄然綻放。' },
                 { character: '旁白', text: '「無聲之園」，收容那些無法壓抑情咒的孩子們。' },
                 { character: '旁白', text: '瑪格麗特已不再是當年那個顫抖的少女。她身姿挺直，溫柔地教導新來的孩子如何與情感共處。' },
                 { character: '旁白', text: '某日，一封無署名信送來。紙張泛黃，字跡卻熟悉。' },
