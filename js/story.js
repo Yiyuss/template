@@ -67,13 +67,18 @@ c1_gate: {
     background: 'assets/images/backgrounds/campus.jpg',
     bgm: 'assets/audio/bgm_ch1.mp3',
     dialogues: [
-        { character: '【校門】', text: '初春的晨風帶著微涼的氣息，靜語花園學院的校門靜靜聳立在遠方。這是一座以白色石材砌成的拱門，頂端盤繞著常青藤，偶爾有幾朵粉紫色的小花點綴其中，像是在迎接每一位到來的學生。' },
-        { character: '旁白', text: '瑪格麗特·諾爾絲靜靜地站在校門口。她背著略顯笨重的旅行袋，肩膀被壓得有些下垂。從長途馬車下來的腳步還有些僵硬，卻掩不住她眼中閃爍的光彩。' },
+        { character: '【校門】', text: '初春的晨風帶著微涼的氣息，靜語花園學院的校門靜靜聳立在遠方。' },
+        { character: '旁白', text: '這是一座以白色石材砌成的拱門，頂端盤繞著常青藤，偶爾有幾朵粉紫色的小花點綴其中，像是在迎接每一位到來的學生。' },
+        { character: '旁白', text: '瑪格麗特·諾爾絲靜靜地站在校門口。' },
+        { character: '旁白', text: '她背著略顯笨重的旅行袋，肩膀被壓得有些下垂。從長途馬車下來的腳步還有些僵硬，卻掩不住她眼中閃爍的光彩。' },
         { character: '瑪格麗特', text: '……就是這裡啊。' },
-        { character: '旁白', text: '和外界的喧囂不同，學院似乎自成一個小小的世界。遠遠望去，紅磚砌成的主教學樓矗立於校園深處，旁邊是綠意盎然的林木。微風拂過枝葉，發出細微的沙沙聲，彷彿在為她奏起迎接的樂曲。' },
-        { character: '旁白', text: '她的心口有些發緊。這裡將是她往後數年的生活之地，也是她必須面對自我的地方。' },
+        { character: '旁白', text: '和外界的喧囂不同，學院似乎自成一個小小的世界。遠遠望去，紅磚砌成的主教學樓矗立於校園深處，旁邊是綠意盎然的林木。' },
+        { character: '旁白', text: '她甚至聽見微風拂過枝葉，發出細微的沙沙聲，彷彿在為她奏起迎接的樂曲。' },
+        { character: '旁白', text: '她的心口有些發緊。' },
+        { character: '旁白', text: '這裡將是她往後數年的生活之地，也是她必須面對自我的地方。' },
         { character: '旁白', text: '她曾經在舊日記裡無數次想像過自己來到這裡的模樣——但真實的場景，卻比她的字句要更鮮明、更迫切。' },
-        { character: '旁白', text: '……呼。她深吸一口氣，才邁步踏入。' },
+        { character: '瑪格麗特', text: '……呼。' },
+        { character: '旁白', text: '她深吸一口氣，才邁步踏入。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【校園小徑】。', choices: [ { text: '繼續', nextScene: 'c1_path' } ] }
     ]
@@ -82,12 +87,18 @@ c1_gate: {
 c1_path: {
     background: 'assets/images/backgrounds/school.jpg',
     dialogues: [
-        { character: '【校園小徑】', text: '沿著鋪滿碎石的小徑前行，兩側是整齊修剪的樹籬。空氣中瀰漫著青草的清香，偶爾有白色的花瓣隨風飄落，在陽光下閃爍著淡淡的光。' },
-        { character: '旁白', text: '瑪格麗特握緊行李袋的帶子，步伐略顯拘謹。她想抬頭欣賞校園，但又忍不住低下視線，避免與周遭的學生視線交會。' },
+        { character: '【校園小徑】', text: '沿著鋪滿碎石的小徑前行，兩側是整齊修剪的樹籬。' },
+        { character: '旁白', text: '空氣中瀰漫著青草的清香，偶爾有白色的花瓣隨風飄落，在陽光下閃爍著淡淡的光。' },
+        { character: '旁白', text: '瑪格麗特握緊行李袋的帶子，步伐略顯拘謹。' },
+        { character: '旁白', text: '她想抬頭欣賞校園，但又忍不住低下視線，避免與周遭的學生視線交會。' },
         { character: '瑪格麗特', text: '這裡的氣息……好安靜。' },
-        { character: '旁白', text: '她覺得自己的存在格外突兀，像是一滴墨水滴入清澈的泉水裡，無論如何掩飾，都會被人注意。' },
-        { character: '旁白', text: '就在她陷入緊張時，一群穿著校服的學生笑鬧著從小徑另一端走來，她立刻偏過身，裝作在整理肩上的帶子。青春的笑聲在耳邊掠過，帶著活力和自在感——那是她所缺乏的。' },
-        { character: '旁白', text: '她心底微微一沉，卻又暗暗打起精神。「沒關係……這裡是新的開始。至少，至少要……試著去改變。」' },
+        { character: '旁白', text: '然而正因如此，她反而覺得自己的存在格外突兀。像是一滴墨水滴入清澈的泉水裡，無論如何掩飾，都會被人注意。' },
+        { character: '旁白', text: '就在她陷入緊張時，一群穿著校服的學生笑鬧著從小徑另一端走來。' },
+        { character: '旁白', text: '她立刻偏過身，裝作在整理肩上的帶子。' },
+        { character: '旁白', text: '學生們的笑聲在她耳邊掠過，帶著青春的活力和一種屬於團體的自在感。' },
+        { character: '旁白', text: '——那是她所缺乏的。' },
+        { character: '旁白', text: '她心底微微一沉，卻又暗暗打起精神。' },
+        { character: '瑪格麗特', text: '沒關係……這裡是新的開始。至少，至少要……試著去改變。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【宿舍走廊】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_hall' } ] }
     ]
@@ -96,9 +107,11 @@ c1_path: {
 c1_dorm_hall: {
     background: 'assets/images/backgrounds/dorm_morning.jpg',
     dialogues: [
-        { character: '【宿舍走廊】', text: '在學姐的帶領下，她抵達了分配好的宿舍棟。走廊鋪著淺色木地板，窗戶敞開，陽光灑落，空氣中帶著淡淡的木香。' },
+        { character: '【宿舍走廊】', text: '在學姐的帶領下，她抵達了分配好的宿舍棟。' },
+        { character: '旁白', text: '走廊裡鋪著淺色木地板，窗戶敞開，陽光灑落，空氣中帶著淡淡的木香。' },
         { character: '旁白', text: '腳步聲在寂靜的走廊迴盪，每一步都提醒她：從今天起，她將在這裡度過無數的晨昏。' },
         { character: '瑪格麗特', text: '這裡……好像比我想像中更寬敞。' },
+        { character: '旁白', text: '她小聲自語，試著讓自己感到安心。' },
         { character: '旁白', text: '宿舍的牆上掛著幾幅描繪花園的水彩畫，色調溫和，彷彿要告訴新來的人——這裡不只是學習的地方，也是心靈的歸宿。' },
         { character: '學姐', text: '你的房間在這裡。' },
         { character: '瑪格麗特', text: '謝、謝謝。' },
@@ -110,13 +123,25 @@ c1_dorm_hall: {
 c1_dorm_room: {
     background: 'assets/images/backgrounds/dorm_morning2.jpg',
     dialogues: [
-        { character: '【宿舍房間】', text: '房間不大，卻佈置得井然有序：靠窗的位置擺著兩張床，中間隔著小桌，桌上放著新發的日程冊和一盞油燈。' },
-        { character: '旁白', text: '窗簾半掀，柔和的光線灑落在淺藍色的床單上。瑪格麗特走近，伸手撫過木質桌面的紋理，指尖觸到一絲溫潤的質感。' },
+        { character: '【宿舍房間】', text: '推開門時，一股淡淡的清新氣息迎面而來。' },
+        { character: '旁白', text: '房間不大，卻佈置得井然有序：靠窗的位置擺著兩張床，中間隔著小桌，桌上放著新發的日程冊和一盞油燈。' },
+        { character: '旁白', text: '窗簾半掀，柔和的光線照進來，灑落在淺藍色的床單上。' },
+        { character: '旁白', text: '瑪格麗特走近，伸手撫過木質桌面的紋理，指尖觸到一絲溫潤的質感。' },
+        { character: '旁白', text: '——她還沒來得及仔細觀察，門卻在此刻被推開了。' },
         { character: '森森鈴蘭', text: '啊，妳已經到了？' },
-        { character: '旁白', text: '瑪格麗特抬頭，與一雙明亮的眼睛對上。那是個與她年紀相仿的少女，帶著自然的笑容，髮梢在陽光下閃爍。' },
-        { character: '森森鈴蘭', text: '……我叫森森鈴蘭。看來以後我們要一起住了呢。' },
+        { character: '旁白', text: '瑪格麗特抬頭，與一雙明亮的眼睛對上。' },
+        { character: '旁白', text: '那是個與她年紀相仿的少女，帶著自然的笑容，髮梢在陽光下閃爍。' },
+        { character: '旁白', text: '她的出現，就像在安靜的房間裡點亮了一盞燈。' },
+        { character: '森森鈴蘭', text: '……我叫森森鈴蘭。' },
+        { character: '森森鈴蘭', text: '看來以後我們要一起住了呢。' },
         { character: '瑪格麗特', text: '我……我叫瑪格麗特·諾爾絲。請、請多多指教。' },
         { character: '森森鈴蘭', text: '嗯，請多多關照呀。' },
+        { character: '瑪格麗特', text: '妳是……轉學生嗎？' },
+        { character: '森森鈴蘭', text: '嗯，算是吧。我以前是在北方的分校念書，因為一些原因才轉來這裡。聽說這裡的花園很有名呢，所以有點期待。' },
+        { character: '瑪格麗特', text: '花園……' },
+        { character: '旁白', text: '瑪格麗特心中微微一顫。對她來說，「花園」並不是單純的觀光景點，而是某種心底的秘密寄託。她一直壓抑的情感，總會在夜晚化作「夜語花」悄然綻放。' },
+        { character: '瑪格麗特', text: '沒、沒事。' },
+        { character: '旁白', text: '瑪格麗特慌忙垂下眼簾，將日記本收進抽屜裡，像是怕被發現什麼。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '繼續', nextScene: 'c1_classroom' } ] }
     ]
@@ -125,14 +150,17 @@ c1_dorm_room: {
 c1_classroom: {
     background: 'assets/images/backgrounds/classroom.jpg',
     dialogues: [
-        { character: '【教室】', text: '翌日清晨，學院的鐘聲悠然響起。瑪格麗特和鈴蘭一同走進教室，裡頭氣氛比她想像的更熱鬧。木質課桌整齊排列，牆上掛著地圖與魔力規範表。' },
-        { character: '旁白', text: '學生們三三兩兩圍在一起，有的在討論課程，有的分享家鄉的趣事。' },
-        { character: '短髮少女', text: '早啊！這位是？' },
+        { character: '【教室】', text: '翌日清晨，學院的鐘聲悠然響起。' },
+        { character: '旁白', text: '瑪格麗特和鈴蘭一同走進教室，裡頭的氣氛比她想像的更熱鬧。' },
+        { character: '旁白', text: '木質課桌整齊排列，牆上掛著地圖與魔力規範表。學生們三三兩兩圍在一起，有的在討論課程，有的則分享家鄉的趣事。' },
+        { character: '短髮少女', text: '早啊！' },
+        { character: '短髮少女', text: '這位是？' },
         { character: '森森鈴蘭', text: '她是我的室友，瑪格麗特。' },
         { character: '瑪格麗特', text: '……初次見面，請多多指教。' },
-        { character: '旁白', text: '課程開始後，老師是一位身穿黑袍的中年男子，聲音低沉卻不失威嚴。' },
+        { character: '短髮少女', text: '哦～' },
         { character: '老師', text: '靜語花園學院，是情咒研究的核心場所。你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
-        { character: '旁白', text: '瑪格麗特低下頭，用筆記下老師的話。「與自己相處……」這幾個字在她腦中迴盪，卻又像一道無形的牆，讓她感到窒息。' },
+        { character: '旁白', text: '瑪格麗特低下頭，用筆記下老師的話。' },
+        { character: '瑪格麗特', text: '與自己相處……' },
         { character: '森森鈴蘭', text: '瑪格麗特，我們去圖書館看看吧？聽說裡面藏了很多關於情咒的記錄。' },
         { character: '瑪格麗特', text: '……嗯。' },
         { character: '旁白', text: '——' },
@@ -143,13 +171,15 @@ c1_classroom: {
 c1_library: {
     background: 'assets/images/backgrounds/library_night.jpg',
     dialogues: [
-        { character: '【圖書館】', text: '學院的圖書館是一棟古老的建築。高聳的天花板上懸掛著古典吊燈，四周書架延伸至二樓，空氣裡彌漫著書頁氣息。' },
+        { character: '【圖書館】', text: '學院的圖書館是一棟古老的建築。高聳的天花板上懸掛著古典吊燈，四周的書架延伸至二樓。' },
+        { character: '旁白', text: '空氣裡彌漫著書頁的氣息，厚重卻帶著安心感。' },
         { character: '旁白', text: '瑪格麗特走在鈴蘭身旁，腳步輕輕，生怕驚擾到這片靜謐。' },
         { character: '瑪格麗特', text: '好壯觀……' },
-        { character: '森森鈴蘭', text: '嗯，不過也有點像迷宮，小心別走丟了。' },
-        { character: '旁白', text: '兩人走到一排陳舊書櫃前。鈴蘭抽出一本泛黃書卷，上面記載學院過往案例。' },
+        { character: '森森鈴蘭', text: '嗯，不過也有點像迷宮。小心別走丟了。' },
+        { character: '旁白', text: '她的聲音輕快卻帶點調侃，讓瑪格麗特臉微微一紅。' },
+        { character: '旁白', text: '兩人慢慢走到一排陳舊的書櫃前。' },
         { character: '森森鈴蘭', text: '妳看，這裡寫著，曾經有個學生因為過度悲傷，竟然讓花園裡的所有花朵同時凋謝。' },
-        { character: '旁白', text: '瑪格麗特瞳孔微收，想起自己夜晚對星空說話時出現過的奇異之花。如果被人知道……她是否也會被記錄在冊？' },
+        { character: '旁白', text: '瑪格麗特瞳孔微微收縮。她想起自己夜晚偷偷對星空說話時，出現過的那些奇異之花。如果被人知道……她是否也會被記錄在冊？' },
         { character: '瑪格麗特', text: '……太神奇了。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【花園】。', choices: [ { text: '繼續', nextScene: 'c1_garden' } ] }
@@ -159,26 +189,33 @@ c1_library: {
 c1_garden: {
     background: 'assets/images/backgrounds/garden.jpg',
     dialogues: [
-        { character: '【花園】', text: '午後的陽光溫和，圖書館外的花園靜靜迎風搖曳。石板小徑蜿蜒而過，兩側種滿各式花卉，從常見百合、薔薇到少見幻光草，皆綻放不同色彩。' },
+        { character: '【花園】', text: '午後的陽光溫和，圖書館外的花園靜靜迎風搖曳。' },
+        { character: '旁白', text: '石板小徑蜿蜒而過，兩側種滿了各式各樣的花卉，從常見的百合、薔薇，到少見的幻光草，皆綻放著不同的色彩。' },
         { character: '旁白', text: '瑪格麗特和鈴蘭並肩而行。微風拂過，帶來花香，也帶來一種無法言喻的寧靜。' },
         { character: '瑪格麗特', text: '這裡……好美啊。' },
         { character: '森森鈴蘭', text: '是吧？我就說這裡值得一看。' },
-        { character: '旁白', text: '陽光傾灑，兩人第一次真正靜下來分享彼此的沉默——心之間的距離悄悄縮短。' },
+        { character: '森森鈴蘭', text: '對了，妳昨晚是不是在寫什麼？' },
+        { character: '瑪格麗特', text: '啊……只是……日記而已。' },
+        { character: '森森鈴蘭', text: '嗯。' },
+        { character: '旁白', text: '陽光傾灑，兩人並肩走在花園裡。這是她們第一次真正靜下來，分享彼此的沉默——卻也是第一次，讓心之間的距離悄悄縮短。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【宿舍房間・夜】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_window' } ] }
+        { character: '旁白', text: '即將前往【宿舍房間・夜】。', choices: [ { text: '繼續', nextScene: 'c1_dorm_room_night' } ] }
     ]
 },
 
-c1_dorm_window: {
-    background: 'assets/images/backgrounds/dorm_morning2.jpg',
+c1_dorm_room_night: {
+    background: 'assets/images/backgrounds/dorm_night.jpg',
     dialogues: [
-        { character: '【宿舍房間・夜】', text: '夜幕降臨，月光從窗外照進來，灑落在床邊。瑪格麗特坐在書桌前，攤開日記本，筆尖在紙上顫抖，卻仍堅持落下字句。' },
-        { character: '旁白', text: '——今天遇見了室友，她叫森森鈴蘭。笑容很溫暖，好像能看穿一切。我想，或許在這裡……我能找到不一樣的自己。' },
+        { character: '【宿舍房間・夜】', text: '夜幕降臨，月光從窗外照進來，灑落在床邊。' },
+        { character: '旁白', text: '瑪格麗特坐在書桌前，攤開日記本。筆尖在紙上顫抖，卻仍堅持落下字句。' },
+        { character: '旁白', text: '——今天遇見了室友。她叫森森鈴蘭。' },
+        { character: '旁白', text: '——笑容很溫暖，好像能看穿一切。' },
+        { character: '旁白', text: '——我想，或許在這裡……我能找到不一樣的自己。' },
         { character: '瑪格麗特', text: '……我希望這次，不要再錯過了。' },
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
-        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/transition_ch1_to_ch2.mp4', nextScene: 'c2_library_night' }
+        { character: '旁白', text: '——第一章完。', choices: [ { text: '前往第二章', nextScene: 'c2_start' } ] }
     ]
-},
+}
         
         // 森森鈴蘭視角路線（獨立劇情線，劇本待完成）
         forest: {
@@ -705,5 +742,6 @@ c1_dorm_window: {
 };
 
 export { Story };
+
 
 
