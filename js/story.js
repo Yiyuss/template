@@ -312,7 +312,7 @@ const Story = {
         },
 
         c3_rooftop: {
-            background: 'assets/images/backgrounds/dorm_morning.jpg',
+            background: 'assets/images/backgrounds/dorm_morning2.jpg',
             dialogues: [
                 { character: '【場景：夜晚·宿舍屋頂】', text: '那晚，瑪格麗特一個人坐在屋頂，頭頂是繁星與月光。' },
                 { character: '旁白', text: '夜風輕拂，遠處的花園散發著淡淡光暈。' },
