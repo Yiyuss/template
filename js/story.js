@@ -178,8 +178,8 @@ c1_classroom: {
         { character: '短髮少女', text: '哦～' },
         { character: '旁白', text: '短髮少女眼神閃了閃，像是看透了她的羞怯，但沒有多說，只是回以一笑。' },
         { character: '旁白', text: '課程開始後，老師是一位身穿黑袍的中年男子，聲音低沉卻不失威嚴。' },
-        { character: '老師', text: '靜語花園學院，是情咒研究的核心場所。' },
-        { character: '老師', text: '你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
+        { character: '男老師', text: '靜語花園學院，是情咒研究的核心場所。' },
+        { character: '男老師', text: '你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
         { character: '旁白', text: '瑪格麗特低下頭，用筆記下老師的話。' },
         { character: '瑪格麗特', text: '與自己相處……' },
         { character: '旁白', text: '這幾個字在她腦中迴盪，卻又像一道無形的牆，讓她感到窒息。' },
@@ -716,6 +716,10 @@ c1_dorm_room_night: {
             image: 'assets/images/characters/librarian.png',
             position: '50%'
         },
+        '男老師': {
+            image: 'assets/images/characters/librarian2.png',
+            position: '50%'
+        },
         '信件': {
             image: '',
             position: '50%'
@@ -768,6 +772,7 @@ c1_dorm_room_night: {
 };
 
 export { Story };
+
 
 
 
