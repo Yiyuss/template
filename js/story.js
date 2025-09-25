@@ -248,7 +248,7 @@ c1_dorm_room_night: {
         { character: '瑪格麗特', text: '……我希望這次，不要再錯過了。' },
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/transition_greenhouse.mp4', nextScene: 'c2_library_night' }
+        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/transition_greenhouse.mp4', nextScene: 'c2_dorm_morning' }
         
     ]
 },
@@ -288,15 +288,23 @@ c2_dorm_morning: {
     background: 'assets/images/backgrounds/school3.jpg',
     bgm: 'assets/audio/bgm_ch2.mp3',
     dialogues: [
-        { character: '【場景：宿舍房間・清晨】', text: '清晨的鐘聲再度迴盪在學院上空，聲音像一層薄霧，繚繞在古老的迴廊與塔尖。陽光從百葉窗的縫隙滲入，為房間鍍上一層淡金的光。桌上墨跡未乾的日記紙張微微翹起，彷彿還留有昨夜心事的餘溫。' },
-        { character: '旁白', text: '瑪格麗特翻身醒來，眨著惺忪的睡眼，卻發現對面的鈴蘭早已起床。她正端坐在梳妝鏡前，俐落地將長髮束起，神情專注，仿佛清晨的空氣都因她的存在而顯得更加清澈。' },
-        { character: '瑪格麗特', text: '妳今天起得好早。', choices: [] },
-        { character: '森森鈴蘭', text: '習慣了。早起的時候，總覺得空氣比較乾淨，心情也能安定下來。' },
-        { character: '旁白', text: '瑪格麗特愣了愣。對她而言，早晨往往意味著拖延與焦躁，像是被迫迎上未知的一日。但鈴蘭的語氣卻輕盈得像晨風，讓她不自覺地想跟上。' },
+        { character: '【場景：宿舍房間・清晨】', text: '清晨的鐘聲再度迴盪在學院上空，聲音像一層薄霧，繚繞在古老的迴廊與塔尖。' },
+        { character: '旁白', text: '陽光從百葉窗的縫隙滲入，為房間鍍上一層淡金的光。' },
+        { character: '旁白', text: '桌上墨跡未乾的日記紙張微微翹起，彷彿還留有昨夜心事的餘溫。' },
+        { character: '旁白', text: '瑪格麗特翻身醒來，眨著惺忪的睡眼，卻發現對面的鈴蘭早已起床。' },
+        { character: '旁白', text: '她正端坐在梳妝鏡前，俐落地將長髮束起，神情專注，仿佛清晨的空氣都因她的存在而顯得更加清澈。' },
+        { character: '瑪格麗特', text: '妳今天起得好早。' },
+        { character: '旁白', text: '瑪麗揉著眼睛，聲音還帶著困倦。' },
+        { character: '森森鈴蘭', text: '習慣了。' },
+        { character: '旁白', text: '鈴蘭笑著回頭，黑髮在光下泛著柔和的光澤。' },
+        { character: '森森鈴蘭', text: '早起的時候，總覺得空氣比較乾淨，心情也能安定下來。' },
+        { character: '旁白', text: '瑪麗愣了愣，對她而言，早晨往往意味著拖延與焦躁，像是被迫迎上未知的一日。' },
+        { character: '旁白', text: '但鈴蘭的語氣卻輕盈得像晨風，讓她不自覺地想跟上。' },
         { character: '瑪格麗特', text: '……真不可思議。' },
         { character: '森森鈴蘭', text: '什麼不可思議？' },
-        { character: '瑪格麗特', text: '沒什麼。' },
-        { character: '旁白', text: '瑪格麗特迅速背過身，把被子掀開，腳步慌張地踏向更衣架。她不願承認，自己只是被那種淡然自若的氣息所吸引。' },
+        { character: '瑪格麗特', text: '沒什麼！' },
+        { character: '旁白', text: '瑪麗迅速背過身，把被子掀開，腳步慌張地踏向更衣架。' },
+        { character: '旁白', text: '她不願承認，自己只是被那種淡然自若的氣息所吸引。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【餐廳】。', choices: [ { text: '繼續', nextScene: 'c2_cafeteria' } ] }
     ]
@@ -305,58 +313,87 @@ c2_dorm_morning: {
 c2_cafeteria: {
     background: 'assets/images/backgrounds/cafeteria.jpg',
     dialogues: [
-        { character: '【場景：餐廳】', text: '餐廳大廳挑高宏偉，宛若小型禮堂，吊燈折射出的光華流淌在銀器與玻璃杯上。長桌上擺滿了各式早餐：熱騰騰的奶油麵包、果醬與黃油、清爽的水果盅，還有專為情咒學徒調製的花草茶。' },
-        { character: '旁白', text: '人聲交錯，卻不顯嘈雜。大多數學生邊交談邊翻閱課本，顯然緊張的氣氛依舊籠罩著新學期。' },
-        { character: '森森鈴蘭', text: '這個——是給初學者喝的，可以穩定情緒波動。' },
-        { character: '旁白', text: '瑪格麗特有些遲疑。她低下頭，小心抿了一口。淡淡的甜味與花香交織，順著喉嚨滑下，化作一股暖流在胸腔散開。原本怦怦直跳的心口，像被一雙看不見的手輕輕撫平。' },
+        { character: '【場景：餐廳】', text: '餐廳大廳挑高宏偉，宛若小型禮堂，吊燈折射出的光華流淌在銀器與玻璃杯上。' },
+        { character: '旁白', text: '長桌上擺滿了各式早餐：熱騰騰的奶油麵包、果醬與黃油、清爽的水果盅，還有專為情咒學徒調製的花草茶。' },
+        { character: '旁白', text: '人聲交錯，卻不顯嘈雜。' },
+        { character: '旁白', text: '大多數學生邊交談邊翻閱課本，顯然緊張的氣氛依舊籠罩著新學期。' },
+        { character: '森森鈴蘭', text: '這個——' },
+        { character: '旁白', text: '鈴蘭端起一杯淡紫色的茶，微笑著遞到瑪格麗特面前' },
+        { character: '森森鈴蘭', text: '是給初學者喝的，可以穩定情緒波動。' },
+        { character: '旁白', text: '瑪麗有些遲疑。她低下頭，小心抿了一口。' },
+        { character: '旁白', text: '淡淡的甜味與花香交織，順著喉嚨滑下，化作一股暖流在胸腔散開。' },
+        { character: '旁白', text: '原本怦怦直跳的心口，像被一雙看不見的手輕輕撫平。' },
         { character: '瑪格麗特', text: '……好喝。' },
+        { character: '旁白', text: '鈴蘭眼神一亮，語氣輕快卻帶著堅定：' },
         { character: '森森鈴蘭', text: '那就每天都喝吧，當作我們的約定。' },
-        { character: '旁白', text: '瑪格麗特愣了下，耳尖微紅。她沒有回答，只是點點頭，將茶杯握得更緊。' },
+        { character: '旁白', text: '瑪格麗特愣了下，耳尖微紅，她沒有回答，只是點點頭，將茶杯握得更緊。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '繼續', nextScene: 'c2_classroom' } ] }
+        { character: '旁白', text: '即將前往【教室】。', choices: [ { text: '好感度上升', nextScene: 'c2_classroom' } ] }
     ]
 },
 
 c2_classroom: {
     background: 'assets/images/backgrounds/classroom.jpg',
     dialogues: [
-        { character: '【場景：教室】', text: '上午的課程比昨日更加緊湊。講台上的老師揮動教鞭，符號與花紋在黑板上逐一浮現。' },
-        { character: '老師', text: '情咒的力量，並非單純的法術，而是情感與意志的共鳴。若心境動搖，咒語便會隨之變質。今天，我們要進行最基礎的感應訓練。' },
+        { character: '【場景：教室】', text: '上午的課程比昨日更加緊湊，講台上的老師揮動教鞭，符號與花紋在黑板上逐一浮現。' },
+        { character: '老師', text: '情咒的力量，並非單純的法術，而是情感與意志的共鳴。' },
+        { character: '老師', text: '若心境動搖，咒語便會隨之變質。今天，我們要進行最基礎的感應訓練。' },
         { character: '旁白', text: '教室瞬間安靜。學生們依序閉上眼睛，跟隨指引感受內心情緒的流動。' },
-        { character: '旁白', text: '瑪格麗特緊張地攥著裙角，掌心滲出細汗。她試圖屏息、放空，卻總被昨夜的影像干擾：那朵在月色中綻放的夜語花，靜靜浮現眼前，掀起心底難以抑制的波動。' },
-        { character: '森森鈴蘭', text: '瑪格麗特？妳還好嗎？' },
+        { character: '旁白', text: '瑪麗緊張地攥著裙角，掌心滲出細汗。' },
+        { character: '旁白', text: '她試圖屏息、放空，卻總被昨夜的影像干擾：那朵在月色中綻放的夜語花，靜靜浮現眼前，掀起心底難以抑制的波動。' },
+        { character: '森森鈴蘭', text: '瑪麗？' },
+        { character: '旁白', text: '一聲低喚將她拉回現實。她睜開眼，撞上鈴蘭專注的目光。' },
+        { character: '森森鈴蘭', text: '妳還好嗎？' },
+        { character: '旁白', text: '鈴蘭的眼神真摯，像是能窺見她心底的漣漪。' },
         { character: '瑪格麗特', text: '我……沒事。' },
-        { character: '旁白', text: '老師並未察覺兩人的小插曲，仍在黑板上書寫。瑪格麗特卻怎麼也無法平靜，她偷偷側目，見鈴蘭已重新閉眼，神色安詳。那一瞬間，她竟羨慕起對方的從容。' },
+        { character: '旁白', text: '瑪麗急忙低下頭，耳尖已泛起燒灼般的熱度。' },
+        { character: '旁白', text: '老師並未察覺兩人的小插曲，仍在黑板上書寫。' },
+        { character: '旁白', text: '瑪格麗特卻怎麼也無法平靜，她偷偷側目，見鈴蘭已重新閉眼，神色安詳。' },
+        { character: '旁白', text: '那一瞬間，她竟羨慕起對方的從容。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【圖書館】。', choices: [ { text: '繼續', nextScene: 'c2_library_noon' } ] }
+        { character: '旁白', text: '即將前往【圖書館】。', choices: [ { text: '好感度上升', nextScene: 'c2_library_noon' } ] }
     ]
 },
 
 c2_library_noon: {
     background: 'assets/images/backgrounds/library_day.jpg',
     dialogues: [
-        { character: '【場景：圖書館】', text: '午休時分，陽光從高窗灑落，照在書架上一排排厚重典籍。圖書館空曠而寧靜，只能聽見筆尖摩擦紙面的沙沙聲。' },
+        { character: '【場景：圖書館】', text: '午休時分，陽光從高窗灑落，照在書架上一排排厚重典籍。' },
+        { character: '旁白', text: '圖書館空曠而寧靜，只能聽見筆尖摩擦紙面的沙沙聲。' },
+        { character: '旁白', text: '鈴蘭主動翻出一本古舊的《花語情咒錄》，厚重的封皮上浮雕著淡金的藤蔓。' },
         { character: '森森鈴蘭', text: '妳看，這裡寫著：某些稀有花朵，會隨著人的情感而自發綻放。它們是最純粹的情咒形態。' },
-        { character: '旁白', text: '瑪格麗特的手指顫了一下，停在那頁紙上。插圖裡的花，與昨夜見到的夜語花幾乎一模一樣。' },
-        { character: '瑪格麗特', text: '怎麼了？' },
-        { character: '旁白', text: '然而，夜語花的影像卻像藤蔓般纏繞在她腦海。她開始懷疑，那朵花究竟只是幻覺，還是她心境外洩的具象？' },
-        { character: '森森鈴蘭', text: '沒……只是覺得很漂亮。' },
+        { character: '旁白', text: '她指著一幅插圖，眼神閃爍著光。' },
+        { character: '旁白', text: '瑪麗的手指顫了一下，停在那頁紙上。' },
+        { character: '旁白', text: '插圖裡的花，與昨夜見到的夜語花幾乎一模一樣。' },
+        { character: '森森鈴蘭', text: '怎麼了？' },
+        { character: '旁白', text: '鈴蘭敏銳地察覺異樣。' },
+        { character: '瑪格麗特', text: '沒事……只是覺得很漂亮。' },
+        { character: '旁白', text: '瑪格麗特急忙收回手，將翻湧的情緒壓回心底。' },
+        { character: '旁白', text: '然而，夜語花的影像卻像藤蔓般纏繞在她腦海。' },
+        { character: '旁白', text: '她開始懷疑，那朵花究竟只是幻覺，還是她心境外洩的具象？' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【花園】。', choices: [ { text: '繼續', nextScene: 'c2_garden_afternoon' } ] }
+        { character: '旁白', text: '即將前往【花園】。', choices: [ { text: '情咒等級上升', nextScene: 'c2_garden_afternoon' } ] }
     ]
 },
 
 c2_garden_afternoon: {
     background: 'assets/images/backgrounds/garden.jpg',
     dialogues: [
-        { character: '【場景：花園】', text: '午後的陽光傾灑在花園深處，萬花競放，香氣交織。小徑兩側的玫瑰與鈴蘭隨風搖曳，彷彿低聲呢喃。' },
-        { character: '旁白', text: '兩人散步至一處隱蔽角落，看見一位蒼老卻神情沉穩的園丁正在修剪枝葉。他動作緩慢，卻帶著一種歲月沉澱的從容。' },
-        { character: '園丁', text: '新來的孩子啊。記住，花園裡的花，是學院的鏡子。若妳們心境動盪，花也會隨之變色。' },
+        { character: '【場景：花園】', text: '午後的陽光傾灑在花園深處，萬花競放，香氣交織。' },
+        { character: '旁白', text: '小徑兩側的玫瑰與鈴蘭隨風搖曳，彷彿低聲呢喃。' },
+        { character: '旁白', text: '兩人散步至一處隱蔽角落，看見一位蒼老卻神情沉穩的園丁正在修剪枝葉。' },
+        { character: '旁白', text: '他動作緩慢，卻帶著一種歲月沉澱的從容。' },
+        { character: '園丁', text: '新來的孩子啊，記住，花園裡的花，是學院的鏡子。' },
+        { character: '旁白', text: '老園丁抬頭，目光慈和卻深邃' },
+        { character: '園丁', text: '若妳們心境動盪，花也會隨之變色。' },
+        { character: '旁白', text: '鈴蘭恭敬點頭，語氣誠懇：' },
         { character: '森森鈴蘭', text: '謝謝您的教誨。' },
-        { character: '旁白', text: '瑪格麗特卻怔怔站著，心頭一震。她想開口詢問夜語花的事，卻最終噤聲。她害怕答案會揭穿自己的秘密。' },
-        { character: '旁白', text: '老園丁似乎看穿她的猶豫，卻什麼也沒說，只是低頭繼續修剪。花瓣靜靜飄落，像是在無聲地見證。' },
+        { character: '旁白', text: '瑪麗卻怔怔站著，心頭一震。' },
+        { character: '旁白', text: '她想開口詢問夜語花的事，卻最終噤聲，她害怕答案會揭穿自己的秘密。' },
+        { character: '旁白', text: '老園丁似乎看穿她的猶豫，卻什麼也沒說，只是低頭繼續修剪。' },
+        { character: '旁白', text: '花瓣靜靜飄落，像是在無聲地見證。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【宿舍房間・夜】。', choices: [ { text: '繼續', nextScene: 'c2_dorm_night_expanded' } ] }
+        { character: '旁白', text: '即將前往【宿舍房間・夜】。', choices: [ { text: '情咒等級下降', nextScene: 'c2_dorm_night_expanded' } ] }
     ]
 },
 
@@ -364,11 +401,15 @@ c2_dorm_night_expanded: {
     background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：宿舍房間・夜】', text: '夜幕降臨，窗外月光灑進，為房間披上一層銀紗。' },
-        { character: '旁白', text: '鈴蘭躺在床上翻著書，神情專注，偶爾卻悄悄瞥向對面。瑪格麗特坐在書桌前，燈光映照在她側臉，勾勒出柔和的弧度。' },
-        { character: '旁白', text: '她的手指輕輕停在日記本的封面，卻遲遲沒有落筆。腦中盤旋的，始終是鈴蘭白天望向她時，那種彷彿能看透一切的眼神。' },
-        { character: '瑪格麗特', text: '……如果有一天妳知道我的秘密，還會願意坐在我身邊嗎？' },
+        { character: '旁白', text: '鈴蘭躺在床上翻著書，神情專注，偶爾卻悄悄瞥向對面。' },
+        { character: '旁白', text: '瑪格麗特坐在書桌前，燈光映照在她側臉，勾勒出柔和的弧度。' },
+        { character: '旁白', text: '她的手指輕輕停在日記本的封面，卻遲遲沒有落筆。' },
+        { character: '旁白', text: '腦中盤旋的，始終是鈴蘭白天望向她時，那種彷彿能看透一切的眼神。' },
+        { character: '瑪格麗特（低聲）', text: '……如果有一天妳知道我的秘密，還會願意坐在我身邊嗎？' },
         { character: '旁白', text: '窗外，夜語花再次無聲綻放，幽藍的花瓣在月光下閃爍微光。' },
-        { character: '旁白', text: '瑪格麗特並不知道，對面床上的鈴蘭雖假裝專心讀書，卻早已聽見那聲呢喃。她的指尖停在書頁上，心口泛起一陣難以言喻的悸動。' },
+        { character: '旁白', text: '瑪格麗特並不知道，對面床上的鈴蘭雖假裝專心讀書，卻早已聽見那聲呢喃。' },
+        { character: '旁白', text: '她的指尖停在書頁上，心口泛起一陣難以言喻的悸動。' },
+        { character: '旁白', text: '——' },
         { character: '旁白', text: '【第二章·完】', video: 'assets/videos/transition_ch2_to_ch3.mp4', nextScene: 'c3_dorm_morning' }
     ]
 },
@@ -763,6 +804,7 @@ c2_dorm_night_expanded: {
 };
 
 export { Story };
+
 
 
 
