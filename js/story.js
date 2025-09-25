@@ -620,85 +620,266 @@ c3_dorm_night: {
 },
         
         // 第四章：共鳴咒試煉 — 分場景
-        c4_plaza: {
-            background: 'assets/images/backgrounds/plaza.jpg',
-            bgm: 'assets/audio/bgm_ch4.mp3',
-            dialogues: [
-                { character: '【場景：清晨·學院廣場】', text: '廣場的石磚在露水的浸潤下泛著光。鐘樓響起長鳴，聲音迴盪在空曠的空氣裡。' },
-                { character: '旁白', text: '學生們聚集於廣場中央，氣氛異樣壓抑。每個人手裡都拿著一張被封印的「試煉名單」，上面寫著即將參與「情感共鳴測試」的學生名。' },
-                { character: '旁白', text: '瑪格麗特的手心微微冒汗。她盯著名單，看見自己的名字赫然列在其上。' },
-                { character: '旁白', text: '再往下，她看見「森森鈴蘭」。指尖瞬間僵硬。她明白，無論如何，她與鈴蘭都無法迴避這場試煉。' },
-                { character: '旁白', text: '——' },
-                { character: '旁白', text: '即將前往【課堂·試煉前的說明】。', choices: [ { text: '繼續', nextScene: 'c4_classroom_brief' } ] }
-            ]
-        },
+c4a_plaza: {
+    background: 'assets/images/backgrounds/plaza.jpg',
+    bgm: 'assets/audio/bgm_ch4.mp3',
+    dialogues: [
+        { character: '【場景：學院廣場·清晨】', text: '晨霧尚未散去，廣場中央卻早已人聲雜沓。' },
+        { character: '旁白', text: '銀灰色的石磚鋪面映照著微冷的晨光，四周懸掛的旗幟在風中鼓動，帶來一種嚴肅到近乎壓迫的氣息。' },
+        { character: '旁白', text: '來自各年級的學生聚集於此，低聲交談，衣袂與書袋摩擦發出的聲響與心跳一樣急促。' },
+        { character: '旁白', text: '偶爾能見到幾位遠道而來的家長，他們的神情既緊張又小心，彷彿連呼吸都怕驚擾到將臨的考驗。' },
+        { character: '旁白', text: '靠近台階處，有幾名身著深色長袍的政府官員站立，袖口繡著銀色的徽章，表情冷峻。' },
+        { character: '旁白', text: '瑪格麗特在隊伍邊緣停下腳步。' },
+        { character: '旁白', text: '她的指尖輕輕摩挲著日記本的封皮，卻沒有勇氣打開。' },
+        { character: '旁白', text: '心口像是被緊繃的絲線繞緊，一呼一吸都帶著隱痛。' },
+        { character: '森森鈴蘭', text: '早起的空氣總是這樣乾淨。' },
+        { character: '旁白', text: '身旁傳來柔和的聲音。' },
+        { character: '旁白', text: '鈴蘭笑著，語氣輕巧，像是在故意把沉重的氣氛稀釋。' },
+        { character: '旁白', text: '她的掌心裡，正捧著一朵小小的瑪格麗特花，花瓣在晨光下顫動，清香淡淡瀰散開。' },
+        { character: '森森鈴蘭', text: '送妳。' },
+        { character: '旁白', text: '她將花遞過來，眼神裡沒有玩笑，只有靜謐。' },
+        { character: '旁白', text: '瑪麗一瞬間愣住。' },
+        { character: '旁白', text: '掌心接過花時，感覺到細微的露水滑過指尖，冰涼卻溫柔。' },
+        { character: '旁白', text: '心中一個幾乎無聲的念頭再次湧起——' },
+        { character: '瑪格麗特（心聲）', text: '如果有一天妳知道我的秘密，還會願意坐在我身邊嗎？' },
+        { character: '旁白', text: '那句話在腦海裡迴響不去，像夜裡低語的花，無人知曉卻在暗處綻放。' },
+        { character: '旁白', text: '她不敢說出口，只能輕輕把花放進胸前的口袋。' },
+        { character: '瑪格麗特', text: '……謝謝妳。' },
+        { character: '旁白', text: '聲音微弱，卻真切。' },
+        { character: '旁白', text: '鈴蘭只是笑，沒有再追問。' },
+        { character: '旁白', text: '她似乎總能恰到好處地停下，不讓瑪格麗特退得太遠。' },
+        { character: '旁白', text: '遠處，鐘聲忽然響起，渾厚而莊嚴，像是宣告某種無可迴避的命運。' },
+        { character: '旁白', text: '學生們陸續往大講堂移動，腳步聲交疊，像一場未見終曲的樂章。' },
+        { character: '旁白', text: '瑪格麗特抬起頭，望著那棟圓頂建築。' },
+        { character: '旁白', text: '石牆上雕刻的花紋隱約閃爍著符文的光芒，壓迫感在胸口堆積得更沉。' },
+        { character: '旁白', text: '腦海深處，另一段記憶被喚起。' },
+        { character: '旁白', text: '——她還記得，童年時小鎮上的檢測日，聽到了這段話。' },
+        { character: '神秘長輩', text: '越是壓抑，越是危險，記住，孩子……小心政府。' },
+        { character: '旁白', text: '那一刻，她第一次明白「被推薦」意味著什麼。' },
+        { character: '旁白', text: '不是榮耀，而是一種無聲的烙印。' },
+        { character: '旁白', text: '她微微顫抖，緊緊抱住日記本，像抓住最後的浮木。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【大講堂・試煉說明】', choices: [ { text: '情咒等級因壓抑而下降', nextScene: 'c4a_classroom_brief' } ] }
+    ]
+},
 
-        c4_classroom_brief: {
-            background: 'assets/images/backgrounds/classroom.jpg',
-            dialogues: [
-                { character: '【場景：課堂·試煉前的說明】', text: '大講堂內，老師的聲音低沉。牆上懸掛的古老掛毯描繪著無數被情咒吞噬的影子。' },
-                { character: '老師', text: '共鳴咒試煉，不是戰鬥，而是揭示。它將讓你們面對最深的心念。你們可以選擇隱藏，但試煉不會說謊。' },
-                { character: '旁白', text: '學生們議論紛紛，壓抑的氣氛逐漸蔓延。有人呼吸急促，有人低聲禱告。' },
-                { character: '旁白', text: '瑪格麗特只是沉默，心跳卻逐漸加快。她感覺得到，鈴蘭的視線停留在自己身上。' },
-                { character: '旁白', text: '但當她回望時，鈴蘭卻若無其事地移開目光，仿佛什麼都沒有發生過。' },
-                { character: '旁白', text: '——' },
-                { character: '旁白', text: '即將前往【傍晚·學院花園】。', choices: [ { text: '繼續', nextScene: 'c4_garden' } ] }
-            ]
-        },
+c4a_classroom_brief: {
+    background: 'assets/images/backgrounds/hall_interior.jpg',
+    dialogues: [
+        { character: '【場景：大講堂·試煉說明】', text: '大講堂的圓頂高聳入雲，內壁鑲嵌著一圈透明水晶，晨光穿透其中，折射出冷冽的光。' },
+        { character: '旁白', text: '正中央的祭壇上，擺放著一顆巨大的晶石，紋路宛如花瓣綻開，透著奇異的藍白色光暈。' },
+        { character: '旁白', text: '台上站著幾名長者，其中一位身著深藍長袍的院長抬手，示意眾人安靜。' },
+        { character: '院長', text: '今日，諸位將接受共鳴咒的試煉。' },
+        { character: '旁白', text: '院長的聲音沉穩，像從石壁深處滲出。' },
+        { character: '院長', text: '試煉不以技巧取勝，而是以心念為證。' },
+        { character: '院長', text: '情感若真切，水晶會為之映照；情感若虛偽，水晶會使之碎裂。' },
+        { character: '院長', text: '——記住，這不只是測驗，而是你們與世界之間的契約。' },
+        { character: '旁白', text: '學生間傳出一陣壓低的呼吸聲。' },
+        { character: '旁白', text: '有人咬緊嘴唇，有人偷偷握緊拳頭，空氣沉重得近乎凝固。' },
+        { character: '院長', text: '試煉中，外人只能見你們的形體，但你們將身處自己的心境，那裡沒有謊言。' },
+        { character: '旁白', text: '瑪麗聽著，胸口愈發緊繃。' },
+        { character: '旁白', text: '她偷偷看向鈴蘭，對方只是一如既往地笑著，仿佛什麼也不怕。' },
+        { character: '旁白', text: '但她知道，那笑容背後，必定有誰都不願觸碰的陰影。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【試煉前的準備】', choices: [ { text: '繼續', nextScene: 'c4a_preparation' } ] }
+    ]
+},
 
-        c4_garden: {
-            background: 'assets/images/backgrounds/garden.jpg',
-            dialogues: [
-                { character: '【場景：傍晚·學院花園】', text: '試煉前夕。夕陽把整個花園渲染成橘紅色，長椅上落滿了斑駁的光影。' },
-                { character: '旁白', text: '瑪格麗特坐在石椅上，手裡攥著那本日記，心情紊亂。' },
-                { character: '旁白', text: '鈴蘭慢慢走來，手中拿著一支白色的百合。' },
-                { character: '森森鈴蘭', text: '聽說百合能驅散惡夢。明天，妳應該會需要它。' },
-                { character: '旁白', text: '鈴蘭把花放在她手心，語氣帶著輕快的調侃。瑪格麗特怔住，低聲問：' },
-                { character: '瑪格麗特', text: '……妳不害怕嗎？' },
-                { character: '森森鈴蘭', text: '害怕啊。不過，與其害怕試煉，不如害怕自己連正視都不敢吧。' },
-                { character: '旁白', text: '這句話像一根細針，輕輕刺入瑪格麗特心裡。她張了張口，卻什麼也沒說，只能緊緊握住那支百合。' },
-                { character: '旁白', text: '——' },
-                { character: '旁白', text: '即將前往【夜晚·宿舍屋頂】。', choices: [ { text: '繼續', nextScene: 'c4_rooftop' } ] }
-            ]
-        },
+c4a_preparation: {
+    background: 'assets/images/backgrounds/waiting_room.jpg',
+    dialogues: [
+        { character: '【場景：試煉前的準備】', text: '學生們被分批帶到大講堂一側的等候區。' },
+        { character: '旁白', text: '空間寬闊卻寂靜，長椅排列得整齊，氣氛比任何考場都要沉重。' },
+        { character: '旁白', text: '瑪格麗特坐下，膝上攤著日記本。' },
+        { character: '旁白', text: '她沒有翻開，只是用拇指摩挲著那熟悉的封面。' },
+        { character: '旁白', text: '頁頁文字像沉睡的聲音，在心底暗暗低喃。' },
+        { character: '旁白', text: '忽然，一杯溫熱的抹茶被遞到她手邊。' },
+        { character: '森森鈴蘭', text: '喝一口，會好受些。' },
+        { character: '旁白', text: '鈴蘭輕聲道，眼裡閃著笑意。' },
+        { character: '旁白', text: '茶香帶著淡淡的海苔味，滲入喉間的瞬間，緊繃的心弦微微鬆動。' },
+        { character: '瑪格麗特', text: '……謝謝。' },
+        { character: '旁白', text: '然而，就在這時，耳邊傳來一個壓低的竊語。' },
+        { character: '路人學生', text: '聽說她還沒成功過一次……' },
+        { character: '另一名學生', text: '那樣的話，會不會……' },
+        { character: '旁白', text: '模糊的話語像毒針般刺入。' },
+        { character: '旁白', text: '她努力告訴自己不要在意，卻仍舊止不住手心發冷。' },
+        { character: '旁白', text: '鈴蘭側身擋住她的視線，語氣輕快卻堅定：' },
+        { character: '森森鈴蘭', text: '別聽他們的，這不是比誰更強，而是比誰更真。' },
+        { character: '旁白', text: '那雙眼睛亮得像能把一切陰影融化。' },
+        { character: '旁白', text: '瑪格麗特緊緊抱著花與日記，深吸一口氣。' },
+        { character: '旁白', text: '她知道，很快，就輪到她了。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【大講堂·水晶祭壇】', choices: [ { text: '情咒等級下降', nextScene: 'c4b_hall' } ] }
+    ]
+},
 
-        c4_rooftop: {
-            background: 'assets/images/backgrounds/dorm_morning.jpg',
-            dialogues: [
-                { character: '【場景：夜晚·宿舍屋頂】', text: '深夜的宿舍裡一片寂靜，只有月光從窗縫照進來。' },
-                { character: '旁白', text: '瑪格麗特翻來覆去，無法入睡。她終於下床，抱著日記走到屋頂。' },
-                { character: '旁白', text: '風很冷，星光卻很亮。她緩緩寫下心中的不安。' },
-                { character: '瑪格麗特（心聲）', text: '我不想讓她看見我的心。可是，我又無法忍受，她若因此與我保持距離。' },
-                { character: '旁白', text: '墨跡在月色下閃動，淚水無聲滑落。就在這時，身後傳來輕響。' },
-                { character: '森森鈴蘭', text: '睡不著嗎？' },
-                { character: '旁白', text: '鈴蘭的聲音響起，她也走上了屋頂。披著外套，髮絲被夜風吹亂。' },
-                { character: '旁白', text: '兩人並肩坐下，誰也沒說話。只是靜靜地看著遠方的夜空。' },
-                { character: '旁白', text: '沉默中，瑪格麗特聽見自己的心跳，強烈到像是要把胸腔震碎。' },
-                { character: '旁白', text: '——' },
-                { character: '旁白', text: '即將前往【試煉之日·大禮堂】。', choices: [ { text: '繼續', nextScene: 'c4_hall' } ] }
-            ]
-        },
+c4b_hall: {
+    background: 'assets/images/backgrounds/hall_exterior.jpg',
+    dialogues: [
+        { character: '【場景：大講堂·水晶祭壇】', text: '瑪格麗特的名字被念出時，空氣忽然凝固。' },
+        { character: '旁白', text: '她的雙腿像灌了鉛，卻仍在眾目注視下，一步步走向祭壇中央。' },
+        { character: '旁白', text: '那顆巨大的晶石靜靜矗立，宛如一朵未綻的透明之花。' },
+        { character: '旁白', text: '冰涼的光從晶體深處散開，照得她心臟一顫。' },
+        { character: '長者', text: '將手放上去。' },
+        { character: '旁白', text: '監考長者的聲音沉穩，卻不容拒絕。' },
+        { character: '旁白', text: '瑪麗深吸一口氣，把日記本交給侍立的助手，然後抬起顫抖的手，輕觸水晶。' },
+        { character: '旁白', text: '——瞬間，世界傾斜。' },
+        { character: '旁白', text: '腳下的石磚消失，她被光與黑交織的洪流吞沒。' },
+        { character: '旁白', text: '四周沒有邊界，只有無盡漂浮的紙頁，宛如天空中墜落的羽毛。' },
+        { character: '旁白', text: '那些紙頁一張張展開，化為信箋，墨跡清晰，筆跡正是她熟悉的字。' },
+        { character: '旁白', text: '她的內心，被赤裸地翻開。' },
+        { character: '——', text: '' },
+        { character: '旁白', text: '即將前往【內心世界·千封信】', choices: [ { text: '情咒等級下降', nextScene: 'c4b_inner_letters' } ] }
+    ]
+},
 
-        c4_hall: {
-            background: 'assets/images/backgrounds/hall_exterior.jpg',
-            dialogues: [
-                { character: '【場景：試煉之日·大禮堂】', text: '高聳的圓頂、冷冽的石牆，四周環繞著古老符文，空氣中瀰漫著壓迫感。' },
-                { character: '旁白', text: '學生們被一一喚名，走向中央的試煉水晶。當瑪格麗特的名字被念出，她幾乎站不穩。' },
-                { character: '旁白', text: '她走到水晶前，閉上眼。瞬間，黑暗如潮水般湧來——' },
-                { character: '【內心世界】', text: '她看見無數散落的信紙，鋪滿腳下的地面。' },
-                { character: '旁白', text: '每一封，都是她從未寄出的日記與信件，字裡行間全是關於鈴蘭的片段。' },
-                { character: '旁白', text: '腳步聲響起。她回頭，看見鈴蘭站在遠方，拾起那些信紙，逐字逐句地閱讀。' },
-                { character: '旁白', text: '瑪格麗特慌亂地想要阻止，卻無法靠近。她的聲音在這個心境裡失效，只能眼睜睜看著鈴蘭一封接一封地讀下去。' },
-                { character: '【試煉水晶外】', text: '圍觀的學生看不見心境裡的景象，只見瑪格麗特淚流滿面，渾身顫抖。' },
-                { character: '旁白', text: '而站在另一側的鈴蘭，眼神卻愈發深沉，唇角失去了笑意。' },
-                { character: '旁白', text: '她伸出手，輕輕碰上水晶。下一瞬間，她竟「闖入」了瑪格麗特的心境。' },
-                { character: '【內心世界·交會】', text: '信紙如雪片般飛舞。鈴蘭站在瑪格麗特面前，手中仍捏著那最後一封信。' },
-                { character: '旁白', text: '她沒有說話。只是一步一步走近，然後——牽起瑪格麗特的手。' },
-                { character: '旁白', text: '那一刻，所有信紙同時化作夜語花，漫天盛放。瑪格麗特呆呆望著，淚水止不住。' },
-                { character: '森森鈴蘭', text: '妳知道嗎……我一直都聽得見。' },
-                { character: '旁白', text: '【第四章·完】', video: 'assets/videos/transition_ch4_to_ch5.mp4', nextScene: 'c5_gate' }
-            ]
-        },
+// =====================
+// 內心世界：千封信
+// =====================
+c4b_inner_letters: {
+    background: 'assets/images/backgrounds/inner_world.jpg',
+    dialogues: [
+        { character: '【場景：內心世界】', text: '第一封信，紙張仍帶著未乾的墨香。' },
+        { character: '信件一', text: '「親愛的自己，今天我又看見了她。」' },
+        { character: '信件一', text: '「她站在校門口，陽光落在她的髮上，像在閃爍。」' },
+        { character: '信件一', text: '「……我沒有打招呼，只是從遠處看著。」' },
+        { character: '旁白', text: '字跡拘謹，像剛學會告白的孩子。' },
+        { character: '旁白', text: '紙頁在光中燃起，化作另一封。' },
+        { character: '旁白', text: '第二封信。' },
+        { character: '信件二', text: '「她笑的時候，好像連空氣都跟著亮了。」' },
+        { character: '信件二', text: '「可是，我的聲音卻卡在喉嚨裡，一個字都不敢說。」' },
+        { character: '信件二', text: '「……要是她知道我在想什麼，會不會覺得可笑呢？」' },
+        { character: '旁白', text: '聲音在內心世界迴盪，像從四面八方傳來的低語。' },
+        { character: '旁白', text: '第三封信，筆跡顫抖。' },
+        { character: '信件三', text: '「今天她遞給我一枝筆。」' },
+        { character: '信件三', text: '「只是隨手的動作，可是我的手指卻發熱到發抖。」' },
+        { character: '信件三', text: '「……我假裝若無其事，可是心裡卻像要炸開。」' },
+        { character: '旁白', text: '紙頁如雪落下，堆滿她的腳邊。' },
+        { character: '旁白', text: '每一張都在提醒：她曾經無數次，把未能說出口的情感，藏進文字。' },
+        { character: '旁白', text: '第四封信。' },
+        { character: '信件四', text: '「我想靠近她，卻害怕自己太過明顯。」' },
+        { character: '信件四', text: '「……我只能在夜裡，把話對星空說。」' },
+        { character: '信件四', text: '「星星聽得懂嗎？會不會，有一天，她能看見那些花？」' },
+        { character: '旁白', text: '字句間滲著無聲的渴望。' },
+        { character: '旁白', text: '在信的背面，夜語花的淡影綻放，藍白色的光緩慢舒展。' },
+        { character: '旁白', text: '第五封信。' },
+        { character: '旁白', text: '字跡斷裂，像在顫抖中寫下。' },
+        { character: '信件五', text: '「如果有一天，她知道我的秘密……還會願意坐在我身邊嗎？」' },
+        { character: '旁白', text: '那句話再次出現，比任何時候都更清晰，像利刃般割開胸口。' },
+        { character: '旁白', text: '瑪麗跪倒在信箋的堆疊裡，指尖顫抖。' },
+        { character: '旁白', text: '這些文字，本該永遠只存在於日記，怎麼能如此赤裸地曝露在光裡？' },
+        { character: '旁白', text: '她緊緊抱著自己，淚水從臉頰滑落。' },
+        { character: '旁白', text: '第六封信浮現。' },
+        { character: '信件六', text: '「有時候，我甚至希望她能聽見。」' },
+        { character: '信件六', text: '「哪怕只是一瞬間。」' },
+        { character: '信件六', text: '「……因為我快要被這份沉默淹沒了。」' },
+        { character: '旁白', text: '信紙在光裡顫抖，彷彿隨時要碎裂。' },
+        { character: '旁白', text: '大講堂裡，學生與教師只能看見瑪格麗特立在水晶前。' },
+        { character: '旁白', text: '她的雙肩顫抖，臉上淚水淌落，像在與看不見的風暴搏鬥。' },
+        { character: '旁白', text: '有人竊竊私語：「她……是不是失控了？」' },
+        { character: '旁白', text: '也有人緊張地捂住嘴。' },
+        { character: '旁白', text: '然而，鈴蘭忽然站起，眼神堅定。' },
+        { character: '旁白', text: '她沒有徵求任何人的允許，直接走上台階，伸手觸向水晶。' },
+        { character: '旁白', text: '守在一旁的考官正欲阻止，但晶石忽然綻放耀眼光芒，竟自動接納了她的碰觸。' },
+        { character: '旁白', text: '全場瞬間安靜。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【內心世界·雙人交會】', choices: [ { text: '情咒等級產生裂痕', nextScene: 'c4b_inner_meeting' } ] }
+    ]
+},
+
+// =====================
+// 內心世界：雙人交會
+// =====================
+c4b_inner_meeting: {
+    background: 'assets/images/backgrounds/inner_world.jpg',
+    dialogues: [
+        { character: '【場景：內心世界】', text: '瑪格麗特在信箋海洋中蜷縮，聽見紙頁翻動的聲音逐漸靠近。' },
+        { character: '旁白', text: '她抬起頭，驚愕地看見——鈴蘭站在她面前。' },
+        { character: '旁白', text: '光影映在對方的眼裡，那雙眼正靜靜閱讀漂浮的信箋。' },
+        { character: '旁白', text: '從驚訝，到沉默，再到某種深不可測的柔軟。' },
+        { character: '瑪格麗特', text: '……妳怎麼……' },
+        { character: '旁白', text: '瑪麗聲音顫抖，眼淚模糊了視線。' },
+        { character: '旁白', text: '信上的字跡抖動著，像要逃避，但她卻一字一句讀完。' },
+        { character: '森森鈴蘭', text: '我一直……都聽得見。' },
+        { character: '旁白', text: '聲音極輕，卻穿透所有嘈雜，落在心底最深處。' },
+        { character: '旁白', text: '那一刻，所有的信箋像被風驅動，紛紛飛舞。' },
+        { character: '旁白', text: '夜語花的幻影在空中綻放，藍白光雨灑落，將兩人的身影包裹。' },
+        { character: '旁白', text: '瑪麗呆呆望著她，喉嚨哽住，什麼都說不出口。' },
+        { character: '旁白', text: '只是眼淚止不住地落下，像回應，又像是無聲的告白。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【內心世界·信箋海洋】', choices: [ { text: '情咒等級有如玻璃般碎開，一股氣息衝天而起', nextScene: 'c4c_inner_letters' } ] }
+    ]
+},
+
+// =====================
+// 內心世界：信箋海洋（4C）
+// =====================
+c4c_inner_letters: {
+    background: 'assets/images/backgrounds/inner_world_flowers.jpg',
+    dialogues: [
+        { character: '【場景：內心世界】', text: '紙頁仍在漫天飛舞。' },
+        { character: '旁白', text: '數不清的信件，像潮水般拍擊而來，每一封都帶著瑪格麗特從未敢說出口的心音。' },
+        { character: '瑪格麗特（心聲）', text: '「喜歡……」' },
+        { character: '瑪格麗特（心聲）', text: '「不能……」' },
+        { character: '瑪格麗特（心聲）', text: '「如果失去她……」' },
+        { character: '旁白', text: '這些斷裂的字句交織成回聲，繞在耳際，像要把她淹沒。' },
+        { character: '旁白', text: '她緊緊抱著自己，身子顫抖，呼吸急促到胸口發疼。' },
+        { character: '旁白', text: '然而，一雙手卻從亂流中伸來，牢牢握住她的指尖。' },
+        { character: '旁白', text: '瑪麗猛地抬頭。' },
+        { character: '旁白', text: '鈴蘭正站在信箋的暴風中央，黑髮隨風飛舞，眼神卻沉靜無比。' },
+        { character: '森森鈴蘭', text: '……妳不需要再躲了。' },
+        { character: '旁白', text: '隨著她的聲音，信箋忽然開始閃爍光芒。' },
+        { character: '旁白', text: '紙頁一張張破碎，化作細小的光點，墜落在腳下。' },
+        { character: '旁白', text: '瑪格麗特愣住，只見那些光點化為花苞，在漆黑大地上綻放。' },
+        { character: '旁白', text: '一瞬之間，滿地皆是夜語花。' },
+        { character: '旁白', text: '藍白色的花海無邊無際，光像潮水般洶湧，將兩人托舉在花原之心。' },
+        { character: '旁白', text: '她瞠目結舌，喉嚨緊縮。' },
+        { character: '旁白', text: '那些花——是她的秘密，是她的渴望，是她字裡行間的全部真相。' },
+        { character: '瑪格麗特', text: '不……不要看！' },
+        { character: '旁白', text: '她幾乎哭喊，想要衝過去摧毀那些花。' },
+        { character: '旁白', text: '但鈴蘭卻緊緊拉住她，把她抱進懷裡。' },
+        { character: '森森鈴蘭', text: '瑪格麗特。' },
+        { character: '旁白', text: '鈴蘭的聲音貼近耳畔，帶著前所未有的溫柔。' },
+        { character: '森森鈴蘭', text: '這些花……不醜，也不可怕。它們很美。' },
+        { character: '瑪格麗特', text: '可是——' },
+        { character: '森森鈴蘭', text: '沒有可是。' },
+        { character: '旁白', text: '鈴蘭的手握得更緊' },
+        { character: '森森鈴蘭', text: '因為那就是妳，是我從一開始就一直，看見的妳。' },
+        { character: '旁白', text: '瑪格麗特全身一震。' },
+        { character: '旁白', text: '眼淚再也止不住，瘋狂滑落。' },
+        { character: '瑪格麗特', text: '我……我好害怕……' },
+        { character: '瑪格麗特', text: '如果妳知道了這一切，就再也不會靠近我……' },
+        { character: '旁白', text: '瑪麗哽咽著' },
+        { character: '森森鈴蘭', text: '笨蛋。' },
+        { character: '旁白', text: '鈴蘭輕笑，額頭貼在她髮間。' },
+        { character: '森森鈴蘭', text: '我早就知道了啊。' },
+        { character: '旁白', text: '夜語花同時顫動，像聽見了那句話，綻放出更盛的光。' },
+        { character: '旁白', text: '花瓣紛紛飄落，化作無數晶瑩的字句，在空中流轉。' },
+        { character: '花語', text: '「喜歡妳。」' },
+        { character: '花語', text: '「謝謝妳。」' },
+        { character: '花語', text: '「不要離開。」' },
+        { character: '旁白', text: '那些話並不是單純的文字，而是瑪格麗特深藏心底的願望，被花語替她說出來。' },
+        { character: '旁白', text: '她抖著肩膀，想要否認，卻只能無力地埋進鈴蘭懷裡。' },
+        { character: '旁白', text: '那一刻，她第一次感覺到——即使不開口，也有人願意接住她所有的顫抖。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '外界·大講堂。' },
+        { character: '旁白', text: '水晶忽然閃耀至極，光如雨幕傾瀉，把整個大講堂映照成銀藍色。' },
+        { character: '旁白', text: '所有學生驚訝地仰望，沒有人能靠近。' },
+        { character: '旁白', text: '在那光裡，兩道身影模糊卻清晰——她們並肩而立，花雨繞身。' },
+        { character: '旁白', text: '監考長者低聲喃語：' },
+        { character: '長者', text: '……竟能雙心共鳴？' },
+        { character: '旁白', text: '這是多年來，從未有過的奇景。' },
+        { character: '旁白', text: '終於，光芒逐漸收斂。' },
+        { character: '旁白', text: '夜語花一朵朵消散，重新化為紙箋，輕輕合攏。' },
+        { character: '旁白', text: '瑪麗與鈴蘭緩緩睜眼，仍站在水晶前。' },
+        { character: '旁白', text: '她的臉頰濕潤，卻不再顫抖。' },
+        { character: '旁白', text: '鈴蘭則默默牽著她的手，沒有放開。' },
+        { character: '旁白', text: '大講堂死一般的寂靜，所有人屏住呼吸。' },
+        { character: '旁白', text: '試煉，落幕。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '【第四章·完】', video: 'assets/videos/transition_ch3_to_ch4.mp4', nextScene: 'c5_gate' }
+    ]
+},
         
         // 第五章：無聲之花 — 分場景（含雙結局）
         c5_gate: {
@@ -936,6 +1117,7 @@ c3_dorm_night: {
 };
 
 export { Story };
+
 
 
 
