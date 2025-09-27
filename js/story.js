@@ -1113,7 +1113,250 @@ c5b_shadow: {
         { character: '旁白', text: '她翻身看向窗外，黑影掠過草地，靜默無聲，像是一道預兆。' },
         { character: '旁白', text: '夜語花的影像，在夢與清醒之間再度浮現。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第五章·完】', video: 'assets/videos/transition_ch5_to_ch6.mp4', nextScene: 'c6_gate' }
+        { character: '旁白', text: '【第五章·完】', video: 'assets/videos/transition_ch5_to_ch6.mp4', nextScene: 'c6a_classroom' }
+    ]
+},
+
+// =====================
+// 第六章：緊箍的日誌（6A 開始）
+// =====================
+c6a_classroom: {
+    background: 'assets/images/backgrounds/classroom_morning.jpg',
+    bgm: 'assets/audio/bgm_ch6.mp3',
+    dialogues: [
+        { character: '【場景：教室・春日清晨】', text: '春天的陽光柔和地灑進窗櫺，帶著暖意，卻無法驅散空氣中瀰漫的緊張。' },
+        { character: '旁白', text: '黑板前貼著一張新公告，紙張邊角還帶著未乾的墨香。' },
+        { character: '旁白', text: '那是一封來自學院管理處的通知，字字冷硬，彷彿鐵條般壓在眾人心口。' },
+        { character: '老師', text: '從本週起，將進行更加頻繁的情緒評估。每位學生每日需提交「行為日誌」，並接受不定時宿舍抽檢。夜間外出將受到嚴格限制。' },
+        { character: '旁白', text: '老師的聲音沉穩卻缺乏情感，宛如機械宣讀。教室內響起低低的竊竊私語，學生們的眼神或閃爍，或空洞。' },
+        { character: '旁白', text: '有人偷偷咬著指甲，有人把筆在桌上敲得急促。' },
+        { character: '瑪格麗特', text: '（……行為日誌……）' },
+        { character: '旁白', text: '這三個字帶著無形的重量，彷彿每一筆都會被監視，每一個字都會成為審判的證據。' },
+        { character: '旁白', text: '老師環視全班，目光停留在每一張年輕的臉上，最後才收回視線。' },
+        { character: '老師', text: '請同學們配合，這是為了保障學院與社會的安定。' },
+        { character: '旁白', text: '話音一落，靜默像一層厚布壓下。誰也不敢高聲反駁，只能將異議埋進喉嚨深處。' },
+        { character: '旁白', text: '——場景轉換至【實驗室・午間】', choices: [{ text: '繼續', nextScene: 'c6a_lab' }] }
+    ]
+},
+
+c6a_lab: {
+    background: 'assets/images/backgrounds/laboratory.jpg',
+    dialogues: [
+        { character: '【場景：實驗室・午間】', text: '白色牆壁映照著冷冽的燈光，試劑瓶與水晶裝置整齊排列。' },
+        { character: '旁白', text: '這裡原是學生們做小型咒文實驗的地方，如今卻被改為臨時評估室。' },
+        { character: '旁白', text: '瑪格麗特坐在高腳椅上，面前是一張空白的紙，上方寫著冷冰冰的標題——《行為日誌》。' },
+        { character: '旁白', text: '監督官坐在對面，手持羽毛筆，眼神專注卻不含任何溫度。' },
+        { character: '監督官', text: '請在日誌中記錄你今日的情緒變化，包括與人互動時的想法，以及是否出現不穩定的念頭。' },
+        { character: '瑪格麗特', text: '……是。' },
+        { character: '旁白', text: '她垂下眼簾，筆尖落在紙面上。手心冒著薄汗，紙張因微微顫抖而顯得不穩。' },
+        { character: '旁白', text: '她試著寫下：「今天的天氣很好，陽光溫暖。和同學的交流一切正常。」' },
+        { character: '旁白', text: '字跡端正，卻帶著刻意的生硬。這不是誠實的日記，而是一份自保的假稿。' },
+        { character: '監督官', text: '請多寫一些細節。' },
+        { character: '旁白', text: '她心頭一震，隨後補上一行：「午餐時與鈴蘭一同用餐，心情安定。」' },
+        { character: '旁白', text: '筆劃深深壓入紙張，幾乎要將纖薄的紙層劃破。她感覺到監督官的視線在自己肩頭停留了很久，直到羽毛筆在表格上劃下一道記號，才讓她得以呼吸。' },
+        { character: '旁白', text: '離開實驗室時，她腳步虛浮，走廊的冷風迎面襲來，卻無法驅散體內那股顫抖。' },
+        { character: '旁白', text: '——場景轉換至【校園長廊】', choices: [{ text: '繼續', nextScene: 'c6a_corridor' }] }
+    ]
+},
+
+c6a_corridor: {
+    background: 'assets/images/backgrounds/school_corridor.jpg',
+    dialogues: [
+        { character: '【場景：校園長廊】', text: '午後的風帶著花香，卻也混雜著不安。長廊上張貼著新的公告，每一張都像是冷眼的注視。' },
+        { character: '學生甲', text: '這樣算什麼……我們是學生還是囚犯？' },
+        { character: '學生乙', text: '安分一點比較好，不然被列名就糟了。' },
+        { character: '旁白', text: '耳語此起彼落，像是一張隱形的網，將人心層層纏住。' },
+        { character: '旁白', text: '瑪格麗特靜靜走在其中，耳邊的對話宛如尖銳的針刺。' },
+        { character: '旁白', text: '她將手伸進口袋裡，指尖觸碰到那朵被壓乾的小百合。花瓣雖已失去原本的柔軟，卻仍留存著淡淡香氣。' },
+        { character: '旁白', text: '她閉上眼，彷彿能聽見鈴蘭曾經輕聲的叮囑：「不管怎樣，妳都要平安無事。」' },
+        { character: '旁白', text: '她加快腳步，避開那些目光，卻感覺到每一步都沉甸甸的，像踩在無形的鐵鏈上。' },
+        { character: '旁白', text: '——場景轉換至【宿舍・黃昏】', choices: [{ text: '繼續', nextScene: 'c6a_dormitory' }] }
+    ]
+},
+
+c6a_dormitory: {
+    background: 'assets/images/backgrounds/dorm_room.jpg',
+    dialogues: [
+        { character: '【場景：宿舍・黃昏】', text: '夕陽的餘暉染上窗棂。房間內靜得出奇，只有書桌上放著一本嶄新的空白簿冊。' },
+        { character: '旁白', text: '封面上印著《行為日誌》四個字。' },
+        { character: '旁白', text: '瑪格麗特伸手翻開，空白頁面如同一面鏡子，映照出她壓抑的內心。' },
+        { character: '旁白', text: '她提起筆，想要寫下真實的感受——關於恐懼，關於夜語花，關於鈴蘭。' },
+        { character: '旁白', text: '然而，當墨跡觸碰紙面時，她卻猛然停下。' },
+        { character: '瑪格麗特', text: '（如果有人看到……如果這些字被讀走……）' },
+        { character: '旁白', text: '她將筆緊緊握在手裡，直到指尖泛白。最終，她深吸一口氣，僅寫下：「今日一切如常。」' },
+        { character: '旁白', text: '可是，她心裡很清楚，這樣的春風並不溫柔。它帶著壓迫的氣息，正一步步推著她們走向無處可逃的邊緣。' },
+        { character: '旁白', text: '窗外傳來巡邏的腳步聲。她本能地屏息，直到聲音漸行漸遠，才慢慢吐出一口氣。' },
+        { character: '瑪格麗特', text: '（……不能再只是任人擺布。）' },
+        { character: '旁白', text: '她腦海裡浮現鈴蘭曾說過的話——若要找答案，只有去「那裡」。' },
+        { character: '旁白', text: '夜色深沉，她終於合上眼，卻在夢境裡輾轉反側。' },
+        { character: '旁白', text: '——場景轉換至【圖書館地下室・午後】', choices: [{ text: '繼續', nextScene: 'c6a_library_basement' }] }
+    ]
+},
+
+c6a_library_basement: {
+    background: 'assets/images/backgrounds/library_basement.jpg',
+    dialogues: [
+        { character: '【場景：圖書館地下室・午後】', text: '圖書館的樓梯盤旋而下，石階布滿裂痕與青苔。每一步踩下都傳出細微迴響，像是無形的耳目在暗中窺聽。' },
+        { character: '旁白', text: '昏黃燈光映在磚牆，影子時而拉長，時而斷裂。' },
+        { character: '旁白', text: '瑪格麗特雙手緊緊抱著書卷，心跳清晰震動。前方，鈴蘭舉著小油燈走在前方。' },
+        { character: '鈴蘭', text: '妳確定要看這些嗎？' },
+        { character: '瑪格麗特', text: '……我必須確認。' },
+        { character: '旁白', text: '走廊盡頭的厚重木門被推開，嘎吱聲宛如壓抑的哀鳴。' },
+        { character: '旁白', text: '門後是檔案室，空氣裡滿是紙張與塵埃的氣味。堆疊的卷冊像沉睡的石碑。' },
+        { character: '旁白', text: '瑪格麗特翻開一本《情咒審判記錄》。紙頁上血紅墨跡潰散：——「某家族於審判中全數失蹤，疑遭消除。」' },
+        { character: '旁白', text: '她呼吸一窒，胸口被鐵鉤般撕扯。抬起頭時，鈴蘭眼底掠過痛色，卻隨即沉默。' },
+        { character: '旁白', text: '瑪格麗特想問出口，卻在剎那噤聲。她直覺若真問了，會觸動某個她無法承受的答案。' }
+    ]
+},
+
+// =====================
+// 第六章：流言與協議（6B 開始）
+// =====================
+c6b_corridor_rumors: {
+    background: 'assets/images/backgrounds/corridor_evening.jpg',
+    dialogues: [
+        { character: '【場景：校園長廊・流言】', text: '傍晚時分，長廊被夕陽染成金銅色。牆壁上張貼著新公告，字字森冷，映照得更像一道道囚籠。' },
+        { character: '旁白', text: '學生們成群結伴而過，低語聲此起彼落，急促得像在傳遞某種禁忌的故事。' },
+        { character: '學生甲', text: '……聽說試煉時，有人失控了。' },
+        { character: '學生乙', text: '真的嗎？好像是那個轉學生……' },
+        { character: '學生丙', text: '不，不是她，是她的室友。妳看，她們總是一起行動，很奇怪吧？' },
+        { character: '旁白', text: '瑪格麗特正好走過，耳語像尖銳的針，從四面八方刺向她的背。' },
+        { character: '旁白', text: '她能感覺到那些視線，明明沒有直視，卻像一道道冰冷的火焰，灼燒著皮膚。' },
+        { character: '旁白', text: '她低下頭，緊握書包的帶子，指節死死發白。' },
+        { character: '旁白', text: '腳步愈走愈快，卻怎樣也甩不掉那道無形的審判。' },
+        { character: '旁白', text: '腦海中浮現那份「花名冊」，冷硬的名字彷彿正等待某人被劃入。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【校園巡邏・夜】', choices: [ { text: '繼續', nextScene: 'c6b_patrol_night' } ] }
+    ]
+},
+
+// =====================
+// 校園巡邏・夜
+// =====================
+c6b_patrol_night: {
+    background: 'assets/images/backgrounds/dorm_corridor_night.jpg',
+    dialogues: [
+        { character: '【場景：校園巡邏・夜】', text: '夜幕降臨後，宿舍區比以往更加嚴苛。巡邏員手持水晶燈，一步一步走過長廊，光芒照在牆壁上，像無聲的審問。' },
+        { character: '旁白', text: '遠處偶爾傳來鎖鏈般的金屬聲，讓氣氛更顯壓抑。' },
+        { character: '旁白', text: '瑪格麗特與鈴蘭從圖書館歸來，走在昏暗的角落。' },
+        { character: '旁白', text: '當她們轉過拐角時，幾乎與巡邏員正面相撞。' },
+        { character: '旁白', text: '呼吸凝滯的瞬間，瑪格麗特的心跳劇烈到快要衝破胸腔。' },
+        { character: '旁白', text: '她屏住氣息，雙腿幾乎發軟。' },
+        { character: '旁白', text: '就在那一秒，鈴蘭忽然上前一步。' },
+        { character: '旁白', text: '她的手掌微微抬起，貼在牆上隱約的花形紋路上。符紋閃過一抹細微的光。' },
+        { character: '旁白', text: '下一瞬，走廊另一側傳來一陣細小聲響，像是某個物件落地。' },
+        { character: '旁白', text: '巡邏員立刻轉頭，將燈舉高，追向聲源。燈影逐漸遠去，長廊重新陷入陰影。' },
+        { character: '旁白', text: '兩人屏息片刻，才悄然繼續前行。' },
+        { character: '瑪格麗特', text: '……鈴蘭，妳剛才——' },
+        { character: '鈴蘭', text: '小技巧而已。' },
+        { character: '旁白', text: '她唇角帶著若有似無的笑，卻掩不住眼底的冷意。' },
+        { character: '旁白', text: '瑪格麗特語塞，心裡有種說不清的顫動。方才被鈴蘭拉住的手心，仍殘留著溫度。' },
+        { character: '旁白', text: '那溫度帶來安全感，同時也帶來更深的疑惑：她究竟隱藏著多少不為人知的秘密？' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【宿舍房間・夜】', choices: [ { text: '繼續', nextScene: 'c6b_dorm_night' } ] }
+    ]
+},
+
+// =====================
+// 宿舍房間・夜
+// =====================
+c6b_dorm_night: {
+    background: 'assets/images/backgrounds/dorm_room_night.jpg',
+    dialogues: [
+        { character: '【場景：宿舍房間・夜】', text: '夜深了，宿舍窗外傳來風聲，間或伴隨遠處的腳步。燭火搖曳，投下不安的光影。' },
+        { character: '旁白', text: '瑪格麗特坐在書桌前，紙頁攤開。她想提筆寫下真實：檔案裡的記錄、長廊上的流言、夜間的驚險。' },
+        { character: '旁白', text: '每一件都壓在心口，如同巨石。' },
+        { character: '旁白', text: '可當羽毛筆落在紙上，她卻停住了。' },
+        { character: '瑪格麗特', text: '如果這些被人看見……' },
+        { character: '旁白', text: '她的呼吸像被卡住，胸腔微微顫抖。心頭的重壓讓她幾乎無法動彈。' },
+        { character: '旁白', text: '她抬頭望去，床邊的鈴蘭已蜷縮著睡去，呼吸均勻。' },
+        { character: '旁白', text: '燭光映照她的側臉，竟顯得格外寧靜，與白日那抹冷意判若兩人。' },
+        { character: '瑪格麗特', text: '……我們真的能活著走出去嗎？' },
+        { character: '旁白', text: '燭火輕顫，沒有回應。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【宿舍房間・夜深】', choices: [ { text: '繼續', nextScene: 'c6b_dorm_midnight' } ] }
+    ]
+},
+
+// =====================
+// 宿舍房間・夜深
+// =====================
+c6b_dorm_midnight: {
+    background: 'assets/images/backgrounds/dorm_room_midnight.jpg',
+    dialogues: [
+        { character: '【場景：宿舍房間・夜深】', text: '夜已過子時，靜語花園的宿舍沉浸在一片沉重的寂靜。窗外的風夾帶著早春的寒意。' },
+        { character: '旁白', text: '瑪格麗特伏在書桌前，攤開的日記上寫滿斷裂的字句。' },
+        { character: '旁白', text: '她不斷重複著同一行——「如果被抓住，我們會去哪裡？」' },
+        { character: '旁白', text: '墨跡因手心的汗水而暈開，化成模糊的影子。' },
+        { character: '旁白', text: '她的指尖被墨水染黑，卻沒有察覺。' },
+        { character: '旁白', text: '直到一隻手輕輕覆上她的肩。' },
+        { character: '旁白', text: '鈴蘭坐在她身後的床沿，靜靜看著。' },
+        { character: '鈴蘭', text: '妳已經寫了三遍同樣的問題。' },
+        { character: '旁白', text: '瑪格麗特猛然一顫，回過頭。燭光映照下，鈴蘭的眼神並不調笑，而是前所未有的凝重。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【低聲的協議】', choices: [ { text: '繼續', nextScene: 'c6b_whispered_pact' } ] }
+    ]
+},
+
+// =====================
+// 低聲的協議
+// =====================
+c6b_whispered_pact: {
+    background: 'assets/images/backgrounds/dorm_room_table.jpg',
+    dialogues: [
+        { character: '【場景：低聲的協議】', text: '……妳也在想吧？' },
+        { character: '旁白', text: '瑪格麗特的聲音幾乎低到聽不見。' },
+        { character: '旁白', text: '鈴蘭沒有立即回答，只是伸手，將她日記本闔上，然後把掌心覆在其上。' },
+        { character: '鈴蘭', text: '我不會讓妳被帶走。就算要逃……我也會陪著妳。' },
+        { character: '旁白', text: '這句話如同一道閃電，劃破瑪格麗特胸口積壓已久的黑霧。' },
+        { character: '瑪格麗特', text: '可是……我們能去哪裡？學院有巡邏，城外有關卡……' },
+        { character: '鈴蘭', text: '總會有縫隙的。' },
+        { character: '旁白', text: '她語速很快，像是早已思索過多次。' },
+        { character: '鈴蘭', text: '我在圖書館裡找到一張舊地圖，上面標著一條廢棄的供應路線，穿過森林，可以繞開主要哨站。' },
+        { character: '旁白', text: '她從枕下抽出一張折疊多次的紙，攤在燭光下。' },
+        { character: '旁白', text: '紙張雖斑駁，但墨痕仍清晰：一條細細的紅線蜿蜒至學院圍牆外。' },
+        { character: '旁白', text: '瑪格麗特凝視著地圖，腦海中再次浮現白天看到的那行字——「全數失蹤，疑遭消除」。' },
+        { character: '瑪格麗特', text: '妳……為什麼這麼熟練？' },
+        { character: '旁白', text: '鈴蘭手中動作一頓，唇瓣抿成一條細線。' },
+        { character: '鈴蘭', text: '因為我見過被審判帶走的人，再也沒有回來。' },
+        { character: '旁白', text: '空氣驟然凝固。瑪格麗特窒息。她伸出手，想觸碰鈴蘭，卻又停在半空。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【床邊的誓言】', choices: [ { text: '繼續', nextScene: 'c6b_bedside_oath' } ] }
+    ]
+},
+
+// =====================
+// 床邊的誓言
+// =====================
+c6b_bedside_oath: {
+    background: 'assets/images/backgrounds/dorm_bedside.jpg',
+    dialogues: [
+        { character: '【場景：床邊的誓言】', text: '夜更深了，燭火燃盡，僅剩殘燭微光。' },
+        { character: '瑪格麗特', text: '如果真的走不出去呢？' },
+        { character: '旁白', text: '鈴蘭沒有回答，而是傾身，將額頭輕輕抵在她額上。' },
+        { character: '旁白', text: '呼吸交纏，溫熱卻帶著淚意。' },
+        { character: '鈴蘭', text: '那就走到盡頭。至少……不是一個人。' },
+        { character: '旁白', text: '瑪格麗特的視線模糊了。她緊緊握住鈴蘭的手，手心相扣，直到指節發白。' },
+        { character: '旁白', text: '窗外的風聲漸強，宛如某種不祥的預兆。' },
+        { character: '旁白', text: '——' },
+        { character: '旁白', text: '即將前往【結尾・暗影的伏筆】', choices: [ { text: '繼續', nextScene: 'c6b_shadow_foreshadow' } ] }
+    ]
+},
+
+// =====================
+// 結尾・暗影的伏筆
+// =====================
+c6b_shadow_foreshadow: {
+    background: 'assets/images/backgrounds/campus_night.jpg',
+    dialogues: [
+        { character: '【場景：結尾・暗影的伏筆】', text: '忽然，一聲清脆的鳥鳴打破靜夜。' },
+        { character: '旁白', text: '那並非常見的夜鳥，而是學院巡哨使用的「警戒鳥」。' },
+        { character: '旁白', text: '兩人猛然屏住呼吸，連燭火都隨之顫動。' },
+        { character: '旁白', text: '片刻後，腳步聲從遠方傳來，逐漸靠近又漸行漸遠。' },
+        { character: '旁白', text: '瑪格麗特才意識到——就算在這樣的夜裡，監視仍然無所不在。' },
+        { character: '旁白', text: '然而，在恐懼與壓迫的夾縫中，她們的決心已經凝結成某種無聲的約定。' },
+        { character: '旁白', text: '那一夜，靜語花園的空氣裡，不再只是壓迫，而是暗暗燃起了一絲反抗的火焰。' }
+        { character: '旁白', text: '【第六章·完】', video: 'assets/videos/transition_ch5_to_ch6.mp4', nextScene: 'c7a_classroom' }
     ]
 },
     
@@ -1247,6 +1490,7 @@ c5b_shadow: {
 };
 
 export { Story };
+
 
 
 
