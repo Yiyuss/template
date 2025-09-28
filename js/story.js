@@ -1,5 +1,5 @@
 // 故事內容和對話
-const Story = {
+export const Story = {
     // 默認背景音樂
     defaultBgm: 'assets/audio/default_bgm.mp3',
     
@@ -1556,7 +1556,4 @@ c6b_shadow_foreshadow: {
         const character = this.characters[characterName];
         return character ? character.position : '50%';
     }
-}
-
-export { Story };
-
+};
