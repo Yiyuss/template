@@ -50,7 +50,7 @@ const Story = {
                     text: '請選擇妳想成為的角色：',
                     choices: [
                         {
-                            text: '瑪格麗特·諾爾絲',video: 'assets/videos/margaret_intro.mp4',
+                            text: '瑪格麗特·諾爾絲',video: 'assets/videos/margaret_intro.mp',
                             nextScene: 'c1_gate'
                         },
                         {
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
