@@ -50,7 +50,7 @@ const Story = {
                     text: '請選擇妳想成為的角色：',
                     choices: [
                         {
-                            text: '瑪格麗特·諾爾絲',
+                            text: '瑪格麗特·諾爾絲',video: 'assets/videos/margaret_intro.mp4',
                             nextScene: 'c1_gate'
                         },
                         {
@@ -61,16 +61,6 @@ const Story = {
                 }
             ]
         },
-
-// 新增一個過渡場景（intro_video）
-intro_video: {
-    background: null,
-    bgm: null,
-    video: 'assets/video/margaret_intro.mp4', // 影片路徑
-    autoPlay: true,
-    skippable: true, // 可選：允許玩家按鍵跳過
-    onEnd: 'c1_gate' // 播放完畢自動切換到校門場景
-},
         
         // 第一章：新的校園，新的邂逅 — 分場景
 c1_gate: {
@@ -1592,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
