@@ -1,7 +1,7 @@
 // 故事內容和對話
 const Story = {
     // 默認背景音樂
-    defaultBgm: 'assets/audio/default_bgm.mp3',
+    defaultBgm: 'assets/audio/bgm_ch1.mp3.mp3',
     
     // 場景定義
     scenes: {
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
