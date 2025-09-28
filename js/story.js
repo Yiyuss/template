@@ -238,7 +238,6 @@ c1_garden: {
 
 c1_dorm_room_night: {
     background: 'assets/images/backgrounds/school3.jpg',
-    bgm: null,
     dialogues: [
         { character: '【宿舍房間・夜】', text: '夜幕降臨，月光從窗外照進來，灑落在床邊。' },
         { character: '旁白', text: '瑪麗坐在書桌前，攤開日記本，筆尖在紙上顫抖，卻仍堅持落下字句。' },
@@ -1583,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
