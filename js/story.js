@@ -215,7 +215,7 @@ c1_library: {
 },
 
 c1_garden: {
-    background: 'assets/images/backgrounds/garden2.jpg',
+    background: 'assets/images/backgrounds/garden.jpg',
     dialogues: [
         { character: '【花園】', text: '午後的陽光溫和，圖書館外的花園靜靜迎風搖曳。' },
         { character: '旁白', text: '石板小徑蜿蜒而過，兩側種滿了各式各樣的花卉，從常見的百合、薔薇，到少見的幻光草，皆綻放著不同的色彩。' },
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
