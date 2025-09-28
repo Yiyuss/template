@@ -61,6 +61,16 @@ const Story = {
                 }
             ]
         },
+
+// 新增一個過渡場景（intro_video）
+intro_video: {
+    background: null,
+    bgm: null,
+    video: 'assets/video/margaret_intro.mp4', // 影片路徑
+    autoPlay: true,
+    skippable: true, // 可選：允許玩家按鍵跳過
+    onEnd: 'c1_gate' // 播放完畢自動切換到校門場景
+},
         
         // 第一章：新的校園，新的邂逅 — 分場景
 c1_gate: {
@@ -1582,6 +1592,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
