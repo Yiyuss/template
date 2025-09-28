@@ -615,7 +615,7 @@ c3_dorm_night: {
         { character: '旁白', text: '窗外的夜空裡，一朵夜語花無聲綻放。' },
         { character: '旁白', text: '花瓣如細小的星光，靜靜墜落，只能被真正聽見她心聲的人看見。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第三章·完】', video: 'assets/videos/transition_ch3_to_ch4.mp4', nextScene: 'c4_plaza' }
+        { character: '旁白', text: '【第三章·完】', video: 'assets/videos/transition_ch3_to_ch4.mp4', nextScene: 'c4a_plaza' }
     ]
 },
         
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
