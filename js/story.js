@@ -1254,7 +1254,7 @@ c6a_library_basement: {
         { character: '旁白', text: '她呼吸一窒，喉嚨乾澀，幾乎要鬆開書本。' },
         { character: '旁白', text: '那幾個字像鐵鉤，狠狠撕扯著胸口。' },
         { character: '旁白', text: '她抬起頭，卻見鈴蘭正靜靜地凝視著另一冊卷宗，眼底一瞬間掠過痛色，隨即被壓回沉默中。' },
-        { character: '旁白', text: '瑪格麗特想問出口，卻在那剎那噤聲。' }
+        { character: '旁白', text: '瑪格麗特想問出口，卻在那剎那噤聲。' },
         { character: '旁白', text: '她直覺若真問了，會觸動某個她無法承受的答案。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【校園長廊・流言】', choices: [{ text: '繼續', nextScene: 'c6b_corridor_rumors' }] }
@@ -1558,6 +1558,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
