@@ -1225,7 +1225,7 @@ c6a_dormitory: {
 },
 
 c6a_library_basement: {
-    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
+    background: 'assets/images/backgrounds/library_night.jpg3.jpg',
     dialogues: [
         { character: '【場景：圖書館地下室・午後】', text: '圖書館的樓梯盤旋而下，石階因年代久遠而布滿裂痕，邊角長滿青苔。' },
         { character: '旁白', text: '每一步踩下去都會傳出細微的迴響，像是無形的耳目在暗中窺聽。' },
@@ -1265,7 +1265,7 @@ c6a_library_basement: {
 // 第六章：流言與協議（6B 開始）
 // =====================
 c6b_corridor_rumors: {
-    background: 'assets/images/backgrounds/garden2.jpg',
+    background: 'assets/images/backgrounds/school.jpg',
     dialogues: [
         { character: '【場景：校園長廊・流言】', text: '傍晚時分，長廊被夕陽染成金銅色。' },
         { character: '旁白', text: '牆壁上張貼著新公告，字字森冷，映照得更像一道道囚籠。' },
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
