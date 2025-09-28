@@ -1557,6 +1557,3 @@ c6b_shadow_foreshadow: {
         return character ? character.position : '50%';
     }
 },}
-
-
-
