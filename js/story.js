@@ -1425,9 +1425,32 @@ c6b_shadow_foreshadow: {
         { character: '旁白', text: '然而，在恐懼與壓迫的夾縫中，她們的決心已經凝結成某種無聲的約定。' },
         { character: '旁白', text: '那一夜，靜語花園的空氣裡，不再只是壓迫，而是暗暗燃起了一絲反抗的火焰。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第六章·完】', video: 'assets/videos/transition_ch5_to_ch6.mp4', nextScene: 'c7a_classroom' }
-    ]
-},
+                { character: '旁白', text: '—— 請通關森森鈴蘭路線解鎖 ——' },
+                { character: '旁白', text: '【第六章·完】', choices: [ { text: '前往第七章', nextScene: 'c5_endA' }, { text: '隱藏路線', nextScene: 'start' } ] }
+            ]
+        },
+        
+        // 結局A：尋找
+        c5_endA: {
+            background: 'assets/images/backgrounds/mountains.jpg',
+            bgm: 'assets/audio/bgm_end_a.mp3',
+            dialogues: [
+                { character: '旁白', text: '她合上信，抬頭望向群山：如果妳還在……我一定會找到妳。' },
+                { character: '旁白', text: '她踏上旅途。', video: 'assets/videos/ending_A.mp4', nextScene: 'start' }
+            ]
+        },
+        
+        // 結局B：傳遞
+        c5_endB: {
+            background: 'assets/images/backgrounds/garden.jpg',
+            bgm: 'assets/audio/bgm_end_b.mp3',
+            dialogues: [
+                { character: '旁白', text: '她將信折好，放入夜語花的花心：就讓孩子們，替我把情感傳遞下去吧。' },
+                { character: '旁白', text: '風起，花瓣飛舞。', video: 'assets/videos/ending_B.mp4', nextScene: 'start' }
+            ]
+        }
+    },
+
     
     // 角色定義
     characters: {
@@ -1559,4 +1582,5 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
