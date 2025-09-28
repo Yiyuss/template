@@ -116,7 +116,6 @@ const Game = {
         
         // 處理視頻
         if (dialogue.video) {
-            AudioManager.pauseBgm();
             this.playVideo(dialogue.video, dialogue.nextScene);
         }
     },
