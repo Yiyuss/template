@@ -991,7 +991,7 @@ c5a_library_basement: {
         { character: '旁白', text: '她沿著熟悉的樓梯拾級而下，往地下室的方向走。' },
         { character: '旁白', text: '那裡，傳聞中存放著最不願被人知曉的書籍與紀錄。' },
         { character: '旁白', text: '每下一階，心口的悸動便更強烈。' },
-        { character: '旁白', text: '她緊緊抓住胸前的花，像抓住最後的勇氣。 },
+        { character: '旁白', text: '她緊緊抓住胸前的花，像抓住最後的勇氣。' },
         { character: '旁白', text: '——花名冊。' },
         { character: '旁白', text: '那個名字在心中一遍遍浮現。' },
         { character: '旁白', text: '她不知道自己會不會找到它，但她知道，答案就藏在前方的黑暗裡。' },
@@ -1558,6 +1558,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
