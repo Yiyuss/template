@@ -1556,5 +1556,6 @@ c6b_shadow_foreshadow: {
         const character = this.characters[characterName];
         return character ? character.position : '50%';
     }
-};
+}
+
 
