@@ -215,7 +215,7 @@ c1_library: {
 },
 
 c1_garden: {
-    background: 'assets/images/backgrounds/garden.jpg',
+    background: 'assets/images/backgrounds/garden2.jpg',
     dialogues: [
         { character: '【花園】', text: '午後的陽光溫和，圖書館外的花園靜靜迎風搖曳。' },
         { character: '旁白', text: '石板小徑蜿蜒而過，兩側種滿了各式各樣的花卉，從常見的百合、薔薇，到少見的幻光草，皆綻放著不同的色彩。' },
@@ -377,7 +377,7 @@ c2_library_noon: {
 },
 
 c2_garden_afternoon: {
-    background: 'assets/images/backgrounds/garden.jpg',
+    background: 'assets/images/backgrounds/garden2.jpg',
     dialogues: [
         { character: '【場景：花園】', text: '午後的陽光傾灑在花園深處，萬花競放，香氣交織。' },
         { character: '旁白', text: '小徑兩側的玫瑰與鈴蘭隨風搖曳，彷彿低聲呢喃。' },
@@ -519,7 +519,7 @@ c3_classroom: {
 },
 
 c3_after_class: {
-    background: 'assets/images/backgrounds/hallway.jpg',
+    background: 'assets/images/backgrounds/classroom.jpg',
     dialogues: [
         { character: '【場景：課後・教室外】', text: '下課鐘聲響起，學生們像潮水般散去。' },
         { character: '旁白', text: '教室裡殘留著粉筆灰的氣味與低語的餘韻。' },
@@ -541,7 +541,7 @@ c3_after_class: {
 },
 
 c3_path_library: {
-    background: 'assets/images/backgrounds/campus_path.jpg',
+    background: 'assets/images/backgrounds/school.jpg',
     dialogues: [
         { character: '【場景：校園小徑・往圖書館】', text: '通往圖書館的小徑兩側栽種著修剪整齊的樹籬，風吹過時，樹葉發出低聲的沙響。' },
         { character: '旁白', text: '午後的陽光斜斜灑落，瑪格麗特的腳步卻顯得沉重。' },
@@ -568,7 +568,7 @@ c3_path_library: {
 },
         
 c3_library: {
-    background: 'assets/images/backgrounds/library.jpg',
+    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
     dialogues: [
         { character: '【場景：圖書館・黃昏】', text: '圖書館的大門靜靜矗立，門框上雕刻著繁複的藤蔓紋路。' },
         { character: '旁白', text: '推門進去時，厚重的木質聲音迴盪在空氣裡，帶來一股與外界隔絕的靜謐感。' },
@@ -602,7 +602,7 @@ c3_library: {
 },
 
 c3_dorm_night: {
-    background: 'assets/images/backgrounds/dorm_room.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：宿舍房間・夜】', text: '回到宿舍時，夜色已經覆蓋校園，窗外的月光灑落，像是一層透明的水銀。' },
         { character: '旁白', text: '鈴蘭洗漱過後，很快就沉沉睡去，呼吸規律，表情安穩。' },
@@ -686,7 +686,7 @@ c4a_classroom_brief: {
 },
 
 c4a_preparation: {
-    background: 'assets/images/backgrounds/waiting_room.jpg',
+    background: 'assets/images/backgrounds/hall_interior.jpg',
     dialogues: [
         { character: '【場景：試煉前的準備】', text: '學生們被分批帶到大講堂一側的等候區。' },
         { character: '旁白', text: '空間寬闊卻寂靜，長椅排列得整齊，氣氛比任何考場都要沉重。' },
@@ -714,7 +714,7 @@ c4a_preparation: {
 },
 
 c4b_hall: {
-    background: 'assets/images/backgrounds/hall_exterior.jpg',
+    background: 'assets/images/backgrounds/hall_interior.jpg',
     dialogues: [
         { character: '【場景：大講堂·水晶祭壇】', text: '瑪格麗特的名字被念出時，空氣忽然凝固。' },
         { character: '旁白', text: '她的雙腿像灌了鉛，卻仍在眾目注視下，一步步走向祭壇中央。' },
@@ -883,10 +883,10 @@ c4c_inner_letters: {
         
         // 第五章：花名冊的影子
 c5a_plaza: {
-    background: 'assets/images/backgrounds/hall_plaza.jpg',
+    background: 'assets/images/backgrounds/plaza.jpg',
     bgm: 'assets/audio/bgm_ch5.mp3',
     dialogues: [
-        { character: '【場景：大講堂外・廣場】', text: '沉重的木門緩緩推開，厚實的鐵軸摩擦聲在空曠的空間迴盪。' },
+        { character: '【場景：大講堂外・廣場】', text: '沉重的門緩緩推開，厚實的鐵軸摩擦聲在空曠的空間迴盪。' },
         { character: '旁白', text: '隨著最後一聲試煉鐘響，空氣忽然從凝滯變得騷動，學生們成群結隊地湧出大禮堂。' },
         { character: '旁白', text: '廣場鋪著灰白色的石磚，在午後的日光下反射出刺眼的光。' },
         { character: '旁白', text: '人群交錯，聲音此起彼落，卻不知為何都壓低了分貝，像是刻意把秘密藏在低語裡。' },
@@ -918,7 +918,7 @@ c5a_plaza: {
 },
 
 c5a_teachers: {
-    background: 'assets/images/backgrounds/square_corner.jpg',
+    background: 'assets/images/backgrounds/plaza.jpg',
     dialogues: [
         { character: '【場景：人群邊緣・教師的低語】', text: '廣場角落裡，幾位教師圍在一起，聲音低沉。' },
         { character: '教師甲', text: '從來沒有過雙心共鳴……這不會失控嗎？' },
@@ -936,7 +936,7 @@ c5a_teachers: {
 },
 
 c5a_lily: {
-    background: 'assets/images/backgrounds/square_flower.jpg',
+    background: 'assets/images/backgrounds/plaza.jpg',
     dialogues: [
         { character: '【場景：花語】', text: '就在這時，鈴蘭從懷裡掏出一樣東西。' },
         { character: '旁白', text: '是一朵白色的百合，清晨時她們在廣場邊的花壇裡摘下來的。' },
@@ -954,7 +954,7 @@ c5a_lily: {
 },
 
 c5a_library_night: {
-    background: 'assets/images/backgrounds/library_exterior_night.jpg',
+    background: 'assets/images/backgrounds/school.jpg',
     dialogues: [
         { character: '【場景：圖書館前・夜色】', text: '廣場的人群漸漸散去，天色暗了下來。' },
         { character: '旁白', text: '宿舍方向傳來笑聲與腳步聲，卻無法驅散心頭的陰影。' },
@@ -984,7 +984,7 @@ c5a_library_night: {
 },
 
 c5a_library_basement: {
-    background: 'assets/images/backgrounds/library_basement.jpg',
+    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
     dialogues: [
         { character: '【場景：圖書館大廳・通往地下室】', text: '寬闊的書架矗立，靜默如林。' },
         { character: '旁白', text: '高窗外的月光灑下來，在地面投出斑駁的光影。' },
@@ -1010,7 +1010,7 @@ c5a_library_basement: {
 // =====================
 
 c5b_library: {
-    background: 'assets/images/backgrounds/library_basement.jpg',
+    background: 'assets/images/backgrounds/school2.jpg',
     dialogues: [
         { character: '【場景：圖書館・地下室】', text: '那本封面最黑的冊子，赫然刻著金字——' },
         { character: '旁白', text: '《花名冊》。' },
@@ -1077,7 +1077,7 @@ c5b_garden: {
 },
 
 c5b_dorm: {
-    background: 'assets/images/backgrounds/dorm_room_night.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：宿舍房間・夜】', text: '夜色靜謐，窗外星子點點。' },
         { character: '旁白', text: '瑪格麗特伏在書桌前，日記本鋪開。' },
@@ -1104,7 +1104,7 @@ c5b_dorm: {
 },
 
 c5b_shadow: {
-    background: 'assets/images/backgrounds/campus_night.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：結尾・暗影】', text: '夜深，宿舍的燈熄滅。' },
         { character: '旁白', text: '瑪格麗特輾轉反側，腦海不斷浮現那頁冊子與鈴蘭的笑容。' },
@@ -1121,7 +1121,7 @@ c5b_shadow: {
 // 第六章：緊箍的日誌（6A 開始）
 // =====================
 c6a_classroom: {
-    background: 'assets/images/backgrounds/classroom_morning.jpg',
+    background: 'assets/images/backgrounds/classroom.jpg',
     bgm: 'assets/audio/bgm_ch6.mp3',
     dialogues: [
         { character: '【場景：教室・春日清晨】', text: '春天的陽光柔和地灑進窗櫺，帶著暖意，卻無法驅散空氣中瀰漫的緊張。' },
@@ -1172,7 +1172,7 @@ c6a_lab: {
 },
 
 c6a_corridor: {
-    background: 'assets/images/backgrounds/school_corridor.jpg',
+    background: 'assets/images/backgrounds/school5.jpg',
     dialogues: [
         { character: '【場景：校園長廊】', text: '午後的風帶著花香，卻也混雜著不安。' },
         { character: '旁白', text: '長廊上張貼著新的公告，每一張都像是冷眼的注視。' },
@@ -1193,7 +1193,7 @@ c6a_corridor: {
 },
 
 c6a_dormitory: {
-    background: 'assets/images/backgrounds/dorm_room.jpg',
+    background: 'assets/images/backgrounds/school4.jpg',
     dialogues: [
         { character: '【場景：宿舍・黃昏】', text: '回到宿舍時，夕陽的餘暉染上窗棂。' },
         { character: '旁白', text: '房間內靜得出奇，只有書桌上放著一本嶄新的空白簿冊。' },
@@ -1225,7 +1225,7 @@ c6a_dormitory: {
 },
 
 c6a_library_basement: {
-    background: 'assets/images/backgrounds/library_basement.jpg',
+    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
     dialogues: [
         { character: '【場景：圖書館地下室・午後】', text: '圖書館的樓梯盤旋而下，石階因年代久遠而布滿裂痕，邊角長滿青苔。' },
         { character: '旁白', text: '每一步踩下去都會傳出細微的迴響，像是無形的耳目在暗中窺聽。' },
@@ -1265,7 +1265,7 @@ c6a_library_basement: {
 // 第六章：流言與協議（6B 開始）
 // =====================
 c6b_corridor_rumors: {
-    background: 'assets/images/backgrounds/corridor_evening.jpg',
+    background: 'assets/images/backgrounds/garden2.jpg',
     dialogues: [
         { character: '【場景：校園長廊・流言】', text: '傍晚時分，長廊被夕陽染成金銅色。' },
         { character: '旁白', text: '牆壁上張貼著新公告，字字森冷，映照得更像一道道囚籠。' },
@@ -1288,7 +1288,7 @@ c6b_corridor_rumors: {
 // 校園巡邏・夜
 // =====================
 c6b_patrol_night: {
-    background: 'assets/images/backgrounds/dorm_corridor_night.jpg',
+    background: 'assets/images/backgrounds/academy_gate_dawn2.jpg',
     dialogues: [
         { character: '【場景：校園巡邏・夜】', text: '夜幕降臨後，宿舍區比以往更加嚴苛。' },
         { character: '旁白', text: '巡邏員手持水晶燈，一步一步走過長廊，光芒照在牆壁上，像無聲的審問。' },
@@ -1318,7 +1318,7 @@ c6b_patrol_night: {
 // 宿舍房間・夜
 // =====================
 c6b_dorm_night: {
-    background: 'assets/images/backgrounds/dorm_room_night.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：宿舍房間・夜】', text: '夜深了，宿舍窗外傳來風聲，間或伴隨遠處的腳步，燭火搖曳，投下不安的光影。' },
         { character: '旁白', text: '瑪格麗特坐在書桌前，紙頁攤開。' },
@@ -1341,7 +1341,7 @@ c6b_dorm_night: {
 // 宿舍房間・夜深
 // =====================
 c6b_dorm_midnight: {
-    background: 'assets/images/backgrounds/dorm_room_midnight.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：宿舍房間・夜深】', text: '夜已過子時，靜語花園的宿舍沉浸在一片沉重的寂靜。' },
         { character: '旁白', text: '窗外的風夾帶著早春的寒意，吹動窗縫，讓燭火一陣一陣顫抖。' },
@@ -1363,7 +1363,7 @@ c6b_dorm_midnight: {
 // 低聲的協議
 // =====================
 c6b_whispered_pact: {
-    background: 'assets/images/backgrounds/dorm_room_table.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '瑪格麗特', text: '……妳的話，會怎麼做？' },
         { character: '旁白', text: '瑪格麗特的聲音幾乎低到聽不見。' },
@@ -1395,7 +1395,7 @@ c6b_whispered_pact: {
 // 床邊的誓言
 // =====================
 c6b_bedside_oath: {
-    background: 'assets/images/backgrounds/dorm_bedside.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：床邊的誓言】', text: '夜更深了，燭火燃盡，僅剩殘燭微光。' },
         { character: '旁白', text: '兩人肩並肩坐在床邊，背後是厚重的夜色。' },
@@ -1415,7 +1415,7 @@ c6b_bedside_oath: {
 // 結尾・暗影的伏筆
 // =====================
 c6b_shadow_foreshadow: {
-    background: 'assets/images/backgrounds/campus_night.jpg',
+    background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【場景：結尾・暗影的伏筆】', text: '忽然，一聲清脆的鳥鳴打破靜夜。' },
         { character: '旁白', text: '那並非常見的夜鳥，而是學院巡哨使用的「警戒鳥」。' },
@@ -1582,5 +1582,6 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
