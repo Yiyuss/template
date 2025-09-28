@@ -169,11 +169,27 @@ const Game = {
     playVideo: function(videoSrc, nextScene) {
         const videoPlayer = document.getElementById('video-player');
         videoPlayer.src = videoSrc;
+        videoPlayer.preload = 'auto';
+        videoPlayer.setAttribute('playsinline', '');
         videoPlayer.style.display = 'block';
         
         AudioManager.stopBgm();
         AudioManager.stopVoice();
         
+        // 影片載入錯誤時，避免卡住，直接切到下一場景或恢復BGM
+        videoPlayer.onerror = () => {
+            console.error('影片載入失敗:', videoSrc);
+            videoPlayer.style.display = 'none';
+            if (nextScene) {
+                this.loadScene(nextScene);
+            } else {
+                const currentScene = Story.scenes[this.currentScene];
+                if (currentScene.bgm) {
+                    AudioManager.playBgm(currentScene.bgm);
+                }
+            }
+        };
+
         videoPlayer.onended = () => {
             videoPlayer.style.display = 'none';
             
@@ -187,7 +203,22 @@ const Game = {
             }
         };
         
-        videoPlayer.play();
+        // 嘗試播放，若被拒絕（政策或暫時性錯誤），也走後備邏輯
+        const tryPlay = videoPlayer.play();
+        if (tryPlay && typeof tryPlay.catch === 'function') {
+            tryPlay.catch((err) => {
+                console.warn('影片播放失敗，採用後備流程:', err);
+                videoPlayer.style.display = 'none';
+                if (nextScene) {
+                    this.loadScene(nextScene);
+                } else {
+                    const currentScene = Story.scenes[this.currentScene];
+                    if (currentScene.bgm) {
+                        AudioManager.playBgm(currentScene.bgm);
+                    }
+                }
+            });
+        }
     },
     
     // 下一個對話
