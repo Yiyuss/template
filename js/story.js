@@ -568,7 +568,7 @@ c3_path_library: {
 },
         
 c3_library: {
-    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
+    background: 'assets/images/backgrounds/library_night2.jpg',
     dialogues: [
         { character: '【場景：圖書館・黃昏】', text: '圖書館的大門靜靜矗立，門框上雕刻著繁複的藤蔓紋路。' },
         { character: '旁白', text: '推門進去時，厚重的木質聲音迴盪在空氣裡，帶來一股與外界隔絕的靜謐感。' },
@@ -984,7 +984,7 @@ c5a_library_night: {
 },
 
 c5a_library_basement: {
-    background: 'assets/images/backgrounds/library_night.jpg2.jpg',
+    background: 'assets/images/backgrounds/library_night2.jpg',
     dialogues: [
         { character: '【場景：圖書館大廳・通往地下室】', text: '寬闊的書架矗立，靜默如林。' },
         { character: '旁白', text: '高窗外的月光灑下來，在地面投出斑駁的光影。' },
@@ -1225,7 +1225,7 @@ c6a_dormitory: {
 },
 
 c6a_library_basement: {
-    background: 'assets/images/backgrounds/library_night.jpg3.jpg',
+    background: 'assets/images/backgrounds/library_night3.jpg',
     dialogues: [
         { character: '【場景：圖書館地下室・午後】', text: '圖書館的樓梯盤旋而下，石階因年代久遠而布滿裂痕，邊角長滿青苔。' },
         { character: '旁白', text: '每一步踩下去都會傳出細微的迴響，像是無形的耳目在暗中窺聽。' },
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
