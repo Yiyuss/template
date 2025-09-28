@@ -1,7 +1,7 @@
 // 故事內容和對話
 const Story = {
     // 默認背景音樂
-    defaultBgm: 'assets/audio/bgm_ch1.mp3.mp3',
+    defaultBgm: 'assets/audio/bgm_ch1.mp3',
     
     // 場景定義
     scenes: {
@@ -65,7 +65,7 @@ const Story = {
         // 第一章：新的校園，新的邂逅 — 分場景
 c1_gate: {
     background: 'assets/images/backgrounds/campus.jpg',
-    bgm: 'assets/audio/bgm_ch1.mp3',
+    bgm: 'assets/audio/bgm_ch1.mp',
     dialogues: [
         { character: '【校門】', text: '初春的晨風帶著微涼的氣息，靜語花園學院的校門靜靜聳立在遠方。' },
         { character: '旁白', text: '這是一座以白色石材砌成的拱門，頂端盤繞著常青藤，偶爾有幾朵粉紫色的小花點綴其中，像是在迎接每一位到來的學生。' },
@@ -1582,6 +1582,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
