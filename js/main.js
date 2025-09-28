@@ -150,7 +150,12 @@ const Game = {
             
             button.addEventListener('click', () => {
                 AudioManager.stopVoice();
-                this.loadScene(choice.nextScene);
+                // 若選項附帶影片，先播放影片，結束後再進入下一場景
+                if (choice.video) {
+                    this.playVideo(choice.video, choice.nextScene);
+                } else {
+                    this.loadScene(choice.nextScene);
+                }
                 choiceContainer.style.display = 'none';
             });
             
