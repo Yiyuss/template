@@ -39,10 +39,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         if (this.audioContext && this.audioContext.state === 'suspended') {
             this.audioContext.resume().then(() => {
                 console.log('音頻上下文已恢復');
-                // 如果有默認BGM，嘗試播放
-                if (Story.defaultBgm && !this.isBgmPlaying) {
-                    this.playBgm(Story.defaultBgm);
-                }
+                // 僅恢復上下文，不自動播放默認BGM，避免意外疊音
             });
         }
     },
@@ -58,10 +55,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             });
         }
         
-        // 預加載默認BGM
-        if (Story.defaultBgm) {
-            this.loadAudio(Story.defaultBgm);
-        }
+        // 不再預加載默認BGM，改由場景明確指定
     },
     
     // 加載音頻文件
@@ -146,6 +140,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         if (this.isBgmPlaying && this.bgmSource) {
             // 先標記為未播放，避免 onended 回調意外重啟
             this.isBgmPlaying = false;
+            try { this.bgmSource.onended = null; } catch (_) {}
             try {
                 this.bgmSource.stop();
             } catch (e) {
@@ -171,6 +166,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         if (this.bgmSource) {
             // 先標記為未播放，避免 onended 回調意外重啟
             this.isBgmPlaying = false;
+            try { this.bgmSource.onended = null; } catch (_) {}
             try {
                 // 先斷開連接，再停止
                 this.bgmSource.disconnect();
@@ -184,6 +180,28 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         }
         // 清空當前曲目，避免同曲目誤判導致重播
         this.currentBgm = '';
+    },
+
+    // 漸降並停止背景音樂（柔和淡出）
+    fadeOutAndStopBgm: function(durationMs = 400) {
+        if (!this.audioContext || !this.bgmGain) {
+            this.stopBgm();
+            return;
+        }
+        const now = this.audioContext.currentTime;
+        const durationSec = Math.max(0.05, durationMs / 1000);
+        try {
+            // 標記為未播放，避免 onended 迴圈
+            this.isBgmPlaying = false;
+            // 取消既有排程，設定當前值，線性降到 0
+            this.bgmGain.gain.cancelScheduledValues(now);
+            this.bgmGain.gain.setValueAtTime(this.bgmGain.gain.value, now);
+            this.bgmGain.gain.linearRampToValueAtTime(0, now + durationSec);
+        } catch (_) {}
+        // 在淡出結束後徹底停止並斷開
+        setTimeout(() => {
+            this.stopBgm();
+        }, durationMs + 20);
     },
     
      // 設置音量
