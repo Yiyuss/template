@@ -60,6 +60,14 @@ const Game = {
         
         // 使用轉場效果
         Transitions.fadeToBlack(() => {
+            // 章節邊界保護：若跨章切換，先淡出並徹底停止上一章 BGM
+            const fromScene = this.currentScene;
+            const toScene = sceneName;
+            const fromChap = this._getChapterId(fromScene);
+            const toChap = this._getChapterId(toScene);
+            if (fromChap && toChap && fromChap !== toChap) {
+                AudioManager.fadeOutAndStopBgm(250);
+            }
             // 設置背景
             document.getElementById('background-layer').style.backgroundImage = `url('${scene.background}')`;
             
@@ -79,6 +87,13 @@ const Game = {
             // 顯示當前對話
             this.displayCurrentDialogue();
         });
+    },
+
+    // 解析章節號碼（如 c1_gate → 1），非 cX_ 形式則返回 null
+    _getChapterId: function(sceneName) {
+        if (!sceneName || typeof sceneName !== 'string') return null;
+        const m = sceneName.match(/^c(\d+)_/);
+        return m ? parseInt(m[1], 10) : null;
     },
 
     
