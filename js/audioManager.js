@@ -74,9 +74,18 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     
     // 播放背景音樂
     playBgm: function(audioSrc, volume = 0.5) {
-        if (!this.audioContext) return;
+        if (!this.audioContext) {
+            console.error('音頻上下文不存在，無法播放BGM');
+            return;
+        }
         
         console.log('嘗試播放BGM:', audioSrc);
+        
+        // 檢查文件路徑是否有效
+        if (!audioSrc || typeof audioSrc !== 'string') {
+            console.error('無效的音頻路徑:', audioSrc);
+            return;
+        }
         
         // 徹底停止當前播放的BGM（無論如何都要先停止）
         this.stopBgm();
@@ -85,16 +94,19 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         if (this.audioContext.state === 'suspended') {
             this.audioContext.resume().then(() => {
                 console.log('音頻上下文已恢復');
+                // 恢復後重新嘗試播放
+                this._loadAndPlayBgm(audioSrc, volume);
             }).catch(e => {
                 console.warn('恢復音頻上下文失敗:', e);
             });
+        } else {
+            // 直接加載並播放
+            this._loadAndPlayBgm(audioSrc, volume);
         }
-        
-        // 如果是同一首BGM且正在播放，則不做任何操作
-        if (this.currentBgm === audioSrc && this.isBgmPlaying) {
-            return;
-        }
-        
+    },
+    
+    // 內部方法：加載並播放BGM
+    _loadAndPlayBgm: function(audioSrc, volume) {
         // 設置新的BGM
         this.currentBgm = audioSrc;
         
@@ -114,17 +126,52 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
                 }
                 return response.arrayBuffer();
             })
-            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(arrayBuffer => {
+                console.log('音頻數據已獲取，開始解碼:', audioSrc);
+                return this.audioContext.decodeAudioData(arrayBuffer);
+            })
             .then(audioBuffer => {
                 // 保存到緩存
                 this.audioBuffers[audioSrc] = audioBuffer;
+                console.log('音頻解碼成功，準備播放:', audioSrc);
                 // 確保在解碼完成前沒有其他 BGM 開始播放
                 if (this.currentBgm === audioSrc) {
                     console.log('開始播放新加載的音頻:', audioSrc);
                     this.playBufferedAudio(audioBuffer, volume);
+                } else {
+                    console.warn('BGM已更改，取消播放:', audioSrc);
                 }
             })
-            .catch(error => console.error('BGM播放失敗:', error, audioSrc));
+            .catch(error => {
+                console.error('BGM播放失敗:', error, audioSrc);
+                // 嘗試重新加載一次
+                console.log('嘗試重新加載音頻:', audioSrc);
+                setTimeout(() => {
+                    if (this.currentBgm === audioSrc) {
+                        this._retryLoadBgm(audioSrc, volume);
+                    }
+                }, 1000);
+            });
+    },
+    
+    // 重試加載BGM
+    _retryLoadBgm: function(audioSrc, volume) {
+        fetch(audioSrc)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`重試加載失敗 ${audioSrc}: ${response.status} ${response.statusText}`);
+                }
+                return response.arrayBuffer();
+            })
+            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                this.audioBuffers[audioSrc] = audioBuffer;
+                if (this.currentBgm === audioSrc) {
+                    console.log('重試成功，開始播放:', audioSrc);
+                    this.playBufferedAudio(audioBuffer, volume);
+                }
+            })
+            .catch(error => console.error('重試加載失敗:', error, audioSrc));
     },
     
     // 播放已緩存的音頻
@@ -185,6 +232,9 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             this.bgmGain.gain.value = 0;
         }
 
+        // 保存當前BGM路徑，用於後續清除緩存
+        const currentBgmPath = this.currentBgm;
+
         if (this.bgmSource) {
             // 先標記為未播放，避免 onended 回調意外重啟
             this.isBgmPlaying = false;
@@ -206,8 +256,9 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         this.currentBgm = '';
         
         // 不再清除整個緩存，只清除當前BGM的緩存項（如果存在）
-        if (this.currentBgm && this.audioBuffers[this.currentBgm]) {
-            delete this.audioBuffers[this.currentBgm];
+        if (currentBgmPath && this.audioBuffers[currentBgmPath]) {
+            console.log('清除緩存:', currentBgmPath);
+            delete this.audioBuffers[currentBgmPath];
         }
     },
 
