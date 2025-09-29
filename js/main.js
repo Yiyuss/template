@@ -172,6 +172,8 @@ const Game = {
         videoPlayer.setAttribute('playsinline', '');
         videoPlayer.style.display = 'block';
         
+        // 影片開始前先將 BGM 靜音並停止，避免疊音
+        AudioManager.setVolume(0);
         AudioManager.stopBgm();
         AudioManager.stopVoice();
         
