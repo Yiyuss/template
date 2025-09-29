@@ -76,10 +76,16 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     playBgm: function(audioSrc, volume = 0.5) {
         if (!this.audioContext) return;
         
-        // 如果音頻上下文被暫停，嘗試恢復，但不返回。
-        // 保持後續邏輯執行，避免舊曲目在恢復時意外繼續。
+        // 徹底停止當前播放的BGM（無論如何都要先停止）
+        this.stopBgm();
+        
+        // 如果音頻上下文被暫停，嘗試恢復
         if (this.audioContext.state === 'suspended') {
-            this.resumeAudioContext();
+            this.audioContext.resume().then(() => {
+                console.log('音頻上下文已恢復');
+            }).catch(e => {
+                console.warn('恢復音頻上下文失敗:', e);
+            });
         }
         
         // 如果是同一首BGM且正在播放，則不做任何操作
@@ -87,36 +93,40 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             return;
         }
         
-        // 停止當前播放的BGM（徹底斷開，避免恢復時延續）
-        this.stopBgm();
-        
         // 設置新的BGM
         this.currentBgm = audioSrc;
         
-        // 檢查是否已預加載
-        if (this.audioBuffers[audioSrc]) {
-            this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
-        } else {
-            // 如果未預加載，則加載並播放
-            this.loadAudio(audioSrc);
-            fetch(audioSrc)
-                .then(response => response.arrayBuffer())
-                .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
-                .then(audioBuffer => {
-                    this.audioBuffers[audioSrc] = audioBuffer;
+        // 每次都重新加載音頻，避免使用緩存的音頻數據（可能保留了播放位置）
+        fetch(audioSrc)
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                // 確保在解碼完成前沒有其他 BGM 開始播放
+                if (this.currentBgm === audioSrc) {
                     this.playBufferedAudio(audioBuffer, volume);
-                })
-                .catch(error => console.error('BGM播放失敗:', error));
-        }
+                }
+            })
+            .catch(error => console.error('BGM播放失敗:', error));
     },
     
     // 播放已緩存的音頻
     playBufferedAudio: function(audioBuffer, volume = 0.5) {
         if (!this.audioContext) return;
         
+        // 再次確保之前的 BGM 已停止
+        if (this.bgmSource) {
+            try {
+                this.bgmSource.disconnect();
+                this.bgmSource.stop();
+            } catch (e) {}
+            this.bgmSource = null;
+        }
+        
         // 創建音頻源
         this.bgmSource = this.audioContext.createBufferSource();
         this.bgmSource.buffer = audioBuffer;
+        // 保存當前使用的緩衝區引用
+        this.bgmBuffer = audioBuffer;
         this.bgmSource.loop = true;
         
         // 設置音量
@@ -176,6 +186,9 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         this.bgmBuffer = null;
         // 清空當前曲目，避免同曲目誤判導致重播
         this.currentBgm = '';
+        
+        // 強制清除緩存，避免重用可能保留播放位置的緩衝區
+        this.audioBuffers = {};
     },
 
     // 漸降並停止背景音樂（柔和淡出）
