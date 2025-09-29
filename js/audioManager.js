@@ -126,13 +126,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         this.bgmSource.connect(this.bgmGain);
         this.bgmSource.start(0);
         this.isBgmPlaying = true;
-        
-        // 設置結束事件（雖然設置了循環，但以防萬一）
-        this.bgmSource.onended = () => {
-            if (this.isBgmPlaying) {
-                this.playBufferedAudio(audioBuffer, volume);
-            }
-        };
+        // 不設置 onended 重啟邏輯；loop 已足夠，避免在 stop() 或上下文切換時意外重播
     },
     
     // 暫停背景音樂
@@ -178,6 +172,8 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             }
             this.bgmSource = null;
         }
+        // 清空緩衝參考，避免在某些環境中與舊節點殘留產生關聯
+        this.bgmBuffer = null;
         // 清空當前曲目，避免同曲目誤判導致重播
         this.currentBgm = '';
     },
