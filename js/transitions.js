@@ -20,8 +20,8 @@ fadeToBlack: function(callback, duration = 1000) {
     const overlay = document.querySelector('.fade-overlay');
     overlay.classList.add('active');
     
-    // 轉場開始時暫停音樂
-    AudioManager.pauseBgm();
+    // 轉場開始時柔和淡出並停止音樂，避免任何恢復疊音
+    AudioManager.fadeOutAndStopBgm(Math.min(600, duration));
     
     setTimeout(() => {
         if (callback) callback();
@@ -38,8 +38,8 @@ fadeToWhite: function(callback, duration = 1000) {
     const overlay = document.querySelector('.white-fade-overlay');
     overlay.classList.add('active');
     
-    // 轉場開始時暫停音樂
-    AudioManager.pauseBgm();
+    // 轉場開始時柔和淡出並停止音樂，避免任何恢復疊音
+    AudioManager.fadeOutAndStopBgm(Math.min(600, duration));
     
     setTimeout(() => {
         if (callback) callback();
