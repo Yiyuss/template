@@ -50,11 +50,7 @@ const Game = {
         document.getElementById('dialogue-box').addEventListener('click', () => {
             this.nextDialogue();
         });
-        
-        // 播放默認背景音樂
-        if (Story.defaultBgm) {
-            AudioManager.playBgm(Story.defaultBgm);
-        }
+
     },
     
     // 載入場景
@@ -172,9 +168,8 @@ const Game = {
         videoPlayer.setAttribute('playsinline', '');
         videoPlayer.style.display = 'block';
         
-        // 影片開始前先將 BGM 靜音並停止，避免疊音
-        AudioManager.setVolume(0);
-        AudioManager.stopBgm();
+        // 影片開始前柔和淡出並完全停止 BGM，避免疊音
+        AudioManager.fadeOutAndStopBgm(400);
         AudioManager.stopVoice();
         
         // 影片載入錯誤時，避免卡住，直接切到下一場景或恢復BGM
