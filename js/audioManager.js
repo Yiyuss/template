@@ -76,6 +76,8 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     playBgm: function(audioSrc, volume = 0.5) {
         if (!this.audioContext) return;
         
+        console.log('嘗試播放BGM:', audioSrc);
+        
         // 徹底停止當前播放的BGM（無論如何都要先停止）
         this.stopBgm();
         
@@ -96,17 +98,33 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         // 設置新的BGM
         this.currentBgm = audioSrc;
         
-        // 每次都重新加載音頻，避免使用緩存的音頻數據（可能保留了播放位置）
+        // 先檢查緩存中是否有該音頻
+        if (this.audioBuffers[audioSrc]) {
+            console.log('使用緩存的音頻:', audioSrc);
+            this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
+            return;
+        }
+        
+        console.log('加載新音頻:', audioSrc);
+        // 加載新的音頻
         fetch(audioSrc)
-            .then(response => response.arrayBuffer())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`無法加載音頻 ${audioSrc}: ${response.status} ${response.statusText}`);
+                }
+                return response.arrayBuffer();
+            })
             .then(arrayBuffer => this.audioContext.decodeAudioData(arrayBuffer))
             .then(audioBuffer => {
+                // 保存到緩存
+                this.audioBuffers[audioSrc] = audioBuffer;
                 // 確保在解碼完成前沒有其他 BGM 開始播放
                 if (this.currentBgm === audioSrc) {
+                    console.log('開始播放新加載的音頻:', audioSrc);
                     this.playBufferedAudio(audioBuffer, volume);
                 }
             })
-            .catch(error => console.error('BGM播放失敗:', error));
+            .catch(error => console.error('BGM播放失敗:', error, audioSrc));
     },
     
     // 播放已緩存的音頻
@@ -187,8 +205,10 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         // 清空當前曲目，避免同曲目誤判導致重播
         this.currentBgm = '';
         
-        // 強制清除緩存，避免重用可能保留播放位置的緩衝區
-        this.audioBuffers = {};
+        // 不再清除整個緩存，只清除當前BGM的緩存項（如果存在）
+        if (this.currentBgm && this.audioBuffers[this.currentBgm]) {
+            delete this.audioBuffers[this.currentBgm];
+        }
     },
 
     // 漸降並停止背景音樂（柔和淡出）
