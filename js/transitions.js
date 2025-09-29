@@ -19,9 +19,7 @@ export const Transitions = {    // 修改：添加 export 關鍵字
 fadeToBlack: function(callback, duration = 1000) {
     const overlay = document.querySelector('.fade-overlay');
     overlay.classList.add('active');
-    
-    // 轉場開始時柔和淡出並停止音樂，避免任何恢復疊音
-    AudioManager.fadeOutAndStopBgm(Math.min(600, duration));
+    // 不在此處處理音樂，交由 loadScene 依場景決定是否切換 BGM
     
     setTimeout(() => {
         if (callback) callback();
@@ -37,9 +35,7 @@ fadeToBlack: function(callback, duration = 1000) {
 fadeToWhite: function(callback, duration = 1000) {
     const overlay = document.querySelector('.white-fade-overlay');
     overlay.classList.add('active');
-    
-    // 轉場開始時柔和淡出並停止音樂，避免任何恢復疊音
-    AudioManager.fadeOutAndStopBgm(Math.min(600, duration));
+    // 不在此處處理音樂，交由 loadScene 依場景決定是否切換 BGM
     
     setTimeout(() => {
         if (callback) callback();
