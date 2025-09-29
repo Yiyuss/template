@@ -144,8 +144,13 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     // 暫停背景音樂
     pauseBgm: function() {
         if (this.isBgmPlaying && this.bgmSource) {
-            this.bgmSource.stop();
+            // 先標記為未播放，避免 onended 回調意外重啟
             this.isBgmPlaying = false;
+            try {
+                this.bgmSource.stop();
+            } catch (e) {
+                // 忽略已停止的音頻源錯誤
+            }
         }
     },
     
@@ -159,14 +164,17 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     // 停止背景音樂
     stopBgm: function() {
         if (this.bgmSource) {
+            // 先標記為未播放，避免 onended 回調意外重啟
+            this.isBgmPlaying = false;
             try {
                 this.bgmSource.stop();
             } catch (e) {
                 // 忽略已停止的音頻源錯誤
             }
             this.bgmSource = null;
-            this.isBgmPlaying = false;
         }
+        // 清空當前曲目，避免同曲目誤判導致重播
+        this.currentBgm = '';
     },
     
      // 設置音量
