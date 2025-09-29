@@ -87,34 +87,50 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             return;
         }
         
+        // 保存要播放的BGM路徑
+        const newBgmPath = audioSrc;
+        
         // 徹底停止當前播放的BGM（無論如何都要先停止）
         this.stopBgm();
+        
+        // 立即設置新的BGM路徑，避免stopBgm後currentBgm為空
+        this.currentBgm = newBgmPath;
         
         // 如果音頻上下文被暫停，嘗試恢復
         if (this.audioContext.state === 'suspended') {
             this.audioContext.resume().then(() => {
                 console.log('音頻上下文已恢復');
                 // 恢復後重新嘗試播放
-                this._loadAndPlayBgm(audioSrc, volume);
+                this._loadAndPlayBgm(newBgmPath, volume);
             }).catch(e => {
                 console.warn('恢復音頻上下文失敗:', e);
+                // 即使恢復失敗也嘗試播放
+                this._loadAndPlayBgm(newBgmPath, volume);
             });
         } else {
             // 直接加載並播放
-            this._loadAndPlayBgm(audioSrc, volume);
+            this._loadAndPlayBgm(newBgmPath, volume);
         }
     },
     
     // 內部方法：加載並播放BGM
     _loadAndPlayBgm: function(audioSrc, volume) {
-        // 設置新的BGM
-        this.currentBgm = audioSrc;
+        // 確保currentBgm已設置
+        if (this.currentBgm !== audioSrc) {
+            this.currentBgm = audioSrc;
+        }
         
         // 先檢查緩存中是否有該音頻
         if (this.audioBuffers[audioSrc]) {
             console.log('使用緩存的音頻:', audioSrc);
-            this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
-            return;
+            try {
+                this.playBufferedAudio(this.audioBuffers[audioSrc], volume);
+                return;
+            } catch (e) {
+                console.warn('使用緩存音頻失敗，嘗試重新加載:', e);
+                // 緩存可能損壞，刪除並重新加載
+                delete this.audioBuffers[audioSrc];
+            }
         }
         
         console.log('加載新音頻:', audioSrc);
@@ -252,11 +268,13 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
         }
         // 清空緩衝參考，避免在某些環境中與舊節點殘留產生關聯
         this.bgmBuffer = null;
-        // 清空當前曲目，避免同曲目誤判導致重播
-        this.currentBgm = '';
         
-        // 不再清除整個緩存，只清除當前BGM的緩存項（如果存在）
-        if (currentBgmPath && this.audioBuffers[currentBgmPath]) {
+        // 不再清除當前曲目，讓playBgm來設置新的曲目
+        // this.currentBgm = '';
+        
+        // 不再清除緩存，保留所有音頻緩存以提高加載速度
+        // 如果確實需要清除特定緩存，可以在特定情況下執行
+        if (false && currentBgmPath && this.audioBuffers[currentBgmPath]) {
             console.log('清除緩存:', currentBgmPath);
             delete this.audioBuffers[currentBgmPath];
         }
