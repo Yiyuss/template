@@ -163,9 +163,18 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     
     // 停止背景音樂
     stopBgm: function() {
+        // 強制靜音，避免殘留聲音
+        if (this.bgmGain) {
+            this.bgmGain.gain.value = 0;
+        }
+
         if (this.bgmSource) {
             // 先標記為未播放，避免 onended 回調意外重啟
             this.isBgmPlaying = false;
+            try {
+                // 先斷開連接，再停止
+                this.bgmSource.disconnect();
+            } catch (_) {}
             try {
                 this.bgmSource.stop();
             } catch (e) {
