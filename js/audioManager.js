@@ -76,10 +76,10 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
     playBgm: function(audioSrc, volume = 0.5) {
         if (!this.audioContext) return;
         
-        // 如果音頻上下文被暫停，嘗試恢復
+        // 如果音頻上下文被暫停，嘗試恢復，但不返回。
+        // 保持後續邏輯執行，避免舊曲目在恢復時意外繼續。
         if (this.audioContext.state === 'suspended') {
             this.resumeAudioContext();
-            return;
         }
         
         // 如果是同一首BGM且正在播放，則不做任何操作
@@ -87,7 +87,7 @@ export const AudioManager = {    // 修改：添加 export 關鍵字
             return;
         }
         
-        // 停止當前播放的BGM
+        // 停止當前播放的BGM（徹底斷開，避免恢復時延續）
         this.stopBgm();
         
         // 設置新的BGM
