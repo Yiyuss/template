@@ -1426,8 +1426,8 @@ c6b_shadow_foreshadow: {
         { character: '旁白', text: '然而，在恐懼與壓迫的夾縫中，她們的決心已經凝結成某種無聲的約定。' },
         { character: '旁白', text: '那一夜，靜語花園的空氣裡，不再只是壓迫，而是暗暗燃起了一絲反抗的火焰。' },
         { character: '旁白', text: '——' },
-                { character: '旁白', text: '—— 請通關森森鈴蘭路線解鎖 ——' },
-                { character: '旁白', text: '【第六章·完】', choices: [ { text: '前往第七章', nextScene: 'start' }, { text: '隱藏路線', nextScene: 'start' } ] }
+                { character: '旁白', text: '【第六章·完】' },
+                { character: '旁白', text: '—— 請通關森森鈴蘭路線解鎖 ——', choices: [ { text: '前往第七章(未解鎖)', nextScene: 'start' }, { text: '隱藏路線(未解鎖)', nextScene: 'start' } ] }
             ]
         },
         
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
