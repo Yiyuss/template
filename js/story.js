@@ -287,7 +287,7 @@ c1_dorm_room_night: {
         // 第二章：花語的迴響 — 分場景
 c2_dorm_morning: {
     background: 'assets/images/backgrounds/school4.jpg',
-    bgm: 'assets/audio/bgm_ch2.mp3',
+    bgm: 'assets/audio/bgm_ch3.mp3',
     dialogues: [
         { character: '【場景：宿舍房間・清晨】', text: '清晨的鐘聲再度迴盪在學院上空，聲音像一層薄霧，繚繞在古老的迴廊與塔尖。' },
         { character: '旁白', text: '陽光從百葉窗的縫隙滲入，為房間鍍上一層淡金的光。' },
@@ -418,7 +418,7 @@ c2_dorm_night_expanded: {
         // 第三章：微光的試探 — 分場景
 c3_dorm_morning: {
     background: 'assets/images/backgrounds/school4.jpg',
-    bgm: 'assets/audio/bgm_ch3.mp3',
+    bgm: 'assets/audio/bgm_ch2.mp3',
     dialogues: [
         { character: '【場景：宿舍房間・晨】', text: '開學經過了幾個月，微涼的晨風透過半掩的窗縫鑽進來，輕輕拂過室內的薄紗簾。' },
         { character: '旁白', text: '瑪麗緩緩睜開眼時，視線還停留在夢境的殘影裡——夜空下無聲綻放的夜語花，花瓣宛如星子般散落。' },
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
