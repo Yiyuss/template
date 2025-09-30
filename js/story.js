@@ -1427,12 +1427,12 @@ c6b_shadow_foreshadow: {
         { character: '旁白', text: '那一夜，靜語花園的空氣裡，不再只是壓迫，而是暗暗燃起了一絲反抗的火焰。' },
         { character: '旁白', text: '——' },
                 { character: '旁白', text: '—— 請通關森森鈴蘭路線解鎖 ——' },
-                { character: '旁白', text: '【第六章·完】', choices: [ { text: '前往第七章', nextScene: 'c5_endA' }, { text: '隱藏路線', nextScene: 'start' } ] }
+                { character: '旁白', text: '【第六章·完】', choices: [ { text: '前往第七章', nextScene: 'start' }, { text: '隱藏路線', nextScene: 'start' } ] }
             ]
         },
         
         // 結局A：尋找
-        c5_endA: {
+        c9_endA: {
             background: 'assets/images/backgrounds/mountains.jpg',
             bgm: 'assets/audio/bgm_end_a.mp3',
             dialogues: [
@@ -1442,7 +1442,7 @@ c6b_shadow_foreshadow: {
         },
         
         // 結局B：傳遞
-        c5_endB: {
+        c9_endB: {
             background: 'assets/images/backgrounds/garden.jpg',
             bgm: 'assets/audio/bgm_end_b.mp3',
             dialogues: [
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
