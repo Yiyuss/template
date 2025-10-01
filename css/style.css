@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'GenSenRounded';
-    src: url('../assets/fonts/GenSenRounded-H.woff2') format('truetype');
+    src: url('../assets/fonts/GenSenRounded-H.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -96,14 +96,37 @@ body {
 
 #choice-container {
     position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 30;
+}
+
+/* 臨時圖片容器樣式 */
+.temp-image-container {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 25;
+    max-width: 80%;
+    max-height: 60%;
+}
+
+/* 臨時圖片樣式 */
+.temp-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .choice-button {
@@ -253,5 +276,4 @@ body {
 
 #start-game-button:hover {
     background-color: #ffdd55;
-
 }
