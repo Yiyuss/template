@@ -808,7 +808,7 @@ c4b_inner_meeting: {
         { character: '旁白', text: '瑪麗呆呆望著她，喉嚨哽住，什麼都說不出口。' },
         { character: '旁白', text: '只是眼淚止不住地落下，像回應，又像是無聲的告白。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '即將前往【內心世界·信箋海洋】', choices: [ { text: '情咒等級有如玻璃般碎開，一股氣息衝天而起', nextScene: 'c4c_inner_letters' } ] }
+        { character: '旁白', text: '即將前往【內心世界·信箋海洋】', choices: [ { text: '情咒等級有如玻璃般碎開，一股氣息衝天而起', video: 'assets/videos/ch4.mp4', nextScene: 'c4c_inner_letters' } ] }
     ]
 },
 
@@ -878,7 +878,7 @@ c4c_inner_letters: {
         { character: '旁白', text: '大講堂死一般的寂靜，所有人屏住呼吸。' },
         { character: '旁白', text: '試煉，落幕。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第四章·完】', video: 'assets/videos/ch4.mp4', nextScene: 'c5a_plaza' }
+        { character: '旁白', text: '【第四章·完】', video: 'assets/videos/LOAD.mp4', nextScene: 'c5a_plaza' }
     ]
 },
         
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
