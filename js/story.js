@@ -1515,12 +1515,12 @@ c6b_shadow_foreshadow: {
             image: 'assets/images/characters/visitor.png',
             position: '50%'
         },
-        '教師甲（低聲）': {
-            image: 'assets/images/characters/librarian.png',
+        '教師甲': {
+            image: 'assets/images/characters/01.png',
             position: '50%'
         },
         '教師乙': {
-            image: 'assets/images/characters/librarian.png',
+            image: 'assets/images/characters/02.png',
             position: '50%'
         },
         '老師': {
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
