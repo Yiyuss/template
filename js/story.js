@@ -249,7 +249,7 @@ c1_dorm_room_night: {
         { character: '瑪格麗特', text: '……我希望這次，不要再錯過了。' },
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/cg1.mp4', nextScene: 'c2_dorm_morning' }
+        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/ch1.mp4', nextScene: 'c2_dorm_morning' }
         
     ]
 },
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
