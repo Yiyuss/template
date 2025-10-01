@@ -406,7 +406,7 @@ c2_dorm_night_expanded: {
         { character: '旁白', text: '瑪格麗特坐在書桌前，燈光映照在她側臉，勾勒出柔和的弧度。' },
         { character: '旁白', text: '她的手指輕輕停在日記本的封面，卻遲遲沒有落筆。' },
         { character: '旁白', text: '腦中盤旋的，始終是鈴蘭白天望向她時，那種彷彿能看透一切的眼神。' },
-        { character: '瑪格麗特（低聲）', text: '……如果有一天妳知道我的秘密，還會願意坐在我身邊嗎？' },
+        { character: '瑪格麗特', text: '……如果有一天妳知道我的秘密，還會願意坐在我身邊嗎？' },
         { character: '旁白', text: '窗外，夜語花再次無聲綻放，幽藍的花瓣在月光下閃爍微光。' },
         { character: '旁白', text: '瑪麗並不知道，對面床上的鈴蘭雖假裝專心讀書，卻早已聽見那聲呢喃。' },
         { character: '旁白', text: '她的指尖停在書頁上，心口泛起一陣難以言喻的悸動。' },
@@ -443,7 +443,7 @@ c3_dorm_morning: {
         { character: '旁白', text: '那一瞬間，宛如有微光在心口閃爍。' },
         { character: '瑪格麗特', text: '早……早安。' },
         { character: '旁白', text: '瑪麗急忙低下頭，聲音輕得幾乎要被晨風吹散。' },
-        { character: '森森鈴蘭（笑意）', text: '嗯，早呀。' },
+        { character: '森森鈴蘭', text: '嗯，早呀。' },
         { character: '旁白', text: '她的眼神短暫對上自己，瑪麗心口一緊，彷彿那視線已洞悉枕下的秘密。' },
         { character: '旁白', text: '——' },
         { character: '旁白', text: '即將前往【餐廳・早】。', choices: [ { text: '繼續', nextScene: 'c3_cafeteria' } ] }
@@ -505,7 +505,7 @@ c3_classroom: {
         { character: '旁白', text: '周圍響起小聲的竊語，有人低聲笑出來，有人皺眉搖頭。' },
         { character: '瑪格麗特', text: '……' },
         { character: '旁白', text: '就在她幾乎要逃離的時候，鈴蘭不動聲色地湊近，輕聲提醒：' },
-        { character: '森森鈴蘭（低聲）', text: '慢一點呼吸，把情緒想成一株花……不必去抓住它，只要讓它在風裡搖曳。' },
+        { character: '森森鈴蘭', text: '慢一點呼吸，把情緒想成一株花……不必去抓住它，只要讓它在風裡搖曳。' },
         { character: '旁白', text: '這句話像一根細線，把她從崩潰邊緣拉回。' },
         { character: '旁白', text: '瑪麗再次嘗試，掌心浮現出淡淡的藍光，雖然不穩定，但至少沒有立刻崩解。' },
         { character: '老師', text: '很好，已經有了基礎的形態。' },
@@ -1403,7 +1403,7 @@ c6b_bedside_oath: {
         { character: '瑪格麗特', text: '如果真的走不出去呢？' },
         { character: '旁白', text: '鈴蘭沒有回答，而是傾身，將額頭輕輕抵在她額上。' },
         { character: '旁白', text: '呼吸交纏，溫熱卻帶著淚意。' },
-        { character: '鈴蘭', text: '那就走到盡頭，至少……不是一個人。' },
+        { character: '森森鈴蘭', text: '那就走到盡頭，至少……不是一個人。' },
         { character: '旁白', text: '瑪麗的視線模糊了。' },
         { character: '旁白', text: '她緊緊握住鈴蘭的手，手心相扣，直到指節發白。' },
         { character: '旁白', text: '窗外的風聲漸強，宛如某種不祥的預兆。' },
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
