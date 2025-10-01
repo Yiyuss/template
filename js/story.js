@@ -51,7 +51,7 @@ const Story = {
                     choices: [
                         {
                             text: '瑪格麗特·諾爾絲',
-                            video: 'assets/videos/margaret_intro.mp',
+                            video: 'assets/videos/margaret_intro.mp4',
                             nextScene: 'c1_gate'
                         },
                         {
@@ -249,7 +249,7 @@ c1_dorm_room_night: {
         { character: '瑪格麗特', text: '……我希望這次，不要再錯過了。' },
         { character: '旁白', text: '窗外的花園深處，一朵細小的夜語花悄然綻放。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/transition_greenhouse.mp4', nextScene: 'c2_dorm_morning' }
+        { character: '旁白', text: '【第一章·完】', video: 'assets/videos/cg1.mp4', nextScene: 'c2_dorm_morning' }
         
     ]
 },
@@ -411,7 +411,7 @@ c2_dorm_night_expanded: {
         { character: '旁白', text: '瑪麗並不知道，對面床上的鈴蘭雖假裝專心讀書，卻早已聽見那聲呢喃。' },
         { character: '旁白', text: '她的指尖停在書頁上，心口泛起一陣難以言喻的悸動。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第二章·完】', video: 'assets/videos/transition_ch2_to_ch3.mp4', nextScene: 'c3_dorm_morning' }
+        { character: '旁白', text: '【第二章·完】', video: 'assets/videos/LOAD.mp4', nextScene: 'c3_dorm_morning' }
     ]
 },
         
@@ -616,7 +616,7 @@ c3_dorm_night: {
         { character: '旁白', text: '窗外的夜空裡，一朵夜語花無聲綻放。' },
         { character: '旁白', text: '花瓣如細小的星光，靜靜墜落，只能被真正聽見她心聲的人看見。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第三章·完】', video: 'assets/videos/transition_ch3_to_ch4.mp4', nextScene: 'c4a_plaza' }
+        { character: '旁白', text: '【第三章·完】', video: 'assets/videos/ch3.mp4', nextScene: 'c4a_plaza' }
     ]
 },
         
@@ -878,7 +878,7 @@ c4c_inner_letters: {
         { character: '旁白', text: '大講堂死一般的寂靜，所有人屏住呼吸。' },
         { character: '旁白', text: '試煉，落幕。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第四章·完】', video: 'assets/videos/transition_ch3_to_ch4.mp4', nextScene: 'c5a_plaza' }
+        { character: '旁白', text: '【第四章·完】', video: 'assets/videos/ch4.mp4', nextScene: 'c5a_plaza' }
     ]
 },
         
@@ -1114,7 +1114,7 @@ c5b_shadow: {
         { character: '旁白', text: '她翻身看向窗外，黑影掠過草地，靜默無聲，像是一道預兆。' },
         { character: '旁白', text: '夜語花的影像，在夢與清醒之間再度浮現。' },
         { character: '旁白', text: '——' },
-        { character: '旁白', text: '【第五章·完】', video: 'assets/videos/transition_ch5_to_ch6.mp4', nextScene: 'c6a_classroom' }
+        { character: '旁白', text: '【第五章·完】', video: 'assets/videos/LOAD.mp4', nextScene: 'c6a_classroom' }
     ]
 },
 
@@ -1583,6 +1583,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
