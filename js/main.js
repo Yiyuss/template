@@ -125,6 +125,36 @@ const Game = {
             document.getElementById('choice-container').style.display = 'none';
         }
         
+        // 處理臨時圖片
+        const imageContainer = document.getElementById('image-container');
+        if (dialogue.image) {
+            // 創建或顯示圖片容器
+            if (!imageContainer) {
+                const newImageContainer = document.createElement('div');
+                newImageContainer.id = 'image-container';
+                newImageContainer.className = 'temp-image-container';
+                document.getElementById('game-container').appendChild(newImageContainer);
+            } else {
+                imageContainer.style.display = 'flex';
+            }
+            
+            // 設置圖片
+            const imageElement = document.createElement('img');
+            imageElement.src = dialogue.image;
+            imageElement.className = 'temp-image';
+            
+            // 清空並添加新圖片
+            if (imageContainer) {
+                imageContainer.innerHTML = '';
+            } else {
+                document.getElementById('image-container').innerHTML = '';
+            }
+            (imageContainer || document.getElementById('image-container')).appendChild(imageElement);
+        } else if (imageContainer) {
+            // 如果沒有圖片但容器存在，則隱藏容器
+            imageContainer.style.display = 'none';
+        }
+        
         // 處理視頻
         if (dialogue.video) {
             this.playVideo(dialogue.video, dialogue.nextScene);
