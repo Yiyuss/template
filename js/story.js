@@ -178,7 +178,7 @@ c1_classroom: {
         { character: '瑪格麗特', text: '……初次見面，請多多指教。' },
         { character: '短髮少女', text: '哦～' },
         { character: '旁白', text: '短髮少女眼神閃了閃，像是看透了她的羞怯，但沒有多說，只是回以一笑。' },
-        { character: '旁白', text: '課程開始後，老師是一位身穿黑袍的中年男子，聲音低沉卻不失威嚴。' },
+        { character: '旁白', text: '課程開始後，老師是一位身穿西裝的中年男子，聲音低沉卻不失威嚴。' },
         { character: '男老師', text: '靜語花園學院，是情咒研究的核心場所。' },
         { character: '男老師', text: '你們在這裡所學，不僅僅是控制情感的技巧，更是學會與自己相處的方式。' },
         { character: '旁白', text: '瑪格麗特低下頭，用筆記下老師的話。' },
@@ -241,7 +241,8 @@ c1_dorm_room_night: {
     background: 'assets/images/backgrounds/school3.jpg',
     dialogues: [
         { character: '【宿舍房間・夜】', text: '夜幕降臨，月光從窗外照進來，灑落在床邊。' },
-        { character: '旁白', text: '瑪麗坐在書桌前，攤開日記本，筆尖在紙上顫抖，卻仍堅持落下字句。' },
+        { character: '旁白', text: '瑪麗坐在書桌前，攤開日記本。', image: 'assets/images/letters/book.png' },
+        { character: '旁白', text: '筆尖在紙上顫抖，卻仍堅持落下字句。' },
         { character: '旁白', text: '——今天遇見了室友。她叫森森鈴蘭。' },
         { character: '旁白', text: '——笑容很溫暖，好像能看穿一切。' },
         { character: '旁白', text: '——我想，或許在這裡……我能找到不一樣的自己。' },
@@ -341,7 +342,7 @@ c2_classroom: {
         { character: '老師', text: '若心境動搖，咒語便會隨之變質。今天，我們要進行最基礎的感應訓練。' },
         { character: '旁白', text: '教室瞬間安靜。學生們依序閉上眼睛，跟隨指引感受內心情緒的流動。' },
         { character: '旁白', text: '瑪麗緊張地攥著裙角，掌心滲出細汗。' },
-        { character: '旁白', text: '她試圖屏息、放空，卻總被昨夜的影像干擾：那朵在月色中綻放的夜語花，靜靜浮現眼前，掀起心底難以抑制的波動。' },
+        { character: '旁白', text: '她試圖屏息、放空，卻總被昨夜的影像干擾：那朵在月色中綻放的夜語花，靜靜浮現眼前，掀起心底難以抑制的波動。', image: 'assets/images/letters/01.png'},
         { character: '森森鈴蘭', text: '瑪麗？' },
         { character: '旁白', text: '一聲低喚將她拉回現實。她睜開眼，撞上鈴蘭專注的目光。' },
         { character: '森森鈴蘭', text: '妳還好嗎？' },
@@ -1583,6 +1584,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
