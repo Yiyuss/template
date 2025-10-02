@@ -818,6 +818,7 @@ c4b_inner_meeting: {
 // =====================
 c4c_inner_letters: {
     background: 'assets/images/backgrounds/inner_world_flowers.jpg',
+    bgm: 'assets/audio/bgm_ch4.mp3',
     dialogues: [
         { character: '【場景：內心世界】', text: '紙頁仍在漫天飛舞。' },
         { character: '旁白', text: '數不清的信件，像潮水般拍擊而來，每一封都帶著瑪格麗特從未敢說出口的心音。' },
@@ -1584,6 +1585,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
