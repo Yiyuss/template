@@ -747,31 +747,31 @@ c4b_inner_letters: {
         { character: '信件一', text: '「……我沒有打招呼，只是從遠處看著。」', image: 'assets/images/letters/02.png' },
         { character: '旁白', text: '字跡拘謹，像剛學會告白的孩子。' },
         { character: '旁白', text: '紙頁在光中燃起，化作另一封。' },
-        { character: '旁白', text: '第二封信。', image: 'assets/images/letters/02.png' },
+        { character: '旁白', text: '第二封信。' },
         { character: '信件二', text: '「她笑的時候，好像連空氣都跟著亮了。」', image: 'assets/images/letters/02.png' },
         { character: '信件二', text: '「可是，我的聲音卻卡在喉嚨裡，一個字都不敢說。」', image: 'assets/images/letters/02.png' },
         { character: '信件二', text: '「……要是她知道我在想什麼，會不會覺得可笑呢？」', image: 'assets/images/letters/02.png' },
         { character: '旁白', text: '聲音在內心世界迴盪，像從四面八方傳來的低語。' },
-        { character: '旁白', text: '第三封信，筆跡顫抖。', image: 'assets/images/letters/02.png' },
+        { character: '旁白', text: '第三封信，筆跡顫抖。' },
         { character: '信件三', text: '「今天她遞給我一枝筆。」', image: 'assets/images/letters/02.png' },
         { character: '信件三', text: '「只是隨手的動作，可是我的手指卻發熱到發抖。」', image: 'assets/images/letters/02.png' },
         { character: '信件三', text: '「……我假裝若無其事，可是心裡卻像要炸開。」', image: 'assets/images/letters/02.png' },
         { character: '旁白', text: '紙頁如雪落下，堆滿她的腳邊。' },
         { character: '旁白', text: '每一張都在提醒：她曾經無數次，把未能說出口的情感，藏進文字。' },
-        { character: '旁白', text: '第四封信。', image: 'assets/images/letters/02.png' },
+        { character: '旁白', text: '第四封信。' },
         { character: '信件四', text: '「我想靠近她，卻害怕自己太過明顯。」', image: 'assets/images/letters/02.png' },
         { character: '信件四', text: '「……我只能在夜裡，把話對星空說。」', image: 'assets/images/letters/02.png' },
         { character: '信件四', text: '「星星聽得懂嗎？會不會，有一天，她能看見那些花？」', image: 'assets/images/letters/02.png' },
         { character: '旁白', text: '字句間滲著無聲的渴望。' },
         { character: '旁白', text: '在信的背面，夜語花的淡影綻放，藍白色的光緩慢舒展。' },
-        { character: '旁白', text: '第五封信。', image: 'assets/images/letters/02.png' },
-        { character: '旁白', text: '字跡斷裂，像在顫抖中寫下。', image: 'assets/images/letters/02.png' },
+        { character: '旁白', text: '第五封信。' },
+        { character: '旁白', text: '字跡斷裂，像在顫抖中寫下。' },
         { character: '信件五', text: '「如果有一天，她知道我的秘密……還會願意坐在我身邊嗎？」', image: 'assets/images/letters/02.png' },
         { character: '旁白', text: '那句話再次出現，比任何時候都更清晰，像利刃般割開胸口。' },
         { character: '旁白', text: '瑪麗跪倒在信箋的堆疊裡，指尖顫抖。' },
         { character: '旁白', text: '這些文字，本該永遠只存在於日記，怎麼能如此赤裸地曝露在光裡？' },
         { character: '旁白', text: '她緊緊抱著自己，淚水從臉頰滑落。' },
-        { character: '旁白', text: '第六封信浮現。', image: 'assets/images/letters/02.png' },
+        { character: '旁白', text: '第六封信浮現。' },
         { character: '信件六', text: '「有時候，我甚至希望她能聽見。」', image: 'assets/images/letters/02.png' },
         { character: '信件六', text: '「哪怕只是一瞬間。」', image: 'assets/images/letters/02.png' },
         { character: '信件六', text: '「……因為我快要被這份沉默淹沒了。」', image: 'assets/images/letters/02.png' },
@@ -1584,6 +1584,7 @@ c6b_shadow_foreshadow: {
 };
 
 export { Story };
+
 
 
 
